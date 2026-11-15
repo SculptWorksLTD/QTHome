@@ -95,6 +95,7 @@ jobs:
       - name: Crea il .app e l'installer
         run: |
           set -e
+          mkdir -p dist
           APP="appA/QTHome.app"; C="$APP/Contents"
           mkdir -p "$C/MacOS" "$C/Resources"
           cp bin/QTHome "$C/MacOS/QTHome"; chmod +x "$C/MacOS/QTHome"
@@ -107,7 +108,6 @@ jobs:
             --scripts build/pkg --identifier com.sculptworks.qthome --version "$VERSION" QTHome-core.pkg
           sed -e "s/__VERSION__/${VERSION}/" build/pkg/distribution.xml > distribution.xml
           productbuild --distribution distribution.xml --resources build/pkg/resources "dist/QTHome-Mac.pkg"
-          mkdir -p dist 2>/dev/null || true
           ls -la dist
       - uses: actions/upload-artifact@v4
         with:
