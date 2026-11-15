@@ -1,0 +1,157 @@
+name: build
+
+# Costruisce QTHome dal sorgente privato (segreto SOURCE_TOKEN) e pubblica solo
+# il programma pronto. Un unico file nativo: finestra WebView del sistema + motore Go,
+# senza Electron. Resta solo l'ultima release: l'app installata scarica sempre quella.
+
+on:
+  workflow_dispatch:
+    inputs:
+      completa:
+        description: 'Build completa anche se il sorgente non è cambiato'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+env:
+  SOURCE_REPO: SculptWorksLTD/QTHomeSource
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      build: ${{ steps.c.outputs.build }}
+      tag: ${{ steps.c.outputs.tag }}
+      sha: ${{ steps.c.outputs.sha }}
+      version: ${{ steps.c.outputs.version }}
+    steps:
+      - id: c
+        env:
+          SOURCE_TOKEN: ${{ secrets.SOURCE_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$SOURCE_TOKEN" ]; then
+            echo "::notice::Manca il segreto SOURCE_TOKEN: nessuna build."
+            echo "build=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          sha=$(git ls-remote "https://x-access-token:${SOURCE_TOKEN}@github.com/${SOURCE_REPO}" refs/heads/main 2>/dev/null | cut -f1)
+          if [ -z "$sha" ]; then
+            echo "::error::SOURCE_TOKEN non riesce a leggere il sorgente (scaduto o senza permessi)."
+            exit 1
+          fi
+          last=$(gh api "repos/${GITHUB_REPOSITORY}/releases/latest" --jq '.tag_name + "|" + .body' 2>/dev/null || true)
+          tag="${last%%|*}"
+          # serie 0.1: stazione + CW + log
+          next=1
+          case "$tag" in v0.1.*) next=$(( ${tag#v0.1.} + 1 ));; esac
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          echo "version=0.1.$next" >> "$GITHUB_OUTPUT"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          mode=full
+          if [ "${{ inputs.completa }}" != "true" ]; then
+            pb=$(printf '%s' "$last" | grep -o 'build [0-9a-f]\{12\}' | head -1 | cut -d' ' -f2)
+            if [ "${sha:0:12}" = "$pb" ]; then
+              mode=none
+            fi
+          fi
+          echo "Modo: $mode (sorgente ${sha:0:12}, ultima build: ${pb:-nessuna})"
+          if [ "$mode" = full ]; then echo "build=true" >> "$GITHUB_OUTPUT"; else echo "build=false" >> "$GITHUB_OUTPUT"; fi
+
+  mac:
+    needs: check
+    if: ${{ needs.check.outputs.build == 'true' }}
+    runs-on: macos-latest
+    timeout-minutes: 30
+    env:
+      VERSION: ${{ needs.check.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.SOURCE_REPO }}
+          ref: ${{ needs.check.outputs.sha }}
+          token: ${{ secrets.SOURCE_TOKEN }}
+          persist-credentials: false
+      - uses: actions/setup-go@v5
+        with: { go-version: '1.24', cache: false }
+      - name: Prepara (dipendenze e test)
+        run: |
+          go get github.com/webview/webview_go@latest
+          go mod tidy
+          go test ./... 2>&1 | tail -4
+      - name: Compila (Mac Apple)
+        run: |
+          CGO_ENABLED=1 GOARCH=arm64 go build -trimpath -ldflags "-s -w" -o bin/QTHome .
+          file bin/QTHome
+      - name: Icona
+        run: |
+          mkdir -p icon.iconset
+          for s in 16 32 128 256; do
+            sips -z $s $s build/resources/icon-256.png --out icon.iconset/icon_${s}x${s}.png >/dev/null
+            d=$((s*2)); sips -z $d $d build/resources/icon-256.png --out icon.iconset/icon_${s}x${s}@2x.png >/dev/null
+          done
+          iconutil -c icns icon.iconset -o icon.icns
+      - name: Crea il .app e l'installer
+        run: |
+          set -e
+          APP="appA/QTHome.app"; C="$APP/Contents"
+          mkdir -p "$C/MacOS" "$C/Resources"
+          cp bin/QTHome "$C/MacOS/QTHome"; chmod +x "$C/MacOS/QTHome"
+          cp icon.icns "$C/Resources/icon.icns"
+          sed -e "s|<string>0.1.0</string>|<string>${VERSION}</string>|g" build/pkg/Info.plist > "$C/Info.plist"
+          codesign --force --deep --sign - "$APP"
+          pkgbuild --analyze --root appA comp.plist
+          /usr/libexec/PlistBuddy -c "Set :0:BundleIsRelocatable false" -c "Set :0:BundleOverwriteAction upgrade" comp.plist
+          pkgbuild --root appA --component-plist comp.plist --install-location /Applications \
+            --scripts build/pkg --identifier com.sculptworks.qthome --version "$VERSION" QTHome-core.pkg
+          sed -e "s/__VERSION__/${VERSION}/" build/pkg/distribution.xml > distribution.xml
+          productbuild --distribution distribution.xml --resources build/pkg/resources "dist/QTHome-Mac.pkg"
+          mkdir -p dist 2>/dev/null || true
+          ls -la dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-mac
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 2
+
+  release:
+    needs: [check, mac]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          pattern: app-*
+          merge-multiple: true
+      - name: Pubblica la release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.check.outputs.version }}
+          SHA: ${{ needs.check.outputs.sha }}
+        run: |
+          ls -la dist
+          D="https://github.com/${{ github.repository }}/releases/download/v${VERSION}"
+          {
+            echo "## Scarica · Download"
+            echo
+            echo "| Sistema · System | |"
+            echo "|---|---|"
+            echo "| **Mac** con chip Apple (M1, M2, M3, M4) | [⬇ QTHome-Mac.pkg](${D}/QTHome-Mac.pkg) |"
+            echo
+            echo "Mac: doppio clic sul .pkg (se il Mac lo blocca: tasto destro → Apri). Windows e Linux: arrivano con le prossime versioni."
+            echo
+            echo "Questa versione ha dentro: la stazione (motore The Rigger, radio e programmi collegati), il pannello CW con CWEngine ufficiale e il log unico. La **decodifica CW resta gratis per sempre**. Tutto in locale sul tuo computer."
+            echo
+            echo "Le installazioni esistenti si aggiornano da sole. (build ${SHA:0:12})"
+          } > notes.md
+          gh release create "v${VERSION}" dist/* \
+            --repo "${{ github.repository }}" \
+            --title "QTHome ${VERSION}" \
+            --notes-file notes.md --latest
+          gh release list --repo "${{ github.repository }}" --limit 100 --json tagName --jq '.[].tagName' | while read -r t; do
+            if [ "$t" != "v${VERSION}" ]; then
+              gh release delete "$t" --repo "${{ github.repository }}" --yes --cleanup-tag || true
+            fi
+          done
