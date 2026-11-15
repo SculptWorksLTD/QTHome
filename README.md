@@ -2,9 +2,18 @@
 
 **Un solo programma per tutta la stazione radioamatoriale.** · *One program for the whole amateur radio station.*
 
-> In arrivo · Coming soon. La pagina di QTHome: [iu1mvi.jimdofree.com/qthome](https://iu1mvi.jimdofree.com/qthome/)
+## Scarica · Download
 
-## Cosa sarà · What it will be
+| Sistema · System | |
+|---|---|
+| **Mac** con chip Apple (M1, M2, M3, M4) | [⬇ Scarica per Mac](https://github.com/SculptWorksLTD/QTHome/releases/latest/download/QTHome-Mac.pkg) |
+
+Mac: doppio clic sul file (se il Mac lo blocca: tasto destro → Apri). Windows e Linux: arrivano con le prossime versioni.
+Poi collega la radio: il resto lo fa da solo. La decodifica CW è gratis per sempre.
+
+> Prima versione: la stazione con The Rigger integrato, il pannello CW con CWEngine (decoder ufficiale CWIU1MVI) e il log unico.
+
+## Cos'è · What it is
 
 Un unico programma per Mac, Windows e Linux: controllo delle radio, CW, fonia, modi
 digitali, log, cluster, SDR, satelliti, remoto e un assistente AI che gira sul computer.
