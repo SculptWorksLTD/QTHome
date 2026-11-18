@@ -2,16 +2,13 @@
 
 **Un solo programma per tutta la stazione radioamatoriale.** · *One program for the whole amateur radio station.*
 
-## Scarica · Download
+## In arrivo · Coming soon
 
-| Sistema · System | |
-|---|---|
-| **Mac** con chip Apple (M1, M2, M3, M4) | [⬇ Scarica per Mac](https://github.com/SculptWorksLTD/QTHome/releases/latest/download/QTHome-Mac.pkg) |
+QTHome è in sviluppo. La prima versione arriva ai beta tester all'inizio del 2027.
+Intanto puoi usare gratis [The Rigger](https://github.com/SculptWorksLTD/TheRigger), che sarà il cuore di QTHome.
 
-Mac: doppio clic sul file (se il Mac lo blocca: tasto destro → Apri). Windows e Linux: arrivano con le prossime versioni.
-Poi collega la radio: il resto lo fa da solo. La decodifica CW è gratis per sempre.
-
-> Prima versione: la stazione con The Rigger integrato, il pannello CW con CWEngine (decoder ufficiale CWIU1MVI) e il log unico.
+*QTHome is in development. The first version reaches beta testers in early 2027.
+Meanwhile you can use [The Rigger](https://github.com/SculptWorksLTD/TheRigger) for free: it will be the heart of QTHome.*
 
 ## Cos'è · What it is
 
@@ -38,4 +35,4 @@ QTHome unisce due programmi gratuiti già pubblicati da IU1MVI: [The Rigger](htt
 
 ---
 
-© IU1MVI (Enrico Migliorati) · Tutti i diritti riservati · [Sostieni con PayPal](https://www.paypal.com/paypalme/iu1mvi)
+© IU1MVI (Enrico Migliorati) · Tutti i diritti riservati · [Sostieni con PayPal](https://paypal.me/nerosdmf)
