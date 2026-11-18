@@ -276,7 +276,7 @@ jobs:
             xvfb-run -a -s "-screen 0 1280x900x24" bash -c "$2 >app-$1.log 2>&1 & sleep 14; import -window root $1.png; echo import=\$?"
             pkill -9 -f "^\./$1"; sleep 1
             tail -n 4 app-$1.log
-            if [ -f $1.png ]; then convert $1.png -resize 1000x -quality 80 foto-$1.jpg; ls -la foto-$1.jpg; else echo "nessuna foto per $1"; fi
+            if [ -f $1.png ]; then convert $1.png -resize 1000x -quality 75 foto-$1.jpg; base64 -w 6000 foto-$1.jpg | nl -nrz -w3 -s: | sed "s/^/SHOT-$1-/"; else echo "nessuna foto per $1"; fi
           }
           shot qthome "./qthome --demo"
           shot trainer "./trainer"
