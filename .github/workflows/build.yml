@@ -1,8 +1,11 @@
 name: build
 
-# Costruisce QTHome dal sorgente privato (segreto SOURCE_TOKEN) e pubblica solo
-# il programma pronto. Un unico file nativo: finestra WebView del sistema + motore Go,
-# senza Electron. Resta solo l'ultima release: l'app installata scarica sempre quella.
+# Costruisce dal sorgente privato (segreto SOURCE_TOKEN) e pubblica solo i
+# programmi pronti: QTHome e QTHome Trainer per Mac (Apple e Intel) e Windows.
+# QTHome Mothership (strumento interno) va solo tra gli "artifact" della build,
+# non nella release. Ogni programma è un unico file nativo: finestra WebView del
+# sistema + motore Go, senza Electron. Resta solo l'ultima release.
+# Nei log non si stampa mai il sorgente.
 
 on:
   workflow_dispatch:
@@ -11,6 +14,10 @@ on:
         description: 'Build completa anche se il sorgente non è cambiato'
         type: boolean
         default: false
+      pubblica:
+        description: 'Pubblica la release (se no: solo prove e artifact)'
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -23,7 +30,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       build: ${{ steps.c.outputs.build }}
-      tag: ${{ steps.c.outputs.tag }}
       sha: ${{ steps.c.outputs.sha }}
       version: ${{ steps.c.outputs.version }}
     steps:
@@ -43,27 +49,23 @@ jobs:
           fi
           last=$(gh api "repos/${GITHUB_REPOSITORY}/releases/latest" --jq '.tag_name + "|" + .body' 2>/dev/null || true)
           tag="${last%%|*}"
-          # serie 0.1: stazione + CW + log
           next=1
           case "$tag" in v0.1.*) next=$(( ${tag#v0.1.} + 1 ));; esac
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
           echo "version=0.1.$next" >> "$GITHUB_OUTPUT"
-          echo "tag=$tag" >> "$GITHUB_OUTPUT"
           mode=full
           if [ "${{ inputs.completa }}" != "true" ]; then
             pb=$(printf '%s' "$last" | grep -o 'build [0-9a-f]\{12\}' | head -1 | cut -d' ' -f2)
-            if [ "${sha:0:12}" = "$pb" ]; then
-              mode=none
-            fi
+            [ "${sha:0:12}" = "$pb" ] && mode=none
           fi
           echo "Modo: $mode (sorgente ${sha:0:12}, ultima build: ${pb:-nessuna})"
-          if [ "$mode" = full ]; then echo "build=true" >> "$GITHUB_OUTPUT"; else echo "build=false" >> "$GITHUB_OUTPUT"; fi
+          [ "$mode" = full ] && echo "build=true" >> "$GITHUB_OUTPUT" || echo "build=false" >> "$GITHUB_OUTPUT"
 
   mac:
     needs: check
     if: ${{ needs.check.outputs.build == 'true' }}
     runs-on: macos-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     env:
       VERSION: ${{ needs.check.outputs.version }}
     steps:
@@ -74,16 +76,26 @@ jobs:
           token: ${{ secrets.SOURCE_TOKEN }}
           persist-credentials: false
       - uses: actions/setup-go@v5
-        with: { go-version: '1.24', cache: false }
-      - name: Prepara (dipendenze e test)
+        with: { go-version-file: go.mod, cache: false }
+      - name: Prepara (dipendenze e prove veloci)
         run: |
           go get github.com/webview/webview_go@latest
           go mod tidy
-          go test ./... 2>&1 | tail -4
-      - name: Compila (Mac Apple)
+          go test ./qtengine/ft8 ./qtengine/telemetry ./qtengine/oracle ./qtengine/audio ./apps/... 2>&1 | tail -8
+      - name: Compila (Apple e Intel, poi universale)
         run: |
-          CGO_ENABLED=1 GOARCH=arm64 go build -trimpath -ldflags "-s -w" -o bin/QTHome .
-          file bin/QTHome
+          set -e
+          flags="-s -w -X github.com/SculptWorksLTD/QTHome/qtengine.Version=${VERSION}"
+          tflags="-s -w -X main.Version=${VERSION}"
+          for a in arm64 amd64; do
+            cf=""; [ $a = amd64 ] && cf="-arch x86_64"
+            CGO_ENABLED=1 GOARCH=$a CGO_CFLAGS="$cf" CGO_LDFLAGS="$cf" go build -trimpath -ldflags "$flags" -o bin/$a/QTHome .
+            CGO_ENABLED=1 GOARCH=$a CGO_CFLAGS="$cf" CGO_LDFLAGS="$cf" go build -trimpath -ldflags "$tflags" -o bin/$a/trainer ./apps/trainer
+            CGO_ENABLED=1 GOARCH=$a CGO_CFLAGS="$cf" CGO_LDFLAGS="$cf" go build -trimpath -ldflags "-s -w" -o bin/$a/mothership ./apps/mothership
+          done
+          mkdir -p bin/u
+          for p in QTHome trainer mothership; do lipo -create -output bin/u/$p bin/arm64/$p bin/amd64/$p; done
+          file bin/u/*
       - name: Icona
         run: |
           mkdir -p icon.iconset
@@ -92,13 +104,13 @@ jobs:
             d=$((s*2)); sips -z $d $d build/resources/icon-256.png --out icon.iconset/icon_${s}x${s}@2x.png >/dev/null
           done
           iconutil -c icns icon.iconset -o icon.icns
-      - name: Crea il .app e l'installer
+      - name: QTHome (.app e installer)
         run: |
           set -e
           mkdir -p dist
           APP="appA/QTHome.app"; C="$APP/Contents"
           mkdir -p "$C/MacOS" "$C/Resources"
-          cp bin/QTHome "$C/MacOS/QTHome"; chmod +x "$C/MacOS/QTHome"
+          cp bin/u/QTHome "$C/MacOS/QTHome"; chmod +x "$C/MacOS/QTHome"
           cp icon.icns "$C/Resources/icon.icns"
           sed -e "s|<string>0.1.0</string>|<string>${VERSION}</string>|g" build/pkg/Info.plist > "$C/Info.plist"
           codesign --force --deep --sign - "$APP"
@@ -106,18 +118,172 @@ jobs:
           /usr/libexec/PlistBuddy -c "Set :0:BundleIsRelocatable false" -c "Set :0:BundleOverwriteAction upgrade" comp.plist
           pkgbuild --root appA --component-plist comp.plist --install-location /Applications \
             --scripts build/pkg --identifier com.sculptworks.qthome --version "$VERSION" QTHome-core.pkg
-          sed -e "s/__VERSION__/${VERSION}/" build/pkg/distribution.xml > distribution.xml
+          sed -e "s/__VERSION__/${VERSION}/" -e 's/hostArchitectures="arm64"/hostArchitectures="arm64,x86_64"/' build/pkg/distribution.xml > distribution.xml
           productbuild --distribution distribution.xml --resources build/pkg/resources "dist/QTHome-Mac.pkg"
-          ls -la dist
+      - name: QTHome Trainer e Mothership (.app)
+        run: |
+          set -e
+          mkapp() { # cartella, nome, eseguibile, id, extra plist
+            local C="$1/$2.app/Contents"
+            mkdir -p "$C/MacOS" "$C/Resources"
+            cp "bin/u/$3" "$C/MacOS/$3"; chmod +x "$C/MacOS/$3"
+            cp icon.icns "$C/Resources/icon.icns"
+            cat > "$C/Info.plist" <<PL
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0"><dict>
+          <key>CFBundleExecutable</key><string>$3</string>
+          <key>CFBundleIconFile</key><string>icon</string>
+          <key>CFBundleIdentifier</key><string>$4</string>
+          <key>CFBundleName</key><string>$2</string>
+          <key>CFBundlePackageType</key><string>APPL</string>
+          <key>CFBundleVersion</key><string>${VERSION}</string>
+          <key>CFBundleShortVersionString</key><string>${VERSION}</string>
+          <key>LSMinimumSystemVersion</key><string>11.0</string>
+          <key>NSHighResolutionCapable</key><true/>
+          <key>NSHumanReadableCopyright</key><string>© 2026 SculptWorks LTD · realizzato da IU1MVI</string>
+          $5
+          </dict></plist>
+          PL
+            sed -i '' -e 's/^          //' "$C/Info.plist"
+            codesign --force --deep --sign - "$1/$2.app"
+          }
+          mic='<key>NSMicrophoneUsageDescription</key><string>QTHome Trainer ascolta l’audio della radio (FT8/FT4) per confrontare i decoder. Listens to the radio audio to compare decoders.</string>'
+          mkapp appT "QTHome Trainer" trainer com.sculptworks.qthome.trainer "$mic"
+          pkgbuild --analyze --root appT compT.plist
+          /usr/libexec/PlistBuddy -c "Set :0:BundleIsRelocatable false" compT.plist
+          pkgbuild --root appT --component-plist compT.plist --install-location /Applications \
+            --identifier com.sculptworks.qthome.trainer --version "$VERSION" trainer-core.pkg
+          productbuild --package trainer-core.pkg "dist/QTHome-Trainer-Mac.pkg"
+          mkapp appM "QTHome Mothership" mothership com.sculptworks.qthome.mothership ""
+          mkdir -p internal
+          ditto -c -k --sequesterRsrc --keepParent "appM/QTHome Mothership.app" "internal/QTHome-Mothership-Mac.zip"
+          ls -la dist internal
+      - name: Prova di avvio (senza finestra)
+        run: |
+          set -e
+          ( "appT/QTHome Trainer.app/Contents/MacOS/trainer" --senza-finestra --porta 47470 & ) ; sleep 4
+          curl -sf http://127.0.0.1:47470/api/trainer/state | head -c 300; echo
+          ( "appM/QTHome Mothership.app/Contents/MacOS/mothership" --senza-finestra & ) ; sleep 3
+          curl -sf http://127.0.0.1:47460/api/state | head -c 300; echo
+          pkill -f "MacOS/trainer" || true; pkill -f "MacOS/mothership" || true
       - uses: actions/upload-artifact@v4
         with:
           name: app-mac
           path: dist/*
           if-no-files-found: error
           retention-days: 2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: QTHome-Mothership-Mac
+          path: internal/*
+          retention-days: 60
+
+  windows:
+    needs: check
+    if: ${{ needs.check.outputs.build == 'true' }}
+    runs-on: windows-latest
+    timeout-minutes: 40
+    env:
+      VERSION: ${{ needs.check.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.SOURCE_REPO }}
+          ref: ${{ needs.check.outputs.sha }}
+          token: ${{ secrets.SOURCE_TOKEN }}
+          persist-credentials: false
+      - uses: actions/setup-go@v5
+        with: { go-version-file: go.mod, cache: false }
+      - name: Prepara (dipendenze e icone)
+        shell: bash
+        run: |
+          go get github.com/webview/webview_go@latest
+          go mod tidy
+          go install github.com/tc-hib/go-winres@latest
+          W="$(go env GOPATH)/bin/go-winres"
+          "$W" simply --icon build/resources/icon-256.png --product-name "QTHome" --file-description "QTHome - The Home of OM"
+          (cd apps/trainer && "$W" simply --icon ../../build/resources/icon-256.png --product-name "QTHome Trainer" --file-description "QTHome Trainer")
+          (cd apps/mothership && "$W" simply --icon ../../build/resources/icon-256.png --product-name "QTHome Mothership" --file-description "QTHome Mothership")
+      - name: Compila
+        shell: bash
+        run: |
+          set -e
+          CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X github.com/SculptWorksLTD/QTHome/qtengine.Version=${VERSION}" -o QTHome.exe .
+          CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X main.Version=${VERSION}" -o "QTHome Trainer.exe" ./apps/trainer
+          CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui" -o "QTHome Mothership.exe" ./apps/mothership
+          mkdir -p dist internal z1 z2 z3
+          cp QTHome.exe z1/; cp "QTHome Trainer.exe" z2/; cp "QTHome Mothership.exe" z3/
+          (cd z1 && 7z a ../dist/QTHome-Windows.zip QTHome.exe >/dev/null)
+          (cd z2 && 7z a ../dist/QTHome-Trainer-Windows.zip "QTHome Trainer.exe" >/dev/null)
+          (cd z3 && 7z a ../internal/QTHome-Mothership-Windows.zip "QTHome Mothership.exe" >/dev/null)
+          ls -la dist internal
+      - name: Prova di avvio con la finestra vera
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          $q = Start-Process -FilePath ".\QTHome.exe" -ArgumentList "--demo" -PassThru
+          $t = Start-Process -FilePath ".\QTHome Trainer.exe" -PassThru
+          $m = Start-Process -FilePath ".\QTHome Mothership.exe" -PassThru
+          Start-Sleep 12
+          foreach ($x in @(@($q,"http://127.0.0.1:47481/"), @($t,"http://127.0.0.1:47470/api/trainer/state"), @($m,"http://127.0.0.1:47460/api/state"))) {
+            $p = $x[0]; $u = $x[1]
+            try { $r = Invoke-WebRequest -UseBasicParsing $u -TimeoutSec 5; $s = $r.StatusCode } catch { $s = "errore: " + $_.Exception.Message }
+            "{0}: in esecuzione={1} · {2} → {3}" -f $p.ProcessName, (-not $p.HasExited), $u, $s
+          }
+          Stop-Process $q, $t, $m -ErrorAction SilentlyContinue
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-windows
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: QTHome-Mothership-Windows
+          path: internal/*
+          retention-days: 60
+
+  preview:
+    # controllo visivo: avvia le tre finestre su Linux e ne fa la foto (nel log)
+    needs: check
+    if: ${{ needs.check.outputs.build == 'true' }}
+    runs-on: ubuntu-22.04
+    continue-on-error: true
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.SOURCE_REPO }}
+          ref: ${{ needs.check.outputs.sha }}
+          token: ${{ secrets.SOURCE_TOKEN }}
+          persist-credentials: false
+      - uses: actions/setup-go@v5
+        with: { go-version-file: go.mod, cache: false }
+      - name: Dipendenze di sistema
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends pkg-config libgtk-3-dev libwebkit2gtk-4.0-dev xvfb imagemagick
+      - name: Compila
+        run: |
+          go get github.com/webview/webview_go@latest
+          go mod tidy
+          CGO_ENABLED=1 go build -o qthome . && CGO_ENABLED=1 go build -o trainer ./apps/trainer && CGO_ENABLED=1 go build -o mothership ./apps/mothership
+      - name: Avvio e foto
+        run: |
+          shot() { # nome, comando
+            xvfb-run -a -s "-screen 0 1280x900x24" bash -c "$2 >app-$1.log 2>&1 & sleep 12; import -window root -trim $1.png" || true
+            pkill -9 -f "^\./$1" || true; sleep 1
+            tail -n 5 app-$1.log
+            [ -f $1.png ] && echo "SHOT-$1:$(convert $1.png -resize 900x jpg:- | base64 -w0)"
+          }
+          shot qthome "./qthome --demo"
+          shot trainer "./trainer"
+          shot mothership "./mothership"
 
   release:
-    needs: [check, mac]
+    needs: [check, mac, windows]
+    if: ${{ inputs.pubblica }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
@@ -136,22 +302,18 @@ jobs:
           {
             echo "## Scarica · Download"
             echo
-            echo "| Sistema · System | |"
-            echo "|---|---|"
-            echo "| **Mac** con chip Apple (M1, M2, M3, M4) | [⬇ QTHome-Mac.pkg](${D}/QTHome-Mac.pkg) |"
+            echo "| | Mac (Apple e Intel) | Windows 10 / 11 |"
+            echo "|---|---|---|"
+            echo "| **QTHome** | [⬇ QTHome-Mac.pkg](${D}/QTHome-Mac.pkg) | [⬇ QTHome-Windows.zip](${D}/QTHome-Windows.zip) |"
+            echo "| **QTHome Trainer** (beta tester) | [⬇ QTHome-Trainer-Mac.pkg](${D}/QTHome-Trainer-Mac.pkg) | [⬇ QTHome-Trainer-Windows.zip](${D}/QTHome-Trainer-Windows.zip) |"
             echo
-            echo "Mac: doppio clic sul .pkg (se il Mac lo blocca: tasto destro → Apri). Windows e Linux: arrivano con le prossime versioni."
+            echo "Mac: doppio clic sul .pkg (se il Mac lo blocca: tasto destro → Apri). Windows: apri lo zip e avvia il programma (se Windows avvisa: Ulteriori informazioni → Esegui comunque)."
             echo
-            echo "Questa versione ha dentro: la stazione (motore The Rigger, radio e programmi collegati), il pannello CW con CWEngine ufficiale e il log unico. La **decodifica CW resta gratis per sempre**. Tutto in locale sul tuo computer."
+            echo "**QTHome Trainer** ascolta insieme a te (solo ricezione) e confronta il decoder FT8/FT4 di QTHome con WSJT-X. Serve WSJT-X installato. Manda solo dati anonimi, e gli spezzoni audio solo se acconsenti."
             echo
-            echo "Le installazioni esistenti si aggiornano da sole. (build ${SHA:0:12})"
+            echo "Versione di prova. Realizzato da IU1MVI. (build ${SHA:0:12})"
           } > notes.md
-          gh release create "v${VERSION}" dist/* \
-            --repo "${{ github.repository }}" \
-            --title "QTHome ${VERSION}" \
-            --notes-file notes.md --latest
+          gh release create "v${VERSION}" dist/* --repo "${{ github.repository }}" --title "QTHome ${VERSION}" --notes-file notes.md --latest
           gh release list --repo "${{ github.repository }}" --limit 100 --json tagName --jq '.[].tagName' | while read -r t; do
-            if [ "$t" != "v${VERSION}" ]; then
-              gh release delete "$t" --repo "${{ github.repository }}" --yes --cleanup-tag || true
-            fi
+            [ "$t" != "v${VERSION}" ] && gh release delete "$t" --repo "${{ github.repository }}" --yes --cleanup-tag || true
           done
