@@ -33,19 +33,23 @@ Tutto il lavoro è fatto da **QTEngine**, il motore di QTHome, che contiene The 
 - **Stazione** – le radio si collegano da sole (The Rigger integrato): frequenza, modo, S-meter, PTT, e i programmi esterni (WSJT-X, JTDX, fldigi, N1MM…) agganciati senza configurazioni.
 - **CW** – decoder e tastiera CW di CWIU1MVI; la decodifica CW resta **gratis per sempre**.
 - **Modi digitali** – FT8 e FT4 in ricezione con il decoder di QTEngine, nato in casa. RTTY, PSK, SSTV e APRS in arrivo.
-- **Log** – ogni QSO registrato da solo, import/export ADIF.
+- **Log e QSL elettroniche** – ogni QSO registrato da solo, import/export ADIF; invio a LoTW, eQSL, QRZ e Club Log.
+- **Fonia, cluster, SDR, satelliti, rotore, contest** – registrazioni e memorie voce; DX cluster e RBN con dati solari; ricevitore con la chiavetta RTL-SDR; passaggi e Doppler; rotore verso un locatore; log da contest con Cabrillo.
+- **Remoto** – QTHome dal telefono nella rete di casa, con PIN.
+- **QTHome Chat e assistente** – stanze di testo tra OM; un assistente sul computer che non trasmette mai.
 - **Accessibilità** – S-meter e frequenza a voce o in Morse, navigazione completa da tastiera, lettori di schermo.
 - **Segnalazioni** – un tasto per mandare in modo anonimo un problema o un'idea.
-- **In arrivo** – fonia, cluster e propagazione, SDR, satelliti, remoto e automazione, contest, QTHome Chat, assistente: ogni pannello arriva per step e si vede già come "In arrivo".
-- **10 lingue** – italiano, inglese, francese, tedesco, spagnolo, portoghese, giapponese, russo, arabo e cinese.
+- **9 lingue** – italiano, inglese, francese, tedesco, spagnolo, portoghese, giapponese, russo e cinese.
+
+Manuale: [italiano](docs/manuale-it.md) · [English](docs/manuale-en.md) · [Français](docs/manuale-fr.md) · [Deutsch](docs/manuale-de.md) · [Español](docs/manuale-es.md) · [Português](docs/manuale-pt.md) · [日本語](docs/manuale-ja.md) · [Русский](docs/manuale-ru.md) · [中文](docs/manuale-zh.md)
 
 ## QTHome Trainer
 
-Un piccolo programma per i **beta tester**: ascolta la radio insieme a te mentre usi WSJT-X e confronta il decoder FT8/FT4
-di QTHome con quello di WSJT-X. Non trasmette e non comanda la radio. Manda solo dati anonimi, mai il tuo nominativo;
+Un piccolo programma per i **beta tester**: ascolta la radio insieme a te e allena i decoder di QTHome. FT8 e FT4 si
+confrontano con WSJT-X, il CW e lo skimmer con la chiavetta SDR con il Reverse Beacon Network. Non trasmette e non comanda la radio. Manda solo dati anonimi, mai il tuo nominativo;
 gli spezzoni audio solo se acconsenti. Serve WSJT-X installato (gratuito).
 
-Guida: [italiano](docs/trainer-it.md) · [English](docs/trainer-en.md)
+Guida: [italiano](docs/trainer-it.md) · [English](docs/trainer-en.md) · [Français](docs/trainer-fr.md) · [Deutsch](docs/trainer-de.md) · [Español](docs/trainer-es.md) · [Português](docs/trainer-pt.md) · [日本語](docs/trainer-ja.md) · [Русский](docs/trainer-ru.md) · [中文](docs/trainer-zh.md)
 
 ## Gratis e PRO
 
@@ -66,10 +70,11 @@ step by step, voice, cluster and propagation, SDR, satellites, remote, contests 
 Made for everyone, including visually impaired operators: everything works from the keyboard and can be heard.
 
 **Main features:** automatic radio connection (The Rigger built in) · CW decoder, free forever · FT8/FT4 receive with our own
-decoder · automatic logging with ADIF · S-meter and frequency by voice or Morse · anonymous reports · 10 languages.
+decoder · automatic logging with ADIF · S-meter and frequency by voice or Morse · electronic QSLs · cluster, SDR, satellites, rotator, contest · remote from your phone · anonymous reports · 9 languages.
+Manual: [English](docs/manuale-en.md).
 
-**QTHome Trainer** is a small app for beta testers: it listens along with you while you use WSJT-X and compares our FT8/FT4
-decoder with WSJT-X. It never transmits. Guide: [English](docs/trainer-en.md).
+**QTHome Trainer** is a small app for beta testers: it listens along with you and trains our decoders: FT8/FT4 against
+WSJT-X, CW and the SDR skimmer against the Reverse Beacon Network. It never transmits. Guide: [English](docs/trainer-en.md).
 
 **Requirements:** a Mac with macOS 11 or later (Apple or Intel) or Windows 10/11, with the radio connected as for WSJT-X.
 
