@@ -1,38 +1,81 @@
-# QTHome — The Home of OM
+<p align="center"><img src="logo.png" width="160" alt="QTHome"></p>
 
-**Un solo programma per tutta la stazione radioamatoriale.** · *One program for the whole amateur radio station.*
-
-## In arrivo · Coming soon
-
-QTHome è in sviluppo. La prima versione arriva ai beta tester all'inizio del 2027.
-Intanto puoi usare gratis [The Rigger](https://github.com/SculptWorksLTD/TheRigger), che sarà il cuore di QTHome.
-
-*QTHome is in development. The first version reaches beta testers in early 2027.
-Meanwhile you can use [The Rigger](https://github.com/SculptWorksLTD/TheRigger) for free: it will be the heart of QTHome.*
-
-## Cos'è · What it is
-
-Un unico programma per Mac, Windows e Linux: controllo delle radio, CW, fonia, modi
-digitali, log, cluster, SDR, satelliti, remoto e un assistente AI che gira sul computer.
-Pensato per tutti, anche per chi vede poco.
-
-- **Stazione** — The Rigger integrato: tutte le radio e i programmi collegati da soli.
-- **CW** — il decoder CWEngine di CWIU1MVI: la decodifica resta gratis per sempre.
-- **Log** — ogni QSO registrato da solo, import/export ADIF, invio ai siti di log.
-- **Poi** — modi digitali, fonia, cluster e propagazione, SDR, satelliti, remoto, contest,
-  QTHome Chat e assistente AI: ogni pannello arriva per step.
-
-## Gratis e a pagamento · Free and paid
-
-30 giorni di prova completa. Poi QTHome resta **gratis per ascoltare e decodificare**:
-gratis = vedere, ascoltare, decodificare; PRO = tenere, registrare e trasmettere.
-La decodifica CW è gratis per sempre. The Rigger resta gratis per sempre.
-
-## Da dove nasce
-
-QTHome unisce due programmi gratuiti già pubblicati da IU1MVI: [The Rigger](https://github.com/SculptWorksLTD/TheRigger)
-(controllo CAT delle radio) e [CWIU1MVI](https://github.com/SculptWorksLTD/CWIU1MVI) (decoder CW).
+<h1 align="center">QTHome</h1>
+<p align="center"><i>The Home of OM</i><br><i>Un solo programma per tutta la stazione radioamatoriale · One program for the whole amateur radio station</i></p>
 
 ---
 
-© IU1MVI (Enrico Migliorati) · Tutti i diritti riservati · [Sostieni con PayPal](https://paypal.me/nerosdmf)
+## Download
+
+| | **Mac** (chip Apple e Intel) | **Windows 10/11** |
+|---|---|---|
+| **QTHome** | [**Scarica QTHome per Mac**](https://github.com/SculptWorksLTD/QTHome/releases/latest/download/QTHome-Mac.pkg) | [**Scarica QTHome per Windows**](https://github.com/SculptWorksLTD/QTHome/releases/latest/download/QTHome-Windows.zip) |
+| **QTHome Trainer** (beta tester) | [**Scarica il Trainer per Mac**](https://github.com/SculptWorksLTD/QTHome/releases/latest/download/QTHome-Trainer-Mac.pkg) | [**Scarica il Trainer per Windows**](https://github.com/SculptWorksLTD/QTHome/releases/latest/download/QTHome-Trainer-Windows.zip) |
+
+I link scaricano sempre l'ultima versione. QTHome si aggiorna da solo: lascialo collegato a internet e riavvialo quando lo chiede.
+*The links always download the latest version. QTHome updates itself: keep it online and restart it when asked.*
+
+**Prima apertura.** Mac: se il sistema blocca il programma, vai in *Impostazioni di Sistema → Privacy e sicurezza* e premi **Apri comunque**.
+Windows: apri lo zip, avvia il programma e, se compare l'avviso, scegli **Ulteriori informazioni → Esegui comunque**.
+
+> Versione di prova: QTHome è in sviluppo, la prima versione completa arriva nel 2027.
+
+## Cos'è
+
+QTHome riunisce in **un'unica finestra** tutto quello che serve a una stazione radioamatoriale: controllo delle radio,
+CW, modi digitali, log e, passo dopo passo, fonia, cluster e propagazione, SDR, satelliti, remoto, contest e un assistente
+che gira sul computer. Pensato per tutti, anche per chi vede poco: ogni cosa si usa da tastiera e si può ascoltare.
+
+Tutto il lavoro è fatto da **QTEngine**, il motore di QTHome, che contiene The Rigger e il decoder CW di CWIU1MVI.
+
+## Cosa fa
+
+- **Stazione** – le radio si collegano da sole (The Rigger integrato): frequenza, modo, S-meter, PTT, e i programmi esterni (WSJT-X, JTDX, fldigi, N1MM…) agganciati senza configurazioni.
+- **CW** – decoder e tastiera CW di CWIU1MVI; la decodifica CW resta **gratis per sempre**.
+- **Modi digitali** – FT8 e FT4 in ricezione con il decoder di QTEngine, nato in casa. RTTY, PSK, SSTV e APRS in arrivo.
+- **Log** – ogni QSO registrato da solo, import/export ADIF.
+- **Accessibilità** – S-meter e frequenza a voce o in Morse, navigazione completa da tastiera, lettori di schermo.
+- **Segnalazioni** – un tasto per mandare in modo anonimo un problema o un'idea.
+- **In arrivo** – fonia, cluster e propagazione, SDR, satelliti, remoto e automazione, contest, QTHome Chat, assistente: ogni pannello arriva per step e si vede già come "In arrivo".
+- **10 lingue** – italiano, inglese, francese, tedesco, spagnolo, portoghese, giapponese, russo, arabo e cinese.
+
+## QTHome Trainer
+
+Un piccolo programma per i **beta tester**: ascolta la radio insieme a te mentre usi WSJT-X e confronta il decoder FT8/FT4
+di QTHome con quello di WSJT-X. Non trasmette e non comanda la radio. Manda solo dati anonimi, mai il tuo nominativo;
+gli spezzoni audio solo se acconsenti. Serve WSJT-X installato (gratuito).
+
+Guida: [italiano](docs/trainer-it.md) · [English](docs/trainer-en.md)
+
+## Gratis e PRO
+
+30 giorni di prova completa. Poi QTHome resta **gratis per ascoltare e decodificare**; con PRO si trasmette, si registra e
+si automatizza. The Rigger resta gratis per sempre.
+
+## Requisiti
+
+- **Mac** con macOS 11 o successivo (chip Apple o Intel) oppure **Windows 10/11**.
+- La radio collegata al computer (USB o scheda audio), come per WSJT-X.
+
+---
+
+## What it is
+
+QTHome puts everything an amateur radio station needs in **one window**: radio control, CW, digital modes, logging and,
+step by step, voice, cluster and propagation, SDR, satellites, remote, contests and an assistant running on your computer.
+Made for everyone, including visually impaired operators: everything works from the keyboard and can be heard.
+
+**Main features:** automatic radio connection (The Rigger built in) · CW decoder, free forever · FT8/FT4 receive with our own
+decoder · automatic logging with ADIF · S-meter and frequency by voice or Morse · anonymous reports · 10 languages.
+
+**QTHome Trainer** is a small app for beta testers: it listens along with you while you use WSJT-X and compares our FT8/FT4
+decoder with WSJT-X. It never transmits. Guide: [English](docs/trainer-en.md).
+
+**Requirements:** a Mac with macOS 11 or later (Apple or Intel) or Windows 10/11, with the radio connected as for WSJT-X.
+
+---
+
+<sub>QTHome, QTHome Trainer e QTEngine · © 2026 Enrico Migliorati (IU1MVI). Tutti i diritti riservati / All rights reserved. Software proprietario:
+copia, distribuzione e modifica non consentite senza autorizzazione scritta del titolare. Questo repository contiene solo gli installer,
+la documentazione e il canale degli aggiornamenti. Software di terze parti: [docs/terze-parti.md](docs/terze-parti.md) ·
+[Sostieni con PayPal](https://paypal.me/nerosdmf)</sub>
