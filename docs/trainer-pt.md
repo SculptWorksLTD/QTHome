@@ -48,6 +48,15 @@ Em **Definições** marque **CW** e prima **Começar a ouvir** na placa de som d
 - **Nunca o seu indicativo**, nem o endereço IP, o nome do computador ou as suas pastas pessoais.
 - Excertos de áudio de 15 segundos só se aceitou, no máximo 6 por hora. São apagados após 12 meses.
 
+## Licença grátis para os testers
+
+Nos números encontra as suas **horas de escuta** e o seu **código de tester** (QT-XXXX-XXXX): é anónimo e não contém o seu indicativo. Escreva-o no formulário da página [Beta tester](https://iu1mvi.jimdofree.com/beta-tester/) juntamente com o indicativo.
+
+- **10 horas** de escuta: QTHome PRO grátis durante um ano.
+- **100 horas** em pelo menos 3 meses diferentes: licença Fundador, PRO grátis para sempre.
+
+Só contam as horas com o rádio ligado e sinal a chegar, e só as que já chegaram ao QTHome.
+
 ## Se algo não funcionar
 
 Prima **Comunicar** em cima à direita, conte o que aconteceu e envie. É anónimo; sem internet fica em fila.

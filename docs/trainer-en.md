@@ -57,6 +57,15 @@ in the table ✓ means confirmed, ? never heard by the RBN.
 - **Never your callsign**, IP address, computer name or personal folders.
 - 15-second audio clips only if you agreed, at most 6 per hour. They are deleted after 12 months.
 
+## Free license for testers
+
+In the numbers you'll find your **listening hours** and your **tester code** (QT-XXXX-XXXX): it's anonymous and doesn't contain your callsign. Enter it in the form on the [Beta tester](https://iu1mvi.jimdofree.com/beta-tester/) page together with your callsign.
+
+- **10 hours** of listening: QTHome PRO free for one year.
+- **100 hours** over at least 3 different months: Founder license, PRO free forever.
+
+Only hours with the radio on and signal coming in count, and only those already received by QTHome.
+
 ## If something goes wrong
 
 Press **Report** at the top right, describe what happened and send it. It is anonymous; without internet it waits in a queue.

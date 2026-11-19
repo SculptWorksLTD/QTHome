@@ -48,6 +48,15 @@ Il faut une clé RTL-SDR V3 ou V4 avec une antenne HF (la radio reste libre). Co
 - **Jamais votre indicatif**, ni l'adresse IP, le nom de l'ordinateur ou vos dossiers personnels.
 - Des extraits audio de 15 secondes seulement si vous l'avez accepté, 6 par heure au maximum. Ils sont effacés après 12 mois.
 
+## Licence gratuite pour les testeurs
+
+Dans les chiffres, vous trouvez vos **heures d'écoute** et votre **code testeur** (QT-XXXX-XXXX) : il est anonyme et ne contient pas votre indicatif. Saisissez-le dans le formulaire de la page [Beta tester](https://iu1mvi.jimdofree.com/beta-tester/) avec votre indicatif.
+
+- **10 heures** d'écoute : QTHome PRO gratuit pendant un an.
+- **100 heures** sur au moins 3 mois différents : licence Fondateur, PRO gratuit pour toujours.
+
+Seules comptent les heures avec la radio allumée et du signal reçu, et seulement celles déjà arrivées chez QTHome.
+
 ## Si quelque chose ne va pas
 
 Appuyez sur **Signaler** en haut à droite, décrivez ce qui s'est passé et envoyez. C'est anonyme ; sans internet l'envoi attend dans une file.

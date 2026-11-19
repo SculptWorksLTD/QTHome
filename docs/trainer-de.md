@@ -48,6 +48,15 @@ Du brauchst einen RTL-SDR-Stick V3 oder V4 mit einer KW-Antenne (das Funkgerät 
 - **Nie dein Rufzeichen**, keine IP-Adresse, kein Computername, keine persönlichen Ordner.
 - Audioausschnitte von 15 Sekunden nur mit deiner Zustimmung, höchstens 6 pro Stunde. Sie werden nach 12 Monaten gelöscht.
 
+## Kostenlose Lizenz für Tester
+
+Bei den Zahlen finden Sie Ihre **Hörstunden** und Ihren **Tester-Code** (QT-XXXX-XXXX): Er ist anonym und enthält Ihr Rufzeichen nicht. Tragen Sie ihn zusammen mit Ihrem Rufzeichen im Formular der Seite [Beta tester](https://iu1mvi.jimdofree.com/beta-tester/) ein.
+
+- **10 Stunden** Hören: QTHome PRO ein Jahr kostenlos.
+- **100 Stunden** in mindestens 3 verschiedenen Monaten: Gründer-Lizenz, PRO für immer kostenlos.
+
+Es zählen nur Stunden mit eingeschaltetem Funkgerät und empfangenem Signal, und nur solche, die bereits bei QTHome angekommen sind.
+
 ## Wenn etwas nicht geht
 
 Drücke oben rechts **Melden**, beschreibe, was passiert ist, und sende es. Es ist anonym; ohne Internet wartet es in einer Warteschlange.

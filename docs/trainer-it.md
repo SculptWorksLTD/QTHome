@@ -58,6 +58,15 @@ I nominativi vengono confrontati con il RBN; nella tabella ✓ vuol dire conferm
 - **Mai il tuo nominativo**, mai indirizzo IP, nome del computer o cartelle personali.
 - Spezzoni audio di 15 secondi solo se hai acconsentito, al massimo 6 all'ora. Vengono cancellati dopo 12 mesi.
 
+## Licenza gratis per i tester
+
+Nei numeri trovi le **ore di ascolto** e il tuo **codice tester** (QT-XXXX-XXXX): è anonimo, non contiene il tuo nominativo. Scrivilo nel modulo della pagina [Beta tester](https://iu1mvi.jimdofree.com/beta-tester/) insieme al nominativo.
+
+- **10 ore** di ascolto: QTHome PRO gratis per un anno.
+- **100 ore** in almeno 3 mesi diversi: licenza Fondatore, PRO gratis per sempre.
+
+Contano solo le ore con la radio accesa e il segnale che arriva, e solo quelle già arrivate a QTHome.
+
 ## Se qualcosa non va
 
 Premi **Segnala** in alto a destra, scrivi cosa è successo e invia. Arriva in modo anonimo; se non c'è internet resta in coda e parte dopo.
