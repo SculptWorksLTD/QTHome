@@ -2,8 +2,8 @@ name: build
 
 # Costruisce dal sorgente privato (segreto SOURCE_TOKEN) e pubblica solo i
 # programmi pronti: QTHome e QTHome Trainer per Mac (Apple e Intel) e Windows.
-# QTHome Mothership (strumento interno) va solo tra gli "artifact" della build,
-# non nella release. Ogni programma è un unico file nativo: finestra WebView del
+# QTHome Mothership (strumento interno di IU1MVI) è nella release solo come file
+# per l'aggiornamento automatico: non compare nelle note né sul sito. Ogni programma è un unico file nativo: finestra WebView del
 # sistema + motore Go, senza Electron. Resta solo l'ultima release.
 # Nei log non si stampa mai il sorgente.
 
@@ -91,7 +91,7 @@ jobs:
             cf=""; [ $a = amd64 ] && cf="-arch x86_64"
             CGO_ENABLED=1 GOARCH=$a CGO_CFLAGS="$cf" CGO_LDFLAGS="$cf" go build -trimpath -ldflags "$flags" -o bin/$a/QTHome .
             CGO_ENABLED=1 GOARCH=$a CGO_CFLAGS="$cf" CGO_LDFLAGS="$cf" go build -trimpath -ldflags "$tflags" -o bin/$a/trainer ./apps/trainer
-            CGO_ENABLED=1 GOARCH=$a CGO_CFLAGS="$cf" CGO_LDFLAGS="$cf" go build -trimpath -ldflags "-s -w" -o bin/$a/mothership ./apps/mothership
+            CGO_ENABLED=1 GOARCH=$a CGO_CFLAGS="$cf" CGO_LDFLAGS="$cf" go build -trimpath -ldflags "$tflags" -o bin/$a/mothership ./apps/mothership
           done
           mkdir -p bin/u
           for p in QTHome trainer mothership; do lipo -create -output bin/u/$p bin/arm64/$p bin/amd64/$p; done
@@ -183,9 +183,12 @@ jobs:
             --identifier com.sculptworks.qthome.trainer --version "$VERSION" trainer-core.pkg
           productbuild --package trainer-core.pkg "dist/QTHome-Trainer-Mac.pkg"
           mkapp appM "QTHome Mothership" mothership com.sculptworks.qthome.mothership ""
-          mkdir -p internal
-          ditto -c -k --sequesterRsrc --keepParent "appM/QTHome Mothership.app" "internal/QTHome-Mothership-Mac.zip"
-          ls -la dist internal
+          pkgbuild --analyze --root appM compM.plist
+          /usr/libexec/PlistBuddy -c "Set :0:BundleIsRelocatable false" compM.plist
+          pkgbuild --root appM --component-plist compM.plist --install-location /Applications \
+            --identifier com.sculptworks.qthome.mothership --version "$VERSION" mothership-core.pkg
+          productbuild --package mothership-core.pkg "dist/QTHome-Mothership-Mac.pkg"
+          ls -la dist
       - name: Prova di avvio (senza finestra)
         run: |
           set -e
@@ -200,11 +203,6 @@ jobs:
           path: dist/*
           if-no-files-found: error
           retention-days: 2
-      - uses: actions/upload-artifact@v4
-        with:
-          name: QTHome-Mothership-Mac
-          path: internal/*
-          retention-days: 60
 
   windows:
     needs: check
@@ -238,13 +236,13 @@ jobs:
           set -e
           CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X github.com/SculptWorksLTD/QTHome/qtengine.Version=${VERSION}" -o QTHome.exe .
           CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X main.Version=${VERSION}" -o "QTHome Trainer.exe" ./apps/trainer
-          CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui" -o "QTHome Mothership.exe" ./apps/mothership
+          CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X main.Version=${VERSION}" -o "QTHome Mothership.exe" ./apps/mothership
           mkdir -p dist internal z1 z2 z3
           cp QTHome.exe z1/; cp "QTHome Trainer.exe" z2/; cp "QTHome Mothership.exe" z3/
           (cd z1 && 7z a ../dist/QTHome-Windows.zip QTHome.exe >/dev/null)
           (cd z2 && 7z a ../dist/QTHome-Trainer-Windows.zip "QTHome Trainer.exe" >/dev/null)
-          (cd z3 && 7z a ../internal/QTHome-Mothership-Windows.zip "QTHome Mothership.exe" >/dev/null)
-          ls -la dist internal
+          (cd z3 && 7z a ../dist/QTHome-Mothership-Windows.zip "QTHome Mothership.exe" >/dev/null)
+          ls -la dist
       - name: Prova di avvio con la finestra vera
         continue-on-error: true
         shell: pwsh
@@ -265,11 +263,6 @@ jobs:
           path: dist/*
           if-no-files-found: error
           retention-days: 2
-      - uses: actions/upload-artifact@v4
-        with:
-          name: QTHome-Mothership-Windows
-          path: internal/*
-          retention-days: 60
 
   preview:
     # controllo visivo: avvia le tre finestre su Linux e ne fa la foto (nel log)
