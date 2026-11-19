@@ -1,4 +1,5 @@
 {
   "mothership_url": "",
-  "note": "Configurazione remota letta da QTHome ogni ora. mothership_url = indirizzo del servizio che riceve segnalazioni e dati dei tester (vuoto = invio spento, i pacchetti restano in coda sul computer)."
+  "chat_url": "",
+  "note": "Configurazione remota letta da QTHome ogni ora. mothership_url = servizio che riceve segnalazioni e dati dei tester; chat_url = servizio delle stanze di QTHome Chat (vuoto = non ancora acceso)."
 }
