@@ -96,6 +96,22 @@ jobs:
           mkdir -p bin/u
           for p in QTHome trainer mothership; do lipo -create -output bin/u/$p bin/arm64/$p bin/amd64/$p; done
           file bin/u/*
+      - name: libusb universale (chiavetta SDR; LGPL-2.1, resta una libreria a parte)
+        run: |
+          set -e
+          curl -sfL https://github.com/libusb/libusb/releases/download/v1.0.27/libusb-1.0.27.tar.bz2 | tar xj
+          cd libusb-1.0.27
+          for a in arm64 x86_64; do
+            make distclean >/dev/null 2>&1 || true
+            h=x86_64-apple-darwin; [ $a = arm64 ] && h=aarch64-apple-darwin
+            ./configure --disable-static --host=$h CFLAGS="-arch $a -mmacosx-version-min=11.0 -O2" LDFLAGS="-arch $a" >/dev/null
+            make -j4 >/dev/null
+            cp libusb/.libs/libusb-1.0.0.dylib ../libusb-$a.dylib
+          done
+          cd ..
+          lipo -create -output bin/u/libusb-1.0.dylib libusb-arm64.dylib libusb-x86_64.dylib
+          install_name_tool -id @rpath/libusb-1.0.dylib bin/u/libusb-1.0.dylib
+          file bin/u/libusb-1.0.dylib
       - name: Icona
         run: |
           mkdir -p icon.iconset
@@ -111,6 +127,7 @@ jobs:
           APP="appA/QTHome.app"; C="$APP/Contents"
           mkdir -p "$C/MacOS" "$C/Resources"
           cp bin/u/QTHome "$C/MacOS/QTHome"; chmod +x "$C/MacOS/QTHome"
+          mkdir -p "$C/Frameworks"; cp bin/u/libusb-1.0.dylib "$C/Frameworks/"
           cp icon.icns "$C/Resources/icon.icns"
           sed -e "s|<string>0.1.0</string>|<string>${VERSION}</string>|g" build/pkg/Info.plist > "$C/Info.plist"
           codesign --force --deep --sign - "$APP"
@@ -127,6 +144,7 @@ jobs:
             local C="$1/$2.app/Contents"
             mkdir -p "$C/MacOS" "$C/Resources"
             cp "bin/u/$3" "$C/MacOS/$3"; chmod +x "$C/MacOS/$3"
+            if [ "$3" = trainer ]; then mkdir -p "$C/Frameworks"; cp bin/u/libusb-1.0.dylib "$C/Frameworks/"; fi
             cp icon.icns "$C/Resources/icon.icns"
             cat > "$C/Info.plist" <<PL
           <?xml version="1.0" encoding="UTF-8"?>
@@ -148,7 +166,7 @@ jobs:
             sed -i '' -e 's/^          //' "$C/Info.plist"
             codesign --force --deep --sign - "$1/$2.app"
           }
-          mic='<key>NSMicrophoneUsageDescription</key><string>QTHome Trainer ascolta l’audio della radio (FT8/FT4) per confrontare i decoder. Listens to the radio audio to compare decoders.</string>'
+          mic='<key>NSMicrophoneUsageDescription</key><string>QTHome Trainer ascolta l’audio della radio (FT8, FT4, CW) per confrontare i decoder. Listens to the radio audio (FT8, FT4, CW) to compare decoders.</string>'
           mkapp appT "QTHome Trainer" trainer com.sculptworks.qthome.trainer "$mic"
           pkgbuild --analyze --root appT compT.plist
           /usr/libexec/PlistBuddy -c "Set :0:BundleIsRelocatable false" compT.plist

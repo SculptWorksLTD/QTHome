@@ -26,4 +26,10 @@ QTHome, QTHome Trainer e QTHome Mothership includono:
 - **webview** (finestra) — licenza MIT.
 - **OmniRig** type library — © VE3NEA — licenza MIT.
 
+- **libusb 1.0.27** (accesso alla chiavetta SDR su Mac) — © libusb project — licenza LGPL-2.1.
+  È inclusa come libreria separata (`Contents/Frameworks/libusb-1.0.dylib`) e si può sostituire con un'altra
+  versione compatibile. Sorgente: https://github.com/libusb/libusb/releases/tag/v1.0.27
+- **Reverse Beacon Network** (telnet.reversebeacon.net): il Trainer legge gli spot pubblici per controllare i
+  nominativi letti dal CW e dallo skimmer; non manda nulla al RBN.
+
 WSJT-X non è incluso: il Trainer usa quello installato sul computer come programma separato.
