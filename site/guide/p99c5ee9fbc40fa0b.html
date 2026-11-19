@@ -1,0 +1,23 @@
+<p class="hw-kicker"><a href="/guide/" style="color:inherit">Guide</a> · QTHome</p>
+<h1 class="hw-title" style="font-size:2.1em">WSJT-X non decodifica: le cause più comuni e come risolverle</h1>
+<p class="hw-lead">Senti i segnali FT8 ma lo schermo resta vuoto? Una lista di controllo in ordine di probabilità.</p>
+<figure style="margin:18px 0"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/FT8%2BJT65.png?width=960" alt="Una cascata FT8 corretta: le righe verticali sono i segnali (Wikimedia Commons)" loading="lazy" style="width:100%;max-height:380px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.12)"><figcaption style="font-size:12px;opacity:.7;margin-top:6px">Una cascata FT8 corretta: le righe verticali sono i segnali (Wikimedia Commons) · <a href="https://commons.wikimedia.org/wiki/File:FT8%2BJT65.png" target="_blank" rel="noopener" style="color:inherit">licenza e autore</a></figcaption></figure>
+<div class="hw-panel"><p>È la domanda più frequente sui forum: <i>"sento i segnali FT8 dall'altoparlante ma WSJT-X non decodifica niente"</i>. Quasi sempre la causa è una di queste, in quest'ordine.</p>
+<h3>1. L'orologio</h3>
+<p>FT8 è sincronizzato al secondo. Se il computer è avanti o indietro di più di 1-2 secondi, le decodifiche spariscono. Attiva la sincronizzazione automatica dell'ora e guarda la colonna <b>DT</b>: deve stare vicino a 0.</p>
+<h3>2. L'ingresso audio sbagliato</h3>
+<p>In <i>Impostazioni › Audio</i> l'ingresso deve essere la scheda audio della radio, non il microfono del computer. Se ne vedi due con lo stesso nome, stacca il cavo USB e guarda quale sparisce.</p>
+<h3>3. Il livello</h3>
+<p>Il misuratore in basso a sinistra deve stare intorno a 30-60 dB con la banda tranquilla. Troppo basso: niente decodifiche. Troppo alto: distorsione.</p>
+<h3>4. Il modo della radio</h3>
+<p>Usa USB o USB-DATA. In FM, AM o con filtri stretti da CW il segnale arriva tagliato. Controlla anche che il filtro sia largo almeno 2,5-3 kHz.</p>
+<h3>5. Su Mac: il permesso del microfono</h3>
+<p>Su macOS WSJT-X deve avere il permesso di usare il microfono (Impostazioni di sistema › Privacy e sicurezza › Microfono), altrimenti riceve solo silenzio.</p>
+<h3>6. La frequenza</h3>
+<p>Sembra banale, ma capita: verifica di essere davvero su una frequenza FT8 e che la radio mostri la stessa frequenza di WSJT-X.</p></div>
+<div class="hw-panel" style="border-color:#f2a93b"><span class="hw-tag">Un aiuto in più</span><p>Il Trainer di <b>QTHome</b> confronta in automatico le decodifiche con WSJT-X e segnala livello audio e orologio fuori posto: è nato proprio per trovare questi problemi.</p>
+<div class="hw-btns"><a class="hw-btn" href="/qthome/">Scopri QTHome</a><a class="hw-btn" href="/the-rigger/">The Rigger, gratis</a></div></div>
+<p class="hw-sect">Altre guide</p>
+<div class="hw-panel"><ul class="hw-list"><li><a href="/guide/ft8-come-iniziare/">FT8: come iniziare con WSJT-X, passo per passo</a></li><li><a href="/guide/radio-con-tanti-programmi/">Usare la radio con più programmi insieme: WSJT-X, logger e cluster</a></li><li><a href="/guide/omnirig-su-mac/">OmniRig su Mac: le alternative per condividere la radio</a></li><li><a href="/guide/icom-via-usb/">Collegare una radio Icom al computer con il cavo USB</a></li><li><a href="/guide/decodificare-il-cw/">Decodificare il CW con il computer: cosa aspettarsi davvero</a></li><li><a href="/guide/imparare-il-cw/">Imparare il CW: metodo Koch, Farnsworth e quanto tempo serve</a></li><li><a href="/guide/reverse-beacon-network/">Reverse Beacon Network: scopri dove arriva il tuo segnale</a></li><li><a href="/guide/skimmer-con-rtl-sdr/">Uno skimmer CW con la chiavetta RTL-SDR</a></li><li><a href="/guide/qsl-elettroniche/">QSL elettroniche: LoTW, eQSL, QRZ e Club Log senza fatica</a></li></ul></div>
+
+<script src="https://cdn.jsdelivr.net/gh/SculptWorksLTD/QTHome@main/site/qtsite.js"></script>
