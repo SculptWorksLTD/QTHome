@@ -1,5 +1,6 @@
 {
   "mothership_url": "",
   "chat_url": "",
-  "note": "Configurazione remota letta da QTHome ogni ora. mothership_url = servizio che riceve segnalazioni e dati dei tester; chat_url = servizio delle stanze di QTHome Chat (vuoto = non ancora acceso)."
+  "license_url": "",
+  "note": "Configurazione remota letta da QTHome ogni ora. mothership_url = servizio che riceve segnalazioni e dati dei tester; chat_url = servizio delle stanze di QTHome Chat; license_url = servizio delle licenze (una licenza, un computer). Vuoto = non ancora acceso."
 }
