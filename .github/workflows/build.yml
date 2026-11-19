@@ -230,6 +230,14 @@ jobs:
           "$W" simply --icon build/resources/icon-256.png --product-name "QTHome" --file-description "QTHome - The Home of OM"
           (cd apps/trainer && "$W" simply --icon ../../build/resources/trainer-256.png --product-name "QTHome Trainer" --file-description "QTHome Trainer")
           (cd apps/mothership && "$W" simply --icon ../../build/resources/mothership-256.png --product-name "QTHome Mothership" --file-description "QTHome Mothership")
+      - name: libusb per Windows (chiavetta SDR; LGPL-2.1, resta una libreria a parte accanto al programma)
+        shell: bash
+        run: |
+          set -e
+          curl -sfL -o libusb.7z https://github.com/libusb/libusb/releases/download/v1.0.27/libusb-1.0.27.7z
+          7z x -olibusb libusb.7z >/dev/null
+          cp libusb/MinGW64/dll/libusb-1.0.dll .
+          ls -la libusb-1.0.dll
       - name: Compila
         shell: bash
         run: |
@@ -238,9 +246,9 @@ jobs:
           CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X main.Version=${VERSION}" -o "QTHome Trainer.exe" ./apps/trainer
           CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X main.Version=${VERSION}" -o "QTHome Mothership.exe" ./apps/mothership
           mkdir -p dist internal z1 z2 z3
-          cp QTHome.exe z1/; cp "QTHome Trainer.exe" z2/; cp "QTHome Mothership.exe" z3/
-          (cd z1 && 7z a ../dist/QTHome-Windows.zip QTHome.exe >/dev/null)
-          (cd z2 && 7z a ../dist/QTHome-Trainer-Windows.zip "QTHome Trainer.exe" >/dev/null)
+          cp QTHome.exe libusb-1.0.dll z1/; cp "QTHome Trainer.exe" libusb-1.0.dll z2/; cp "QTHome Mothership.exe" z3/
+          (cd z1 && 7z a ../dist/QTHome-Windows.zip QTHome.exe libusb-1.0.dll >/dev/null)
+          (cd z2 && 7z a ../dist/QTHome-Trainer-Windows.zip "QTHome Trainer.exe" libusb-1.0.dll >/dev/null)
           (cd z3 && 7z a ../dist/QTHome-Mothership-Windows.zip "QTHome Mothership.exe" >/dev/null)
           ls -la dist
       - name: Prova di avvio con la finestra vera
