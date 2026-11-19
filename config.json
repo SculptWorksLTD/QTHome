@@ -1,6 +1,6 @@
 {
   "mothership_url": "",
   "chat_url": "",
-  "license_url": "",
+  "license_url": "https://qthome-negozio.nerosdmf.workers.dev",
   "note": "Configurazione remota letta da QTHome ogni ora. mothership_url = servizio che riceve segnalazioni e dati dei tester; chat_url = servizio delle stanze di QTHome Chat; license_url = servizio delle licenze (una licenza, un computer). Vuoto = non ancora acceso."
 }
