@@ -47,8 +47,9 @@ Parte verso QTHome solo ciò che serve: un nominativo che il RBN non ha mai sent
 ## Skimmer con la chiavetta SDR (solo Mac, per ora)
 
 Serve una chiavetta RTL-SDR V3 o V4 con un'antenna HF collegata (la radio resta libera).
-Spunta **Skimmer con la chiavetta SDR**, scegli le bande e premi **Accendi lo skimmer**: la chiavetta ascolta
-le fette CW di una banda alla volta, 2 minuti ciascuna, e legge tutte le stazioni insieme.
+Spunta **Skimmer con la chiavetta SDR**, scegli le bande e premi **Accendi lo skimmer**: la chiavetta va a caccia
+da sola: si mette sulla banda dove il RBN e lo spettro mostrano più stazioni, le legge tutte insieme e, appena lì
+non arrivano più nominativi nuovi, si sposta dove c'è più attività. Più bande scegli, più prove fa.
 I nominativi vengono confrontati con il RBN; nella tabella ✓ vuol dire confermato, ? mai sentito dal RBN.
 
 ## Cosa parte verso QTHome

@@ -46,8 +46,9 @@ Only useful cases are sent: a callsign the RBN never heard, or the two decoders 
 ## Skimmer with the SDR dongle (Mac only, for now)
 
 You need an RTL-SDR V3 or V4 dongle with an HF antenna (your radio stays free).
-Tick **Skimmer with the SDR dongle**, choose the bands and press **Start the skimmer**: the dongle listens to the CW
-segments of one band at a time, 2 minutes each, reading all stations at once. Callsigns are compared with the RBN;
+Tick **Skimmer with the SDR dongle**, choose the bands and press **Start the skimmer**: the dongle hunts on its own:
+it goes to the band where the RBN and the spectrum show most stations, reads all of them at once and moves as soon as
+no new callsigns arrive. The more bands you choose, the more tests it runs. Callsigns are compared with the RBN;
 in the table ✓ means confirmed, ? never heard by the RBN.
 
 ## What is sent to QTHome
