@@ -41,7 +41,7 @@ O QTHome atualiza-se sozinho: quando sai uma versão nova, descarrega-a e instal
 
 ## Grátis e PRO
 
-Ouvir, descodificar e manter o log é sempre grátis. Transmitir a partir do QTHome, os automatismos, o concurso avançado e as QSL online fazem parte do PRO; os primeiros 30 dias são um teste completo.
+Ouvir, descodificar e manter o log é sempre grátis. Transmitir a partir do QTHome, os automatismos, o concurso avançado e as QSL online fazem parte do PRO; os primeiros 30 dias são um teste completo. O PRO custa **12 € por ano**: cobre os custos de servidores e investigação.
 
 ## Se algo não funcionar
 

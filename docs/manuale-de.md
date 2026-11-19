@@ -41,7 +41,7 @@ QTHome aktualisiert sich selbst: kommt eine neue Version, lädt es sie herunter 
 
 ## Kostenlos und PRO
 
-Hören, Dekodieren und Loggen ist immer kostenlos. Senden aus QTHome, Automatik, erweiterter Contest und Online-QSLs gehören zu PRO; die ersten 30 Tage sind ein vollständiger Test.
+Hören, Dekodieren und Loggen ist immer kostenlos. Senden aus QTHome, Automatik, erweiterter Contest und Online-QSLs gehören zu PRO; die ersten 30 Tage sind ein vollständiger Test. PRO kostet **12 € im Jahr**: damit werden Server und Entwicklung bezahlt.
 
 ## Wenn etwas nicht geht
 

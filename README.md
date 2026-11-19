@@ -53,8 +53,8 @@ Guida: [italiano](docs/trainer-it.md) · [English](docs/trainer-en.md) · [Fran�
 
 ## Gratis e PRO
 
-30 giorni di prova completa. Poi QTHome resta **gratis per ascoltare e decodificare**; con PRO si trasmette, si registra e
-si automatizza. The Rigger resta gratis per sempre.
+30 giorni di prova completa. Poi QTHome resta **gratis per ascoltare e decodificare**; con **PRO a 12 € all'anno** si
+trasmette, si automatizza e si mandano le QSL online. The Rigger resta gratis per sempre.
 
 ## Requisiti
 

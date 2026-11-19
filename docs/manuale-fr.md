@@ -41,7 +41,7 @@ QTHome se met à jour tout seul : quand une nouvelle version sort, il la téléc
 
 ## Gratuit et PRO
 
-Écouter, décoder et tenir le journal est toujours gratuit. Émettre depuis QTHome, les automatismes, le concours avancé et les QSL en ligne font partie de PRO ; les 30 premiers jours sont un essai complet.
+Écouter, décoder et tenir le journal est toujours gratuit. Émettre depuis QTHome, les automatismes, le concours avancé et les QSL en ligne font partie de PRO ; les 30 premiers jours sont un essai complet. PRO coûte **12 € par an** : cela couvre les frais de serveurs et de recherche.
 
 ## Si quelque chose ne va pas
 
