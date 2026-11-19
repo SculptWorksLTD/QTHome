@@ -36,6 +36,20 @@ At the end of each 15-second slot you see a table: for each message, ✓ if QTHo
 
 If the window cannot use the audio, an **Open in the browser** button appears: the Trainer opens in your browser, where the microphone always works.
 
+## CW from the radio
+
+In **Settings** tick **CW** and press **Start listening** on the radio's sound card.
+Listen to CW as usual: every 30 seconds two QTHome decoders re-read what you heard and the callsigns are checked
+against the Reverse Beacon Network (RBN). If The Rigger is running, the Trainer also knows your band.
+Only useful cases are sent: a callsign the RBN never heard, or the two decoders disagreeing.
+
+## Skimmer with the SDR dongle (Mac only, for now)
+
+You need an RTL-SDR V3 or V4 dongle with an HF antenna (your radio stays free).
+Tick **Skimmer with the SDR dongle**, choose the bands and press **Start the skimmer**: the dongle listens to the CW
+segments of one band at a time, 2 minutes each, reading all stations at once. Callsigns are compared with the RBN;
+in the table ✓ means confirmed, ? never heard by the RBN.
+
 ## What is sent to QTHome
 
 - Only useful cases: weak signals, crowded bands, messages decoded by only one of the two decoders.

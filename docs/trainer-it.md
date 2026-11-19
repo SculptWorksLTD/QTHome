@@ -36,6 +36,21 @@ Alla fine di ogni slot di 15 secondi vedi la tabella: per ogni messaggio, ✓ se
 
 Se la finestra non riesce a usare l'audio, compare il tasto **Apri nel browser**: il Trainer si apre nel tuo browser e lì il microfono funziona sempre.
 
+## CW dalla radio
+
+In **Impostazioni** spunta **CW** e premi **Comincia ad ascoltare** sulla stessa scheda audio della radio.
+Ascolta il CW come fai sempre (in banda, in un QSO, in un contest): ogni 30 secondi due decoder di QTHome
+rileggono quello che hai sentito e i nominativi letti vengono controllati con il Reverse Beacon Network (RBN).
+Se The Rigger è acceso, il Trainer sa anche su che banda sei e il controllo è più preciso.
+Parte verso QTHome solo ciò che serve: un nominativo che il RBN non ha mai sentito, o i due decoder in disaccordo.
+
+## Skimmer con la chiavetta SDR (solo Mac, per ora)
+
+Serve una chiavetta RTL-SDR V3 o V4 con un'antenna HF collegata (la radio resta libera).
+Spunta **Skimmer con la chiavetta SDR**, scegli le bande e premi **Accendi lo skimmer**: la chiavetta ascolta
+le fette CW di una banda alla volta, 2 minuti ciascuna, e legge tutte le stazioni insieme.
+I nominativi vengono confrontati con il RBN; nella tabella ✓ vuol dire confermato, ? mai sentito dal RBN.
+
 ## Cosa parte verso QTHome
 
 - Solo i casi utili: segnali deboli, bande affollate, messaggi letti da uno solo dei due decoder.
