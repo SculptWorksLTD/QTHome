@@ -2,5 +2,5 @@
   "mothership_url": "",
   "chat_url": "",
   "license_url": "https://qthome-negozio.nerosdmf.workers.dev",
-  "note": "Configurazione remota letta da QTHome ogni ora. mothership_url = servizio che riceve segnalazioni e dati dei tester; chat_url = servizio delle stanze di QTHome Chat; license_url = servizio delle licenze (una licenza, un computer). Vuoto = non ancora acceso."
+  "note": "Configurazione remota letta da QTHome, Trainer e Mothership ogni ora. mothership_url = servizio che riceve segnalazioni e dati dei tester; chat_url = servizio delle stanze di QTHome Chat; license_url = servizio delle licenze (una licenza, un computer); ft8_trial = parametri del decoder FT8 in prova sui Trainer; ft8_params = parametri FT8 dati a tutti (li scrive Mothership). Vuoto o assente = non ancora acceso / valori di serie."
 }
