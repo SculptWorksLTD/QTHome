@@ -34,7 +34,6 @@ QTHome se actualiza solo: cuando sale una versión nueva la descarga y la instal
 - **Cluster y propagación**: DX cluster y Reverse Beacon Network con filtros; un clic en un spot lleva la radio allí. Datos solares y condiciones de las bandas.
 - **SDR**: receptor con la llave RTL-SDR, espectro y waterfall; clic para escuchar una frecuencia.
 - **Satélites y espacio**: próximos pasos, Doppler, seguimiento con el rotor y corrección de la radio.
-- **Remoto y automático**: usa QTHome desde el móvil en la red de casa, con un PIN. Transmitir a distancia está apagado hasta que tú lo permitas.
 - **Concurso**: ARI DX, CQ WW, CQ WPX, IARU HF, VHF y genérico; números, duplicados, Cabrillo. Intro registra, Esc limpia.
 - **QTHome Chat**: salas de texto y de voz entre radioaficionados; en el servidor no queda nada.
 - **Winlink**: correo por internet o por radio con el módem VARA (se instala aparte): entrada, salida, redactar. La contraseña de Winlink se queda en tu ordenador.
