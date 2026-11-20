@@ -1,53 +1,75 @@
 # QTHome — manual
 
-O QTHome é o programa para toda a estação: rádio, log, CW, modos digitais, cluster, SDR, satélites, concursos e mais, numa só janela. Funciona no computador, sem assinatura para ouvir e descodificar.
+O QTHome é o programa para toda a estação: rádio, log, CW, modos digitais, cluster, SDR, satélites, concursos e mais, numa só janela. É um só programa: o rádio, o indicativo, o QSO em curso e o log são os mesmos em cada secção. Ouvir e descodificar é grátis.
 
 ## Instalar
 
 - **Mac**: descarregue `QTHome-Mac.pkg`, abra-o e siga os passos. O QTHome fica em Aplicações.
-- **Windows**: descarregue `QTHome-Windows.zip`, abra-o e arraste `QTHome.exe` para onde preferir (por exemplo o Ambiente de trabalho), depois abra-o.
+- **Windows**: descarregue `QTHome-Windows.zip`, abra-o e arraste `QTHome.exe` para onde quiser (por exemplo o Ambiente de trabalho), depois abra-o.
 
-O QTHome atualiza-se sozinho: quando sai uma versão nova, descarrega-a e instala-a ao fechar.
+O QTHome atualiza-se sozinho: quando há uma versão nova descarrega-a e instala-a ao fechar.
 
 ## A primeira vez
 
 1. Ligue o rádio ao computador com o cabo USB e ligue-o.
-2. Abra o QTHome: o rádio aparece sozinho no painel **Estação** (lá dentro está o The Rigger, que reconhece os rádios).
-3. Clique em cima à direita em **indicativo?** e escreva o seu indicativo e o seu locator.
-4. Para outro idioma: **Ajuda › Idioma…**
+2. Abra o QTHome: a **janela de boas-vindas** explica os primeiros passos (marque «Não mostrar mais» quando já não precisar) e depois pede **indicativo e locator**. Todas as funções os usam.
+3. O rádio aparece sozinho. Em **Estação** o cartão **Para começar** mostra o que falta (rádio, áudio, cluster), com o botão para o fazer.
+4. No Mac, na primeira vez que ouvir o rádio, permita o **microfone** ao QTHome: é o áudio que vem do rádio.
+5. Para outro idioma: **Configurações › Aparência, idioma e acessibilidade**.
 
 ## A janela
 
 - **Em cima**: os menus, o estado do rádio e da pen SDR, o seu indicativo e a hora UTC.
-- **A barra do rádio** está sempre visível: escolhe o rádio, lê e muda a frequência (VFO A e B) e o modo, prime **PTT · TX** para transmitir (desliga-se sozinho após 3 minutos).
-- **À esquerda** as secções; **à direita** o painel escolhido. As secções ainda não prontas estão marcadas «Em breve».
-- Tudo funciona também pelo teclado e com leitor de ecrã; **Ajuda › Voz** diz em voz alta frequência, modo e sinal.
+- **A barra do rádio** está sempre visível: rádio, banda, frequência (VFO A e B), modo, filtro, **PTT · TX** (fica vermelho quando o rádio transmite, seja quem for a comandá-lo; solta-se sozinho após 3 minutos) e **Comandos do rádio** com todos os comandos do painel frontal.
+- **À esquerda** as secções. De origem vê só as essenciais; as outras estão em **+ Mais funções** (ou todas sempre: **Configurações › Aparência, idioma e acessibilidade**).
+- **Em baixo, a cascata**, por cima da barra QSO, em Estação, Log, Fonia, Concurso, Cluster, Mapa, Satélites e Rotor: um clique em «Cascata» dobra-a.
+- **Não encontra alguma coisa?** ⌘K (Ctrl+K no Windows) abre a pesquisa: escreva «SSTV», «rotor», «HamQTH» ou «licença» e carregue em Enter.
+- **Em baixo a barra QSO**: o QSO em curso, um só para todo o programa. Escreva o indicativo (Alt+Q chega lá de qualquer sítio), relatórios, nome e locator; frequência, banda e modo vêm do rádio. Diz-lhe o país, a distância, a direção, em que bandas se ouve agora e se já o contactou. **Enter** guarda no log, **Esc** recomeça. Enquanto transmites, **Esc** para toda a transmissão (FT8, fonia, CW, PTT), como Estação › Parar toda a transmissão. Na nota podes escrever «POTA IT-0123», «SOTA I/LO-123» ou «WWFF IFF-0123»: a referência vai para o seu campo do log. Guardado por engano? Logo a seguir aparece **Anular**: o QSO sai do log e volta à barra. Na Europa ou em África avisa quando está em fonia na parte CW/digital da banda ou nos 30 m (plano de banda IARU).
+- Sem o rádio ligado (ou com o botão **✎**) frequência, modo, data e hora UTC escrevem-se à mão: útil para registar um QSO feito em portátil.
+- O cluster, o mapa, «Pode contactar agora», FT8, RTTY/PSK e o CW também preenchem o QSO em curso: um clique num spot leva o rádio à frequência e ao modo certos e põe o indicativo na barra. Com um rotor, **↻ Rotor** roda a antena para ele.
+- Tudo se usa também pelo teclado e com um leitor de ecrã. Para quem não vê ou vê pouco: **Configurações › Aparência, idioma e acessibilidade › Ligar a acessibilidade** (avisos por voz, Morse, S-meter lido com ⌘⇧S). Desligada de origem.
 
 ## As secções
 
-- **Estação**: os rádios ligados, a frequência grande, o S-meter, um QSO rápido. Programas como WSJT-X, fldigi ou JS8Call ligam-se ao rádio através do QTHome: as instruções estão em «Como ligar os programas».
-- **Rotor**: ligue um rotor (Yaesu GS-232 ou Hamlib rotctld) e aponte-o em graus ou para um locator, também pelo caminho longo.
-- **Log**: cada QSO, exportar e importar ADIF. Em baixo, as **QSL eletrónicas**: LoTW (é preciso o TQSL, grátis), eQSL, QRZ Logbook e Club Log; as palavras-passe ficam no seu computador.
-- **Fonia**: escuta e gravação, os últimos 60 segundos sempre salváveis, 4 memórias de voz (F1-F4) para transmitir. **FreeDV** (700D, 700E, 700C, 1600): escuta pelo áudio do rádio e «segure para falar». **Pi-Star / WPSD**: quem passa pelo seu hotspot DMR, D-STAR, YSF, com um clique para a barra QSO.
-- **CW**: o descodificador CWEngine, o manipulador, as mensagens, o skimmer com a pen SDR. A descodificação CW é grátis para sempre.
-- **Modos digitais**: FT8 e FT4 como o WSJT-X (recepção e transmissão), RTTY, PSK, APRS, WSPR, Hell, QRSS e SSTV. Q65, MSK144 e JT65 pelo WSJT-X aberto ao lado (quadro «Outros modos com o WSJT-X»).
-- **Cluster e propagação**: DX cluster e Reverse Beacon Network com filtros; um clique num spot leva o rádio para lá. Dados solares e condições das bandas.
-- **SDR**: recetor com a pen RTL-SDR, espectro e waterfall; clique para ouvir uma frequência.
-- **Satélites e espaço**: próximas passagens, Doppler, seguimento com o rotor e correção do rádio.
-- **Concurso**: ARI DX, CQ WW, CQ WPX, IARU HF, VHF e genérico; números, duplicados, Cabrillo. Enter regista, Esc limpa.
-- **QTHome Chat**: salas de texto e de voz entre radioamadores; nada fica no servidor.
-- **Winlink**: correio pela internet ou por rádio com o modem VARA (instalado à parte): entrada, saída, escrever. A senha do Winlink fica no seu computador.
-- **Mapa** e **Ferramentas**: o mundo agora (spots, quem ouve você, linha cinzenta, ionossondas) e calculadoras para a estação.
-- **Assistente IA**: escreva o que quer («põe o rádio em 14.074 FT8», «quando passa a ISS», «o que quer dizer QSB»). Trabalha no computador, sem internet, e nunca transmite.
+- **Estação**: a frequência grande, o S-meter, o PTT, os comandos do rádio, as memórias (também de e para o CHIRP), quem pode contactar agora e as bandas abertas.
+- **Log**: todos os QSO, de cada secção. Procure por indicativo, país ou banda; **clique numa linha** para a corrigir ou apagar. QSL de papel (bureau e direta, etiquetas para imprimir) e **QSL eletrónicas**: LoTW (é preciso o TQSL, grátis), eQSL, QRZ Logbook e Club Log. Diplomas e perfis de estação. Se ativar um parque ou cume, escreva a referência no perfil (Perfis… › «Ativando»): cada QSO leva-a no log e no ADIF; nos Modos digitais o menu ao lado de CQ chama «CQ POTA» ou «CQ SOTA». **Estatísticas…**: QSO por ano, banda, modo e hora UTC, o melhor dia e os confirmados. No perfil indique também a **potência** (W): vai para cada QSO (TX_PWR), escolhe a categoria de potência nos concursos e as Estatísticas mostram o recorde de km por watt. Exportar por perfil dá o ficheiro com o nome que o POTA e o WWFF pedem. Em **Diplomas…** a caixa «só os que faltam confirmar» lista o que trabalhou sem confirmação, com os indicativos a quem pedir a QSL.
+- **Fonia**: escuta e gravação, os últimos 60 segundos sempre salváveis, 4 memórias de voz (F1-F4). **FreeDV** (700D, 700E, 700C, 1600): escuta pelo áudio do rádio e «Segure para falar». **Pi-Star / WPSD**: quem passa pelo seu hotspot DMR, D-STAR ou YSF, com um clique para a barra QSO.
+- **CW**: o descodificador CWEngine, o manipulador, as mensagens, o skimmer com a pen SDR. Ligado continua a trabalhar enquanto usa outras secções. Os QSO feitos aqui vão para o log do QTHome. A descodificação CW é grátis para sempre.
+- **Modos digitais**: FT8 e FT4 como o WSJT-X (sequência automática, CQ, log automático), RTTY, PSK31/63, Feld Hell, QRSS, APRS, WSPR e SSTV (imagens: o modo é reconhecido sozinho, as recebidas ficam na galeria). A banda segue o rádio. Os spots FT8, FT4, RTTY e PSK põem o rádio no sítio certo e abrem os Modos digitais com o correspondente pronto. As descodificações e os QSO podem ir também para GridTracker, JTAlert, N1MM ou Log4OM, como a partir do WSJT-X (Configurações › Rádios e programas). Com o envio ligado, um duplo clique numa estação no GridTracker ou JTAlert prepara-a nos Modos digitais (Tx1 pronto, a transmissão decides tu). Na caça automática responde só aos CQ feitos para si: «CQ POTA/SOTA/WWFF» sempre (os portáteis valem de novo cada dia), «CQ DX» só se quem chama estiver noutro continente, «CQ NA», «CQ EU»… só se for o seu, «CQ TEST» só com um concurso iniciado.
+- **Concurso**: ARI DX, CQ WW, CQ WPX, IARU HF, VHF e genérico; números, duplicados, Cabrillo e SO2R. Enter regista, Esc limpa. Com um concurso iniciado, a barra QSO também pede a troca recebida e cada QSO (FT8, CW, RTTY…) entra no concurso; em cima vê-se o concurso em curso. A pontuação segue as regras do concurso (CQ WW, WPX, ARI DX, IARU, VHF) e vai para o Cabrillo; no CQ WW e na IARU a zona é preenchida a partir do prefixo. Ferramentas de concursista: mapa da banda, sugestões de indicativos enquanto escreve (com os «talvez» a um carácter), mensagens F1-F4 editáveis ({MYCALL} {CALL} {EXCH}) e ESM: Enter envia CQ, troca e TU. Há também o ARI FT8 Activity Contest (IAC): 1 ponto por QSO, multiplicadores os quadrados de 4 caracteres. Sem rádio ligado (sem CAT) escolha banda e modo à mão ao lado do indicativo. Há também o **ARRL International DX** para quem está fora dos EUA e do Canadá (3 pontos por estação W/VE, multiplicadores estados e províncias). Em cima, os **próximos grandes concursos** com a data: um clique escolhe-o; a sua troca (zona, locator, potência) preenche-se sozinha, e na véspera chega um aviso.
+- **Satélites e espaço**: próximas passagens, Doppler, seguimento com o rotor e correção do rádio. As órbitas descarregam-se sozinhas. QO-100: apontamento a partir do seu locator, rotação do LNB, faróis e conversão entre downlink, uplink e saída do LNB.
+- **Cluster e propagação**: DX cluster e Reverse Beacon Network com filtros; um clique num spot leva o rádio até lá. Dados solares e condições das bandas. Faróis NCDXF/IARU: quem transmite agora em cada banda, distância e direção, e quais foram mesmo ouvidos a partir do seu continente. «Aberto agora»: banda por continente, com as estações realmente ouvidas a partir do seu continente nos últimos 30 minutos. Podem juntar-se os spots de portáteis POTA, SOTA e WWFF: a referência do parque ou do cume vai para o log. **Previsão 24 horas**: que bandas abrem, hora a hora, para o correspondente do QSO ou uma zona do mundo; é uma estimativa a partir do fluxo solar (os spots de «Aberto agora» dizem o que está realmente aberto). A barra QSO mostra-a quando não há spots para essa estação, e o assistente responde a «propagation to Japan?». Em **Mostrar** escolha só países novos ou só as estações ainda não trabalhadas nessa banda. Os países DXCC atualizam-se sozinhos todas as semanas.
+- **Mapa**: noite e greyline, spots, quem o ouve, EME, Es; um clique num spot contacta-o. «Os meus QSO» mostra onde estão as estações do log (verde = confirmadas). Com «Aberto a partir de si (estimativa)» escolhe uma banda e o mapa colore as zonas do mundo que essa banda alcança agora a partir da sua estação.
+- **SDR**: recetor com a pen RTL-SDR, espetro e cascata; clique para ouvir uma frequência.
+- **Rotor**: aponte-o em graus, para um locator ou para o QSO em curso, também pelo caminho longo.
+- **QTHome Chat**: salas de texto e voz entre radioamadores, mensagens privadas cifradas; no servidor não fica nada.
+- **Winlink**: correio pela internet ou por rádio com o modem VARA (instalado à parte): entrada, saída, anexos, formulário ICS-213 para emergências. A senha do Winlink fica no seu computador.
+- **Ferramentas**: calculadoras, carta de Smith, laboratório de antenas, treino de pile-up, **aprenda CW com o método Koch**, questionário do exame.
+- **Assistente IA**: escreva o que quer («põe o rádio em 14.074 FT8», «quando passa a ISS», «o que quer dizer QSB»). Trabalha no computador e nunca transmite. Com a janela noutra língua que não o italiano, percebe e responde em inglês; com um modelo no computador (Ollama ou LM Studio), em qualquer língua.
+- **Configurações**: a sua estação, os rádios e os programas externos (WSJT-X, fldigi, logs), que rádio e que áudio usa cada função, os acessórios (amplificador, comutador de antena, bateria, meteorologia, WinKeyer), aparência, idioma e acessibilidade. Em **A minha estação** escolha também as **bandas e modos que usa** («Pode trabalhar agora» e o cluster seguem-nos) e os **avisos**: país novo no ar, satélite a chegar e «estão a ouvir-te» (o teu indicativo nos spots), em qualquer painel.
 
 ## Grátis e PRO
 
-Ouvir, descodificar e manter o log é sempre grátis. Transmitir a partir do QTHome, os automatismos, o concurso avançado e as QSL online fazem parte do PRO; os primeiros 30 dias são um teste completo. O PRO custa **12 € por ano**: cobre os custos de servidores e investigação.
+Ouvir, descodificar e manter o log é sempre grátis. Transmitir a partir do QTHome, as automatizações, o concurso avançado e as QSL online fazem parte do PRO; os primeiros 30 dias são uma experiência completa. O PRO custa **12 € por ano**: cobre os custos dos servidores e da investigação.
 
 ## Se algo não funcionar
 
-- **O rádio não aparece**: verifique o cabo USB e se o rádio está ligado; depois **Estação › Procurar os rádios de novo**.
-- **Sem áudio**: no Mac permita o microfone ao QTHome em Definições do Sistema › Privacidade e segurança.
+- **O rádio não aparece**: verifique o cabo USB e se o rádio está ligado; depois **Configurações › Rádios e programas › Procurar de novo os rádios**.
+- **Sem áudio**: no Mac, Definições do Sistema › Privacidade e segurança › Microfone › ative o QTHome. No Windows, Definições › Privacidade › Microfone.
 - **Comunicar um problema**: **Ajuda › Comunicar um problema ou uma ideia…** É enviado de forma anónima, sem indicativos, nomes ou endereços.
 
-O QTHome é feito por IU1MVI. Se lhe for útil, pode oferecer-lhe um café: paypal.me/nerosdmf
+## Licenças e agradecimentos
+
+O QTHome é um programa de IU1MVI. O seu código foi escrito de raiz ou assenta em bibliotecas cuja licença livre o permite; nenhum código com licença GPL foi copiado para dentro do QTHome.
+
+- **ft8_lib** © Kārlis Goba (MIT): base do descodificador FT8/FT4. Método do trabalho público de K1JT, K9AN e G4WJS (QEX 2020).
+- **wl2k-go** © Martin Hebnes Pedersen LA5NTA (MIT): protocolo Winlink B2F; contém **lzhuf** de Haruyasu Yoshizaki e Haruhiko Okumura.
+- **codec2** © David Rowe VK5DGR e colaboradores (LGPL-2.1): FreeDV. Biblioteca à parte e substituível; fonte: github.com/drowe67/codec2.
+- **libusb** (LGPL-2.1): chave SDR no Mac e no Windows, biblioteca à parte e substituível; fonte: github.com/libusb/libusb.
+- **webview** (MIT) para a janela; **webrtlsdr** (Apache 2.0) para a chave SDR na função CW; type library do **OmniRig** © VE3NEA (MIT).
+- **Programas à parte** que o QTHome usa se os tiver instalados, sem os incluir: **WSJT-X** (GPL, K1JT e colaboradores) para Q65, MSK144, JT65 e a comparação no Trainer; **VARA** (EA5HVK) para Winlink por rádio; **TQSL** (ARRL) para LoTW; **JS8Call** (KN4CRD); **Pi-Star** e **WPSD** no hotspot; **Ollama** ou **LM Studio** para o assistente.
+- **Dados**: entidades DXCC do **cty.dat** de AD1C (country-files.com); dados solares de **hamqsl.com** (N0NBH) e **NOAA SWPC**; ionossondas da rede **GIRO** através de **prop.kc2g.com** (KC2G); órbitas da **CelesTrak**; spots de DX clusters, **Reverse Beacon Network**, **PSK Reporter** (N1DQ), **POTA**, **SOTA** e **WWFF**; **Super Check Partial** (supercheckpartial.com); pesquisa de indicativos com **HamQTH**; mapas **Natural Earth** (domínio público).
+
+O texto completo das licenças está em **docs/terze-parti.md** do repositório público SculptWorksLTD/QTHome.
+
+O QTHome é feito por IU1MVI. Se lhe for útil, pode oferecer um café: paypal.me/nerosdmf

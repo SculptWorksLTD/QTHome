@@ -24,6 +24,7 @@ QTHome, QTHome Trainer e QTHome Mothership includono:
   > SOFTWARE.
 
 - **webview** (finestra) — licenza MIT.
+- **webrtlsdr** (chiavetta RTL-SDR nella funzione CW) — licenza Apache 2.0.
 - **OmniRig** type library — © VE3NEA — licenza MIT.
 
 - **libusb 1.0.27** (accesso alla chiavetta SDR su Mac) — © libusb project — licenza LGPL-2.1.
@@ -37,5 +38,20 @@ QTHome, QTHome Trainer e QTHome Mothership includono:
 - **Reverse Beacon Network** (telnet.reversebeacon.net): il Trainer legge gli spot pubblici per controllare i
   nominativi letti dal CW e dallo skimmer; non manda nulla al RBN.
 
-WSJT-X, VARA e il software degli hotspot (Pi-Star, WPSD) non sono inclusi: QTHome li usa come programmi separati
-installati dall'OM (ponte UDP di WSJT-X, porte TCP di VARA, cruscotto dell'hotspot).
+## Programmi separati (non inclusi)
+
+QTHome li usa se l'OM li ha installati; restano programmi a sé, con le loro licenze, e non vengono distribuiti con QTHome:
+**WSJT-X** (GPL-3, K1JT e collaboratori: ponte UDP per Q65, MSK144, JT65; confronto nel Trainer), **VARA HF/FM** (EA5HVK,
+porte TCP per Winlink via radio), **TQSL** (ARRL, per LoTW), **JS8Call** (KN4CRD, API TCP), **Pi-Star** e **WPSD** (cruscotto
+dell'hotspot), **Ollama** e **LM Studio** (modelli per l'assistente), **Hamlib rigctld** e **flrig** se l'OM li preferisce.
+
+## Dati e servizi
+
+- **cty.dat** di Jim Reisert AD1C (country-files.com): paesi DXCC e zone, aggiornato ogni settimana.
+- **hamqsl.com** di Paul Herrman N0NBH e **NOAA Space Weather Prediction Center**: dati solari.
+- **GIRO** (Global Ionospheric Radio Observatory) tramite **prop.kc2g.com** di Andrew Rodland KC2G: misure delle ionosonde.
+- **CelesTrak** (T.S. Kelso): orbite dei satelliti.
+- DX cluster, **Reverse Beacon Network**, **PSK Reporter** (Philip Gladstone N1DQ), **POTA**, **SOTA**, **WWFF**: spot.
+- **Super Check Partial** (supercheckpartial.com), **HamQTH** (OK2CQR), **Natural Earth** (dominio pubblico), **WSPRnet**.
+- Metodo di decodifica FT8/FT4 dal lavoro pubblico di K1JT, K9AN e G4WJS (QEX, 2020). Metodo Koch per imparare il CW
+  (Ludwig Koch, 1936) e spaziatura Farnsworth come le descrive l'ARRL.
