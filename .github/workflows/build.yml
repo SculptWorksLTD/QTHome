@@ -81,7 +81,8 @@ jobs:
         run: |
           go get github.com/webview/webview_go@latest
           go mod tidy
-          go test ./qtengine/ft8 ./qtengine/telemetry ./qtengine/oracle ./qtengine/audio ./apps/... 2>&1 | tail -8
+          set -o pipefail
+          go test -short ./qtengine/ft8 ./qtengine/tuning ./qtengine/telemetry ./qtengine/oracle ./qtengine/audio ./qtengine/audioout ./qtengine/sqlite ./apps/... 2>&1 | tail -12
       - name: Compila (Apple e Intel, poi universale)
         run: |
           set -e
@@ -241,6 +242,11 @@ jobs:
           "$W" simply --icon build/resources/icon-256.png --product-name "QTHome" --file-description "QTHome - The Home of OM"
           (cd apps/trainer && "$W" simply --icon ../../build/resources/trainer-256.png --product-name "QTHome Trainer" --file-description "QTHome Trainer")
           (cd apps/mothership && "$W" simply --icon ../../build/resources/mothership-256.png --product-name "QTHome Mothership" --file-description "QTHome Mothership")
+      - name: Prove (Windows)
+        shell: bash
+        run: |
+          set -o pipefail
+          CGO_ENABLED=1 go test -short ./qtengine/tuning ./qtengine/telemetry ./qtengine/audio ./qtengine/sqlite ./qtengine/winlink 2>&1 | tail -12
       - name: libusb per Windows (chiavetta SDR; LGPL-2.1, resta una libreria a parte accanto al programma)
         shell: bash
         run: |
@@ -367,6 +373,10 @@ jobs:
           go get github.com/webview/webview_go@latest
           go mod tidy
           go version
+      - name: Prove con Go 1.22
+        run: |
+          set -o pipefail
+          go test -short ./qtengine/tuning ./qtengine/telemetry ./qtengine/sqlite ./qtengine/ft8 2>&1 | tail -12
       - name: Compila (Intel, macOS 10.15)
         run: |
           set -e
