@@ -42,7 +42,7 @@ QTHome se actualiza solo: cuando hay una versión nueva la descarga y la instala
 - **Mapa**: noche y greyline, spots, quién te oye, EME, Es; un clic en un spot lo trabaja. «Mis QSO» muestra dónde están las estaciones del log (verde = confirmadas). Con «Abierto desde ti (estimación)» eliges una banda y el mapa colorea las zonas del mundo que esa banda alcanza ahora desde tu estación.
 - **SDR**: receptor con la llave RTL-SDR, espectro y cascada; clic para escuchar una frecuencia.
 - **Rotor**: apúntalo por grados, hacia un localizador o hacia el QSO en curso, también por el camino largo.
-- **QTHome Chat**: salas de texto y voz entre radioaficionados, mensajes privados cifrados; en el servidor no queda nada.
+- **QTHome Chat**: salas de texto y voz entre radioaficionados, mensajes privados cifrados; en el servidor no queda nada. **APRS por internet (APRS-IS)**: mensajes APRS con tu indicativo y estaciones APRS cercanas en el Mapa (azul claro).
 - **Winlink**: correo por internet o por radio con el módem VARA (se instala aparte): entrada, salida, adjuntos, formulario ICS-213 para emergencias. La contraseña de Winlink se queda en tu ordenador.
 - **Herramientas**: calculadoras, carta de Smith, laboratorio de antenas, entrenamiento de pile-up, **aprende CW con el método Koch**, test de examen.
 - **Asistente IA**: escribe lo que quieres («lleva la radio a 14.074 FT8», «cuándo pasa la ISS», «qué significa QSB»). Trabaja en el ordenador y nunca transmite. Con la ventana en otro idioma distinto del italiano entiende y responde en inglés; con un modelo en el ordenador (Ollama o LM Studio), en cualquier idioma.
@@ -68,7 +68,7 @@ QTHome es un programa de IU1MVI. Su código está escrito desde cero o se basa e
 - **libusb** (LGPL-2.1): llave SDR en Mac y Windows, biblioteca aparte y sustituible; fuente: github.com/libusb/libusb.
 - **webview** (MIT) para la ventana; **webrtlsdr** (Apache 2.0) para la llave SDR en la función CW; type library de **OmniRig** © VE3NEA (MIT).
 - **Programas aparte** que QTHome usa si los tienes instalados, sin incluirlos: **WSJT-X** (GPL, K1JT y colaboradores) para Q65, MSK144, JT65 y la comparación en el Trainer; **VARA** (EA5HVK) para Winlink por radio; **TQSL** (ARRL) para LoTW; **JS8Call** (KN4CRD); **Pi-Star** y **WPSD** en el hotspot; **Ollama** o **LM Studio** para el asistente.
-- **Datos**: entidades DXCC del **cty.dat** de AD1C (country-files.com); datos solares de **hamqsl.com** (N0NBH) y **NOAA SWPC**; ionosondas de la red **GIRO** a través de **prop.kc2g.com** (KC2G); órbitas de **CelesTrak**; spots de DX clusters, **Reverse Beacon Network**, **PSK Reporter** (N1DQ), **POTA**, **SOTA** y **WWFF**; **Super Check Partial** (supercheckpartial.com); búsqueda de indicativos con **HamQTH**; mapas de **Natural Earth** (dominio público).
+- **Datos**: entidades DXCC del **cty.dat** de AD1C (country-files.com); datos solares de **hamqsl.com** (N0NBH) y **NOAA SWPC**; ionosondas de la red **GIRO** a través de **prop.kc2g.com** (KC2G); órbitas de **CelesTrak**; spots de DX clusters, **Reverse Beacon Network**, **PSK Reporter** (N1DQ), **POTA**, **SOTA** y **WWFF**; **Super Check Partial** (supercheckpartial.com); búsqueda de indicativos con **HamQTH**; mapas de **Natural Earth** (dominio público). Red **APRS-IS** (aprs2.net); APRS fue creado por Bob Bruninga WB4APR.
 
 El texto completo de las licencias está en **docs/terze-parti.md** del repositorio público SculptWorksLTD/QTHome.
 

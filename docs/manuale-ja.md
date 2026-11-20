@@ -42,7 +42,7 @@ QTHome は自動で更新されます。新しいバージョンがあればダ�
 - **地図**：夜とグレーライン、スポット、あなたを聞いている局、EME、Es；スポットをクリックで交信へ。 「自分の QSO」でログの局の位置を表示します（緑 = 確認済み）。「あなたから開いている（推定）」でバンドを選ぶと、そのバンドが今あなたの局から届く地域が地図に色で示されます。
 - **SDR**：RTL-SDRドングルの受信機、スペクトラムとウォーターフォール；クリックでその周波数を聞きます。
 - **ローテーター**：角度、ロケーター、現在のQSOの方向に向けます。ロングパスも可能。
-- **QTHome Chat**：アマチュア無線家のテキスト・音声ルーム、暗号化された個人メッセージ；サーバーには何も残りません。
+- **QTHome Chat**：アマチュア無線家のテキスト・音声ルーム、暗号化された個人メッセージ；サーバーには何も残りません。 **インターネット経由の APRS (APRS-IS)**：自局のコールサインで APRS メッセージ、近くの APRS 局を地図に表示（水色）。
 - **Winlink**：インターネットまたは VARA モデム（別途インストール）による無線でのメール：受信、送信、添付、非常通信用の ICS-213 フォーム。Winlink のパスワードはこのコンピューターにだけ保存されます。
 - **ツール**：計算ツール、スミスチャート、アンテナラボ、パイルアップ練習、**コッホ法で CW を覚える**、国家試験クイズ。
 - **AIアシスタント**：やりたいことを書いてください（「無線機を14.074 FT8に」「ISSはいつ通る」「QSBとは」）。コンピューター上で動作し、送信はしません。 イタリア語以外の表示では英語で理解して答えます。コンピューター上のモデル（Ollama または LM Studio）があれば、どの言語でも答えます。
@@ -68,7 +68,7 @@ QTHome は IU1MVI のプログラムです。コードは一から書いたも�
 - **libusb**（LGPL-2.1）：Mac と Windows の SDR ドングル用。差し替え可能な別ライブラリ。ソース：github.com/libusb/libusb。
 - ウィンドウに **webview**（MIT）、CW 機能の SDR ドングルに **webrtlsdr**（Apache 2.0）、**OmniRig** のタイプライブラリ © VE3NEA（MIT）。
 - **別のプログラム**（インストールされていれば QTHome が使用、同梱はしない）：Q65・MSK144・JT65 と Trainer の比較に **WSJT-X**（GPL、K1JT ほか）、無線による Winlink に **VARA**（EA5HVK）、LoTW に **TQSL**（ARRL）、**JS8Call**（KN4CRD）、ホットスポットの **Pi-Star** と **WPSD**、アシスタントに **Ollama** または **LM Studio**。
-- **データ**：AD1C の **cty.dat**（country-files.com）による DXCC エンティティ、**hamqsl.com**（N0NBH）と **NOAA SWPC** の太陽データ、**prop.kc2g.com**（KC2G）経由の **GIRO** ネットワークのイオノゾンデ、**CelesTrak** の軌道要素、DX クラスター・**Reverse Beacon Network**・**PSK Reporter**（N1DQ）・**POTA**・**SOTA**・**WWFF** のスポット、**Super Check Partial**（supercheckpartial.com）、**HamQTH** によるコールサイン検索、**Natural Earth** の地図（パブリックドメイン）。
+- **データ**：AD1C の **cty.dat**（country-files.com）による DXCC エンティティ、**hamqsl.com**（N0NBH）と **NOAA SWPC** の太陽データ、**prop.kc2g.com**（KC2G）経由の **GIRO** ネットワークのイオノゾンデ、**CelesTrak** の軌道要素、DX クラスター・**Reverse Beacon Network**・**PSK Reporter**（N1DQ）・**POTA**・**SOTA**・**WWFF** のスポット、**Super Check Partial**（supercheckpartial.com）、**HamQTH** によるコールサイン検索、**Natural Earth** の地図（パブリックドメイン）。 **APRS-IS** ネットワーク（aprs2.net）。APRS は Bob Bruninga WB4APR が考案しました。
 
 ライセンスの全文は公開リポジトリ SculptWorksLTD/QTHome の **docs/terze-parti.md** にあります。
 

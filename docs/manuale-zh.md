@@ -42,7 +42,7 @@ QTHome 会自动更新：有新版本时会下载，并在退出时安装。
 - **地图**：黑夜和晨昏线、spot、谁能听到你、EME、Es；点击 spot 即可联络。 “我的 QSO”显示日志中电台的位置（绿色 = 已确认）。 在「从你这里开通(估计)」中选择一个波段,地图会给该波段此刻从你的电台能到达的地区上色。
 - **SDR**：使用 RTL-SDR 加密狗的接收机、频谱和瀑布图；点击收听某个频率。
 - **转向器**：按角度、网格定位或当前 QSO 转向，也可走长路径。
-- **QTHome Chat**：业余无线电爱好者的文字和语音房间、加密私信；服务器上不保留任何内容。
+- **QTHome Chat**：业余无线电爱好者的文字和语音房间、加密私信；服务器上不保留任何内容。 **通过互联网的 APRS (APRS-IS)**：用你的呼号收发 APRS 消息，附近的 APRS 电台显示在地图上（浅蓝色）。
 - **Winlink**：通过互联网或用 VARA 调制解调器（需另装）经电台收发邮件：收件、发件、附件、应急用的 ICS-213 表单。Winlink 密码只保存在你的电脑上。
 - **工具**：计算工具、史密斯圆图、天线实验室、堆积呼叫练习、**用 Koch 法学 CW**、执照考试题。
 - **AI 助手**：写下你想做的事（“把电台调到 14.074 FT8”、“ISS 什么时候过境”、“QSB 是什么意思”）。它在电脑上运行，从不发射。 窗口不是意大利语时，助手用英语理解和回答；电脑上装有模型（Ollama 或 LM Studio）时可用任何语言。
@@ -68,7 +68,7 @@ QTHome 是 IU1MVI 的程序。它的代码从零编写，或基于自由许可�
 - **libusb**（LGPL-2.1）：Mac 和 Windows 上的 SDR 接收棒，独立、可替换的库；源码：github.com/libusb/libusb。
 - 窗口使用 **webview**（MIT）；CW 功能中的 SDR 接收棒使用 **webrtlsdr**（Apache 2.0）；**OmniRig** 类型库 © VE3NEA（MIT）。
 - **独立程序**（如已安装，QTHome 会使用，但不包含在内）：**WSJT-X**（GPL，K1JT 及贡献者）用于 Q65、MSK144、JT65 及 Trainer 中的对比；**VARA**（EA5HVK）用于电台 Winlink；**TQSL**（ARRL）用于 LoTW；**JS8Call**（KN4CRD）；热点上的 **Pi-Star** 和 **WPSD**；助手使用 **Ollama** 或 **LM Studio**。
-- **数据**：DXCC 实体来自 AD1C 的 **cty.dat**（country-files.com）；太阳数据来自 **hamqsl.com**（N0NBH）和 **NOAA SWPC**；**GIRO** 网络的电离层测高仪数据经由 **prop.kc2g.com**（KC2G）；轨道来自 **CelesTrak**；spot 来自 DX 集群、**Reverse Beacon Network**、**PSK Reporter**（N1DQ）、**POTA**、**SOTA** 和 **WWFF**；**Super Check Partial**（supercheckpartial.com）；呼号查询使用 **HamQTH**；世界地图来自 **Natural Earth**（公有领域）。
+- **数据**：DXCC 实体来自 AD1C 的 **cty.dat**（country-files.com）；太阳数据来自 **hamqsl.com**（N0NBH）和 **NOAA SWPC**；**GIRO** 网络的电离层测高仪数据经由 **prop.kc2g.com**（KC2G）；轨道来自 **CelesTrak**；spot 来自 DX 集群、**Reverse Beacon Network**、**PSK Reporter**（N1DQ）、**POTA**、**SOTA** 和 **WWFF**；**Super Check Partial**（supercheckpartial.com）；呼号查询使用 **HamQTH**；世界地图来自 **Natural Earth**（公有领域）。 **APRS-IS** 网络（aprs2.net）；APRS 由 Bob Bruninga WB4APR 创立。
 
 许可的完整文本见公开仓库 SculptWorksLTD/QTHome 的 **docs/terze-parti.md**。
 

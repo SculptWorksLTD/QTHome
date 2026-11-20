@@ -53,5 +53,6 @@ dell'hotspot), **Ollama** e **LM Studio** (modelli per l'assistente), **Hamlib r
 - **CelesTrak** (T.S. Kelso): orbite dei satelliti.
 - DX cluster, **Reverse Beacon Network**, **PSK Reporter** (Philip Gladstone N1DQ), **POTA**, **SOTA**, **WWFF**: spot.
 - **Super Check Partial** (supercheckpartial.com), **HamQTH** (OK2CQR), **Natural Earth** (dominio pubblico), **WSPRnet**.
+- **APRS-IS** (aprs2.net): rete internet di APRS, usata solo se la si accende; APRS è un’idea di Bob Bruninga WB4APR.
 - Metodo di decodifica FT8/FT4 dal lavoro pubblico di K1JT, K9AN e G4WJS (QEX, 2020). Metodo Koch per imparare il CW
   (Ludwig Koch, 1936) e spaziatura Farnsworth come le descrive l'ARRL.
