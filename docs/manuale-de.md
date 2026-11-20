@@ -54,6 +54,7 @@ Hören, Dekodieren und Loggen sind immer kostenlos. Senden aus QTHome, Automatik
 
 ## Wenn etwas nicht geht
 
+- **Station prüfen**: **Hilfe › Station prüfen…** testet in einem Durchgang Rufzeichen, Funkgerät, Audio, Uhr, Internet, Lizenz und Aktualisierungen, mit einer Schaltfläche zum Beheben jedes Problems.
 - **Das Funkgerät erscheint nicht**: USB-Kabel prüfen und ob das Funkgerät eingeschaltet ist; dann **Einstellungen › Funkgeräte und Programme › Funkgeräte erneut suchen**.
 - **Kein Audio**: auf dem Mac Systemeinstellungen › Datenschutz & Sicherheit › Mikrofon › QTHome einschalten. Unter Windows Einstellungen › Datenschutz › Mikrofon.
 - **Problem melden**: **Hilfe › Problem oder Idee melden…** Der Bericht ist anonym, ohne Rufzeichen, Namen oder Adressen.

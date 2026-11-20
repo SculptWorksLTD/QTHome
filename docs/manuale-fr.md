@@ -54,6 +54,7 @@ QTHome se met à jour tout seul : quand une nouvelle version existe, il la tél�
 
 ## Si quelque chose ne va pas
 
+- **Vérifier la station** : **Aide › Vérifier la station…** teste d'un coup indicatif, radio, audio, horloge, internet, licence et mises à jour, avec un bouton pour corriger chaque problème.
 - **La radio n'apparaît pas** : vérifiez le câble USB et que la radio est allumée ; puis **Réglages › Radios et programmes › Rechercher à nouveau les radios**.
 - **Pas d'audio** : sur Mac, Réglages Système › Confidentialité et sécurité › Microphone › activez QTHome. Sur Windows, Paramètres › Confidentialité › Microphone.
 - **Signaler un problème** : **Aide › Signaler un problème ou une idée…** L'envoi est anonyme, sans indicatifs, noms ni adresses.

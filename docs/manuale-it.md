@@ -54,6 +54,7 @@ Ascoltare, decodificare e tenere il log è sempre gratis. Trasmettere da QTHome,
 
 ## Se qualcosa non va
 
+- **Controlla la stazione**: **Aiuto › Controlla la stazione…** prova in un colpo nominativo, radio, audio, orologio, internet, licenza e aggiornamenti, e per ogni problema ha il tasto per sistemarlo.
 - **La radio non compare**: controlla il cavo USB e che la radio sia accesa; poi **Impostazioni › Radio e programmi › Cerca di nuovo le radio**.
 - **Niente audio**: su Mac, Impostazioni di Sistema › Privacy e sicurezza › Microfono › accendi QTHome. Su Windows, Impostazioni › Privacy › Microfono.
 - **Segnala un problema**: **Aiuto › Segnala un problema o un'idea…** Parte in modo anonimo, senza nominativi, nomi o indirizzi.

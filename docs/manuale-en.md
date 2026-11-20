@@ -54,6 +54,7 @@ Listening, decoding and logging are always free. Transmitting from QTHome, autom
 
 ## If something goes wrong
 
+- **Check the station**: **Help › Check the station…** tests callsign, radio, audio, clock, internet, licence and updates in one go, with a button to fix each problem.
 - **The radio does not appear**: check the USB cable and that the radio is on; then **Settings › Radios and programs › Search for radios again**.
 - **No audio**: on Mac, System Settings › Privacy & Security › Microphone › turn QTHome on. On Windows, Settings › Privacy › Microphone.
 - **Report a problem**: **Help › Report a problem or an idea…** It is sent anonymously, without callsigns, names or addresses.

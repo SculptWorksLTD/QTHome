@@ -54,6 +54,7 @@ Ouvir, descodificar e manter o log é sempre grátis. Transmitir a partir do QTH
 
 ## Se algo não funcionar
 
+- **Verificar a estação**: **Ajuda › Verificar a estação…** testa de uma vez indicativo, rádio, áudio, relógio, internet, licença e atualizações, com um botão para corrigir cada problema.
 - **O rádio não aparece**: verifique o cabo USB e se o rádio está ligado; depois **Configurações › Rádios e programas › Procurar de novo os rádios**.
 - **Sem áudio**: no Mac, Definições do Sistema › Privacidade e segurança › Microfone › ative o QTHome. No Windows, Definições › Privacidade › Microfone.
 - **Comunicar um problema**: **Ajuda › Comunicar um problema ou uma ideia…** É enviado de forma anónima, sem indicativos, nomes ou endereços.
