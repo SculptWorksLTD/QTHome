@@ -286,6 +286,7 @@ jobs:
             try { $r = Invoke-WebRequest -UseBasicParsing $u -TimeoutSec 5; $s = $r.StatusCode } catch { $s = "errore: " + $_.Exception.Message }
             "{0}: in esecuzione={1} · {2} → {3}" -f $p.ProcessName, (-not $p.HasExited), $u, $s
           }
+          try { "FreeDV (codec2): " + (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:47481/api/freedv" -TimeoutSec 5).Content } catch { "FreeDV: " + $_.Exception.Message }
           Stop-Process $q, $t, $m -ErrorAction SilentlyContinue
       - uses: actions/upload-artifact@v4
         with:
