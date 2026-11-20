@@ -112,6 +112,16 @@ jobs:
           lipo -create -output bin/u/libusb-1.0.dylib libusb-arm64.dylib libusb-x86_64.dylib
           install_name_tool -id @rpath/libusb-1.0.dylib bin/u/libusb-1.0.dylib
           file bin/u/libusb-1.0.dylib
+      - name: codec2 universale (FreeDV; LGPL-2.1, resta una libreria a parte)
+        continue-on-error: true
+        run: |
+          set -e
+          curl -sfL https://github.com/drowe67/codec2/archive/refs/tags/1.2.0.tar.gz | tar xz
+          cmake -S codec2-1.2.0 -B c2 -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 -DUNITTEST=OFF >/dev/null
+          cmake --build c2 --target codec2 -j4 >/dev/null
+          cp "$(find c2 -name 'libcodec2.*.dylib' -type f | head -1)" bin/u/libcodec2.dylib
+          install_name_tool -id @rpath/libcodec2.dylib bin/u/libcodec2.dylib
+          file bin/u/libcodec2.dylib
       - name: Icona
         run: |
           mkdir -p icon.iconset
@@ -136,6 +146,7 @@ jobs:
           mkdir -p "$C/MacOS" "$C/Resources"
           cp bin/u/QTHome "$C/MacOS/QTHome"; chmod +x "$C/MacOS/QTHome"
           mkdir -p "$C/Frameworks"; cp bin/u/libusb-1.0.dylib "$C/Frameworks/"
+          if [ -f bin/u/libcodec2.dylib ]; then cp bin/u/libcodec2.dylib "$C/Frameworks/"; fi
           cp icon.icns "$C/Resources/icon.icns"
           sed -e "s|<string>0.1.0</string>|<string>${VERSION}</string>|g" build/pkg/Info.plist > "$C/Info.plist"
           codesign --force --deep --sign - "$APP"
@@ -238,6 +249,16 @@ jobs:
           7z x -olibusb libusb.7z >/dev/null
           cp libusb/MinGW64/dll/libusb-1.0.dll .
           ls -la libusb-1.0.dll
+      - name: codec2 per Windows (FreeDV; LGPL-2.1, resta una libreria a parte accanto al programma)
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -e
+          curl -sfL https://github.com/drowe67/codec2/archive/refs/tags/1.2.0.tar.gz | tar xz
+          cmake -S codec2-1.2.0 -B c2 -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DUNITTEST=OFF -DCMAKE_SHARED_LINKER_FLAGS="-static-libgcc -static" >/dev/null
+          cmake --build c2 --target codec2 -j4 >/dev/null
+          cp "$(find c2 -name 'libcodec2*.dll' | head -1)" libcodec2.dll
+          ls -la libcodec2.dll
       - name: Compila
         shell: bash
         run: |
@@ -246,8 +267,9 @@ jobs:
           CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X main.Version=${VERSION}" -o "QTHome Trainer.exe" ./apps/trainer
           CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X main.Version=${VERSION}" -o "QTHome Mothership.exe" ./apps/mothership
           mkdir -p dist internal z1 z2 z3
-          cp QTHome.exe libusb-1.0.dll z1/; cp "QTHome Trainer.exe" libusb-1.0.dll z2/; cp "QTHome Mothership.exe" z3/
-          (cd z1 && 7z a ../dist/QTHome-Windows.zip QTHome.exe libusb-1.0.dll >/dev/null)
+          C2=""; [ -f libcodec2.dll ] && C2=libcodec2.dll
+          cp QTHome.exe libusb-1.0.dll $C2 z1/; cp "QTHome Trainer.exe" libusb-1.0.dll z2/; cp "QTHome Mothership.exe" z3/
+          (cd z1 && 7z a ../dist/QTHome-Windows.zip QTHome.exe libusb-1.0.dll $C2 >/dev/null)
           (cd z2 && 7z a ../dist/QTHome-Trainer-Windows.zip "QTHome Trainer.exe" libusb-1.0.dll >/dev/null)
           (cd z3 && 7z a ../dist/QTHome-Mothership-Windows.zip "QTHome Mothership.exe" >/dev/null)
           ls -la dist

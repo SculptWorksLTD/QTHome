@@ -29,7 +29,13 @@ QTHome, QTHome Trainer e QTHome Mothership includono:
 - **libusb 1.0.27** (accesso alla chiavetta SDR su Mac) — © libusb project — licenza LGPL-2.1.
   È inclusa come libreria separata (`Contents/Frameworks/libusb-1.0.dylib`) e si può sostituire con un'altra
   versione compatibile. Sorgente: https://github.com/libusb/libusb/releases/tag/v1.0.27
+- **codec2 1.2.0** (FreeDV) — © David Rowe VK5DGR e collaboratori — licenza LGPL-2.1.
+  È inclusa come libreria separata (Mac `Contents/Frameworks/libcodec2.dylib`, Windows `libcodec2.dll` accanto a
+  `QTHome.exe`) e si può sostituire con un'altra versione compatibile. Sorgente: https://github.com/drowe67/codec2/releases/tag/1.2.0
+- **wl2k-go** (protocollo Winlink B2F) — © 2014-2017 Martin Hebnes Pedersen LA5NTA — licenza MIT (testo come ft8_lib
+  qui sopra). Contiene **lzhuf**, derivato dal lavoro di Haruyasu Yoshizaki e Haruhiko Okumura, di uso libero.
 - **Reverse Beacon Network** (telnet.reversebeacon.net): il Trainer legge gli spot pubblici per controllare i
   nominativi letti dal CW e dallo skimmer; non manda nulla al RBN.
 
-WSJT-X non è incluso: il Trainer usa quello installato sul computer come programma separato.
+WSJT-X, VARA e il software degli hotspot (Pi-Star, WPSD) non sono inclusi: QTHome li usa come programmi separati
+installati dall'OM (ponte UDP di WSJT-X, porte TCP di VARA, cruscotto dell'hotspot).
