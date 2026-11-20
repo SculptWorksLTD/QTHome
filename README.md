@@ -35,7 +35,6 @@ Tutto il lavoro è fatto da **QTEngine**, il motore di QTHome, che contiene The 
 - **Modi digitali** – FT8 e FT4 in ricezione con il decoder di QTEngine, nato in casa. RTTY, PSK, SSTV e APRS in arrivo.
 - **Log e QSL elettroniche** – ogni QSO registrato da solo, import/export ADIF; invio a LoTW, eQSL, QRZ e Club Log.
 - **Fonia, cluster, SDR, satelliti, rotore, contest** – registrazioni e memorie voce; DX cluster e RBN con dati solari; ricevitore con la chiavetta RTL-SDR; passaggi e Doppler; rotore verso un locatore; log da contest con Cabrillo.
-- **Remoto** – QTHome dal telefono nella rete di casa, con PIN.
 - **QTHome Chat e assistente** – stanze di testo tra OM; un assistente sul computer che non trasmette mai.
 - **Accessibilità** – S-meter e frequenza a voce o in Morse, navigazione completa da tastiera, lettori di schermo.
 - **Segnalazioni** – un tasto per mandare in modo anonimo un problema o un'idea.
@@ -66,11 +65,11 @@ trasmette, si automatizza e si mandano le QSL online. The Rigger resta gratis pe
 ## What it is
 
 QTHome puts everything an amateur radio station needs in **one window**: radio control, CW, digital modes, logging and,
-step by step, voice, cluster and propagation, SDR, satellites, remote, contests and an assistant running on your computer.
+step by step, voice, cluster and propagation, SDR, satellites, contests and an assistant running on your computer.
 Made for everyone, including visually impaired operators: everything works from the keyboard and can be heard.
 
 **Main features:** automatic radio connection (The Rigger built in) · CW decoder, free forever · FT8/FT4 receive with our own
-decoder · automatic logging with ADIF · S-meter and frequency by voice or Morse · electronic QSLs · cluster, SDR, satellites, rotator, contest · remote from your phone · anonymous reports · 9 languages.
+decoder · automatic logging with ADIF · S-meter and frequency by voice or Morse · electronic QSLs · cluster, SDR, satellites, rotator, contest · anonymous reports · 9 languages.
 Manual: [English](docs/manuale-en.md).
 
 **QTHome Trainer** is a small app for beta testers: it listens along with you and trains our decoders: FT8/FT4 against
