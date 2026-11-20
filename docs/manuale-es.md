@@ -28,15 +28,17 @@ QTHome se actualiza solo: cuando sale una versión nueva la descarga y la instal
 - **Estación**: las radios conectadas, la frecuencia grande, el S-meter, un QSO rápido. Programas como WSJT-X, fldigi o JS8Call se conectan a la radio a través de QTHome: las instrucciones están en «Cómo conectar los programas».
 - **Rotor**: conecta un rotor (Yaesu GS-232 o Hamlib rotctld) y apúntalo a grados o hacia un locator, también por el camino largo.
 - **Log**: cada QSO, exportar e importar ADIF. Abajo, las **QSL electrónicas**: LoTW (hace falta TQSL, gratis), eQSL, QRZ Logbook y Club Log; las contraseñas se quedan en tu ordenador.
-- **Fonía**: escucha y grabación, los últimos 60 segundos siempre guardables, y 4 memorias de voz (F1-F4) para transmitir.
+- **Fonía**: escucha y grabación, los últimos 60 segundos siempre guardables, 4 memorias de voz (F1-F4) para transmitir. **FreeDV** (700D, 700E, 700C, 1600): escucha desde el audio de la radio y «mantén pulsado para hablar». **Pi-Star / WPSD**: quién pasa por tu hotspot DMR, D-STAR, YSF, con un clic a la barra QSO.
 - **CW**: el decodificador CWEngine, el manipulador, los mensajes, el skimmer con la llave SDR. La decodificación CW es gratis para siempre.
-- **Modos digitales**: FT8 y FT4 en recepción con el decodificador de QTHome.
+- **Modos digitales**: FT8 y FT4 como WSJT-X (recepción y transmisión), RTTY, PSK, APRS, WSPR, Hell, QRSS y SSTV. Q65, MSK144 y JT65 a través de WSJT-X abierto al lado (recuadro «Otros modos con WSJT-X»).
 - **Cluster y propagación**: DX cluster y Reverse Beacon Network con filtros; un clic en un spot lleva la radio allí. Datos solares y condiciones de las bandas.
 - **SDR**: receptor con la llave RTL-SDR, espectro y waterfall; clic para escuchar una frecuencia.
 - **Satélites y espacio**: próximos pasos, Doppler, seguimiento con el rotor y corrección de la radio.
 - **Remoto y automático**: usa QTHome desde el móvil en la red de casa, con un PIN. Transmitir a distancia está apagado hasta que tú lo permitas.
 - **Concurso**: ARI DX, CQ WW, CQ WPX, IARU HF, VHF y genérico; números, duplicados, Cabrillo. Intro registra, Esc limpia.
-- **QTHome Chat**: salas de texto entre radioaficionados; en el servidor no queda nada.
+- **QTHome Chat**: salas de texto y de voz entre radioaficionados; en el servidor no queda nada.
+- **Winlink**: correo por internet o por radio con el módem VARA (se instala aparte): entrada, salida, redactar. La contraseña de Winlink se queda en tu ordenador.
+- **Mapa** y **Herramientas**: el mundo ahora (spots, quién te oye, línea gris, ionosondas) y calculadoras para la estación.
 - **Asistente IA**: escribe lo que quieres («pon la radio en 14.074 FT8», «cuándo pasa la ISS», «qué significa QSB»). Trabaja en el ordenador, sin internet, y nunca transmite.
 
 ## Gratis y PRO

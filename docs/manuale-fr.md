@@ -28,15 +28,17 @@ QTHome se met à jour tout seul : quand une nouvelle version sort, il la téléc
 - **Station** : les radios connectées, la grande fréquence, le S-mètre, un QSO rapide. Les programmes comme WSJT-X, fldigi ou JS8Call se connectent à la radio par QTHome : les instructions sont sous « Comment connecter les programmes ».
 - **Rotor** : connectez un rotor (Yaesu GS-232 ou Hamlib rotctld) et orientez-le en degrés ou vers un locator, aussi par le chemin long.
 - **Journal** : chaque QSO, export et import ADIF. En bas, les **QSL électroniques** : LoTW (il faut TQSL, gratuit), eQSL, QRZ Logbook et Club Log ; les mots de passe restent sur votre ordinateur.
-- **Phonie** : écoute et enregistrement, les 60 dernières secondes toujours enregistrables, et 4 mémoires vocales (F1-F4) à émettre.
+- **Phonie** : écoute et enregistrement, les 60 dernières secondes toujours enregistrables, 4 mémoires vocales (F1-F4) à émettre. **FreeDV** (700D, 700E, 700C, 1600) : écoute depuis l'audio de la radio et « maintenir pour parler ». **Pi-Star / WPSD** : qui passe par votre hotspot DMR, D-STAR, YSF, un clic vers la barre QSO.
 - **CW** : le décodeur CWEngine, le manipulateur, les messages, le skimmer avec la clé SDR. Le décodage CW est gratuit pour toujours.
-- **Modes numériques** : FT8 et FT4 en réception avec le décodeur de QTHome.
+- **Modes numériques** : FT8 et FT4 comme WSJT-X (réception et émission), RTTY, PSK, APRS, WSPR, Hell, QRSS et SSTV. Q65, MSK144 et JT65 via WSJT-X ouvert à côté (cadre « Autres modes avec WSJT-X »).
 - **Cluster et propagation** : DX cluster et Reverse Beacon Network avec filtres ; un clic sur un spot y met la radio. Données solaires et conditions des bandes.
 - **SDR** : récepteur avec la clé RTL-SDR, spectre et waterfall ; cliquez pour écouter une fréquence.
 - **Satellites et espace** : prochains passages, Doppler, suivi avec le rotor et correction de la radio.
 - **À distance et automatisme** : utilisez QTHome depuis le téléphone sur le réseau de la maison, avec un PIN. L'émission à distance reste désactivée tant que vous ne l'autorisez pas.
 - **Concours** : ARI DX, CQ WW, CQ WPX, IARU HF, VHF et générique ; numéros, doublons, Cabrillo. Entrée enregistre, Échap efface.
-- **QTHome Chat** : salons de texte entre OM ; rien ne reste sur le serveur.
+- **QTHome Chat** : salons texte et voix entre OM ; rien ne reste sur le serveur.
+- **Winlink** : courrier par internet ou par radio avec le modem VARA (installé à part) : réception, envoi, écrire. Le mot de passe Winlink reste sur votre ordinateur.
+- **Carte** et **Outils** : le monde maintenant (spots, qui vous entend, ligne grise, ionosondes) et les calculateurs de station.
 - **Assistant IA** : écrivez ce que vous voulez (« mets la radio sur 14.074 FT8 », « quand passe l'ISS », « que veut dire QSB »). Il travaille sur l'ordinateur, sans internet, et n'émet jamais.
 
 ## Gratuit et PRO

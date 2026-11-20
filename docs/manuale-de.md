@@ -28,15 +28,17 @@ QTHome aktualisiert sich selbst: kommt eine neue Version, lädt es sie herunter 
 - **Station**: die verbundenen Funkgeräte, die große Frequenzanzeige, das S-Meter, ein schnelles QSO. Programme wie WSJT-X, fldigi oder JS8Call verbinden sich über QTHome mit dem Funkgerät: die Anleitung steht unter „So verbindest du Programme“.
 - **Rotor**: einen Rotor anschließen (Yaesu GS-232 oder Hamlib rotctld) und ihn auf Grad oder einen Locator richten, auch über den langen Weg.
 - **Log**: jedes QSO, ADIF-Export und -Import. Unten die **elektronischen QSLs**: LoTW (braucht das kostenlose TQSL), eQSL, QRZ Logbook und Club Log; die Passwörter bleiben auf deinem Computer.
-- **Sprechfunk**: Hören und Aufnehmen, die letzten 60 Sekunden immer speicherbar, und 4 Sprachspeicher (F1-F4) zum Senden.
+- **Sprechfunk**: Hören und Aufnehmen, die letzten 60 Sekunden immer speicherbar, 4 Sprachspeicher (F1-F4) zum Senden. **FreeDV** (700D, 700E, 700C, 1600): Hören über das Audio des Funkgeräts und „zum Sprechen gedrückt halten“. **Pi-Star / WPSD**: wer über Ihren DMR-, D-STAR-, YSF-Hotspot kommt, mit einem Klick in die QSO-Leiste.
 - **CW**: der CWEngine-Decoder, die Taste, die Texte, der Skimmer mit dem SDR-Stick. CW-Dekodieren bleibt für immer kostenlos.
-- **Digitale Betriebsarten**: FT8- und FT4-Empfang mit dem Decoder von QTHome.
+- **Digitale Betriebsarten**: FT8 und FT4 wie WSJT-X (Empfang und Senden), RTTY, PSK, APRS, WSPR, Hell, QRSS und SSTV. Q65, MSK144 und JT65 über das daneben geöffnete WSJT-X (Bereich „Weitere Betriebsarten mit WSJT-X“).
 - **Cluster und Ausbreitung**: DX-Cluster und Reverse Beacon Network mit Filtern; ein Klick auf einen Spot bringt das Funkgerät dorthin. Sonnendaten und Bandbedingungen.
 - **SDR**: Empfänger mit dem RTL-SDR-Stick, Spektrum und Wasserfall; klicken, um eine Frequenz zu hören.
 - **Satelliten und Weltraum**: nächste Überflüge, Doppler, Nachführung mit dem Rotor und Korrektur des Funkgeräts.
 - **Fernbedienung und Automatik**: QTHome vom Handy im Heimnetz nutzen, mit PIN. Senden aus der Ferne bleibt aus, bis du es erlaubst.
 - **Contest**: ARI DX, CQ WW, CQ WPX, IARU HF, VHF und allgemein; Nummern, Doppelte, Cabrillo. Enter loggt, Esc leert.
-- **QTHome Chat**: Text-Räume unter OMs; auf dem Server bleibt nichts.
+- **QTHome Chat**: Text- und Sprachräume unter Funkamateuren; auf dem Server bleibt nichts.
+- **Winlink**: Mail über Internet oder per Funk mit dem VARA-Modem (separat installiert): Eingang, Ausgang, Verfassen. Das Winlink-Passwort bleibt auf Ihrem Computer.
+- **Karte** und **Werkzeuge**: die Welt jetzt (Spots, wer Sie hört, Greyline, Ionosonden) und Rechner für die Station.
 - **KI-Assistent**: schreib, was du willst („stell das Funkgerät auf 14.074 FT8“, „wann kommt die ISS“, „was heißt QSB“). Er arbeitet auf dem Computer, ohne Internet, und sendet nie.
 
 ## Kostenlos und PRO

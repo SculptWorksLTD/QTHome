@@ -28,15 +28,17 @@ QTHome updates itself: when a new version is out it downloads it and installs it
 - **Station**: connected radios, the big frequency display, the S-meter, a quick QSO. Programs such as WSJT-X, fldigi or JS8Call connect to the radio through QTHome: instructions are under “How to connect programs”.
 - **Rotator**: connect a rotator (Yaesu GS-232 or Hamlib rotctld) and point it in degrees or towards a locator, long path too.
 - **Log**: every QSO, ADIF export and import. At the bottom, **Electronic QSLs**: LoTW (needs the free TQSL), eQSL, QRZ Logbook and Club Log; passwords stay on your computer.
-- **Phone**: listening and recording, the last 60 seconds always savable, and 4 voice memories (F1-F4) to transmit.
+- **Phone**: listening and recording, the last 60 seconds always savable, 4 voice memories (F1-F4) to transmit. **FreeDV** (700D, 700E, 700C, 1600): listen from the radio audio and “hold to talk”. **Pi-Star / WPSD**: who comes through your DMR, D-STAR, YSF hotspot, one click into the QSO bar.
 - **CW**: the CWEngine decoder, the keyer, messages, the skimmer with the SDR dongle. CW decoding is free forever.
-- **Digital modes**: FT8 and FT4 reception with the QTHome decoder.
+- **Digital modes**: FT8 and FT4 like WSJT-X (receive and transmit), RTTY, PSK, APRS, WSPR, Hell, QRSS and SSTV. Q65, MSK144 and JT65 through WSJT-X open alongside (“Other modes with WSJT-X” box).
 - **Cluster and propagation**: DX cluster and Reverse Beacon Network with filters; one click on a spot takes the radio there. Solar data and band conditions.
 - **SDR**: receiver with the RTL-SDR dongle, spectrum and waterfall; click to listen to a frequency.
 - **Satellites and space**: next passes, Doppler, tracking with the rotator and radio correction.
 - **Remote and automation**: use QTHome from your phone on your home network, with a PIN. Remote transmit stays off until you allow it.
 - **Contest**: ARI DX, CQ WW, CQ WPX, IARU HF, VHF and generic; serials, dupes, Cabrillo. Enter logs, Esc clears.
-- **QTHome Chat**: text rooms between hams; nothing stays on the server.
+- **QTHome Chat**: text and voice rooms between hams; nothing stays on the server.
+- **Winlink**: mail over the internet or by radio with the VARA modem (installed separately): inbox, outbox, compose. Your Winlink password stays on your computer.
+- **Map** and **Tools**: the world right now (spots, who hears you, greyline, ionosondes) and station calculators.
 - **AI Assistant**: type what you want (“tune the radio to 14.074 FT8”, “when does the ISS pass”, “what does QSB mean”). It works on your computer, without internet, and never transmits.
 
 ## Free and PRO
