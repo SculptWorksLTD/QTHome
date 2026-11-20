@@ -278,7 +278,7 @@ jobs:
     if: ${{ needs.check.outputs.build == 'true' }}
     runs-on: ubuntu-22.04
     continue-on-error: true
-    timeout-minutes: 20
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
