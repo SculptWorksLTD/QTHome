@@ -362,7 +362,8 @@ jobs:
         with: { go-version: "1.22.x", cache: false }
       - name: Prepara per Go 1.22
         run: |
-          sed -i '' -E 's/^go [0-9.]+$/go 1.22/; /^toolchain /d' go.mod
+          sed -i '' -E 's/^go [0-9.]+$/go 1.22/; /^toolchain /d; /\/\/ indirect/d' go.mod
+          cat go.mod
           go get github.com/webview/webview_go@latest
           go mod tidy
           go version
