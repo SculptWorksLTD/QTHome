@@ -376,7 +376,8 @@ jobs:
       - name: Prove con Go 1.22
         run: |
           set -o pipefail
-          go test -short ./qtengine/tuning ./qtengine/telemetry ./qtengine/sqlite ./qtengine/ft8 2>&1 | tail -12
+          # Go 1.22 col linker interno non scrive LC_UUID e il dyld dei Mac nuovi rifiuta il binario: linker esterno
+          go test -short -ldflags=-linkmode=external ./qtengine/tuning ./qtengine/telemetry ./qtengine/sqlite ./qtengine/ft8 2>&1 | tail -12
       - name: Compila (Intel, macOS 10.15)
         run: |
           set -e
