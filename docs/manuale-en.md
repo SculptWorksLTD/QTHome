@@ -44,7 +44,7 @@ QTHome updates itself: when there is a new version it downloads it and installs 
 - **Rotator**: point it by degrees, towards a locator or towards the current QSO, also long path.
 - **QTHome Chat**: text and voice rooms between hams, encrypted private messages; nothing stays on the server. **APRS over the internet (APRS-IS)**: APRS messages with your callsign and nearby APRS stations on the Map (light blue).
 - **Winlink**: mail over the internet or by radio with the VARA modem (installed separately): inbox, outbox, attachments, ICS-213 form for emergencies. Your Winlink password stays on your computer.
-- **Tools**: calculators, Smith chart, antenna lab, pile-up training, **learn CW with the Koch method**, licence quiz.
+- **Tools**: calculators, Smith chart, antenna lab, pile-up training, **learn CW with the Koch method**, licence quiz. **NanoVNA**: SWR, impedance and 2:1 bandwidth of the antenna, with a tip on whether to shorten or lengthen it.
 - **AI Assistant**: write what you want ("take the radio to 14.074 FT8", "when does the ISS pass", "what does QSB mean"). It works on the computer and never transmits. With the window in a language other than Italian it understands and answers in English; with a model on the computer (Ollama or LM Studio) in any language.
 - **Settings**: your station, radios and external programs (WSJT-X, fldigi, loggers), which radio and audio each function uses, accessories (amplifier, antenna switch, battery, weather, WinKeyer), appearance, language and accessibility. In **My station** you also choose the **bands and modes you use** (“You can work now” and the cluster follow them) and the **alerts**: new country on the air, satellite coming and “you are being heard” (your callsign in spots), in any panel.
 
