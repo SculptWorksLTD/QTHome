@@ -31,7 +31,7 @@ QTHome 会自动更新：有新版本时会下载，并在退出时安装。
 
 ## 各部分
 
-- **电台**：大号频率、S 表、PTT、电台控制、存储（也可与 CHIRP 互导）、现在可以联络谁以及开放的波段。 **S 表 (dBm)**：在 设置 › 电台和程序 中以 S 单位和 dBm 显示，可用已知信号校准。
+- **电台**：大号频率、S 表、PTT、电台控制、存储（也可与 CHIRP 互导）、现在可以联络谁以及开放的波段。 **S 表 (dBm)**：在 设置 › 电台和程序 中以 S 单位和 dBm 显示，可用已知信号校准。 自动发现家庭网络中的 **FlexRadio 电台**（SmartSDR）。来自 RepeaterBook 的 **附近中继台**（从网站导出的文件），一键存入存储；**写入电台** 通过 CI-V 把存储写入 Icom 电台（其他电台和手台用 CHIRP）。**USB 电键**（设置 › 配件）：用 USB 端口的 DTR 线键控电台的自动键。
 - **日志**：来自所有部分的全部 QSO。按呼号、国家或波段搜索；**点击一行**可修改或删除。纸质 QSL（卡片局和直寄，可打印标签）和**电子 QSL**：LoTW（需要免费的 TQSL）、eQSL、QRZ Logbook 和 Club Log, HRDLog.net, Wavelog/Cloudlog。奖状和电台配置。 在公园或山顶激活时，在配置中填写编号（配置… ›「激活地」）：每个 QSO 都会在日志和 ADIF 中记录；在数字模式中，CQ 旁的菜单可呼叫「CQ POTA」或「CQ SOTA」。 **统计…**:按年、波段、模式和 UTC 小时统计的 QSO、最佳一天和已确认的。 在配置中也填写 **功率**（W）：它会写入每个 QSO（TX_PWR），用于选择比赛的功率组别，统计中显示每瓦公里记录。按配置导出的文件名符合 POTA 和 WWFF 的要求。 在 **奖状…** 中，「只显示待确认的」列出已通联但未确认的项目，以及可索要 QSL 的呼号。 奖状中有 ARI 的 **WAIP**（意大利省份）：省份来自 QSO（修改 QSO 时的省份栏）、ARI 比赛交换信息或备注中的「WAIP-XX」。 奖状还包括 **WCA**（城堡）、**ILLW**（灯塔）和 **JCC**（日本城市）：编号来自 ADIF 的 SIG/SIG_INFO 或备注（“WCA I-00123”）。
 - **话音**：收听与录音，最近 60 秒随时可保存，4 个语音存储（F1-F4）。**FreeDV**（700D、700E、700C、1600）：从电台音频收听，「按住说话」。**Pi-Star / WPSD**：经过你的 DMR、D-STAR 或 YSF 热点的电台，一键放入 QSO 栏。
 - **CW**：CWEngine 解码器、电键、电文、配合 SDR 加密狗的 skimmer。打开后，在使用其他部分时也会继续工作。这里做的 QSO 会进入 QTHome 日志。CW 解码永久免费。
@@ -68,7 +68,7 @@ QTHome 是 IU1MVI 的程序。它的代码从零编写，或基于自由许可�
 - **libusb**（LGPL-2.1）：Mac 和 Windows 上的 SDR 接收棒，独立、可替换的库；源码：github.com/libusb/libusb。
 - 窗口使用 **webview**（MIT）；CW 功能中的 SDR 接收棒使用 **webrtlsdr**（Apache 2.0）；**OmniRig** 类型库 © VE3NEA（MIT）。
 - **独立程序**（如已安装，QTHome 会使用，但不包含在内）：**WSJT-X**（GPL，K1JT 及贡献者）用于 Q65、MSK144、JT65 及 Trainer 中的对比；**VARA**（EA5HVK）用于电台 Winlink；**TQSL**（ARRL）用于 LoTW；**JS8Call**（KN4CRD）；热点上的 **Pi-Star** 和 **WPSD**。
-- **数据**：DXCC 实体来自 AD1C 的 **cty.dat**（country-files.com）；太阳数据来自 **hamqsl.com**（N0NBH）和 **NOAA SWPC**；**GIRO** 网络的电离层测高仪数据经由 **prop.kc2g.com**（KC2G）；轨道来自 **CelesTrak**；spot 来自 DX 集群、**Reverse Beacon Network**、**PSK Reporter**（N1DQ）、**POTA**、**SOTA** 和 **WWFF**；**Super Check Partial**（supercheckpartial.com）；呼号查询使用 **HamQTH**；世界地图来自 **Natural Earth**（公有领域）。 **APRS-IS** 网络（aprs2.net）；APRS 由 Bob Bruninga WB4APR 创立。
+- **数据**：DXCC 实体来自 AD1C 的 **cty.dat**（country-files.com）；太阳数据来自 **hamqsl.com**（N0NBH）和 **NOAA SWPC**；**GIRO** 网络的电离层测高仪数据经由 **prop.kc2g.com**（KC2G）；轨道来自 **CelesTrak**；spot 来自 DX 集群、**Reverse Beacon Network**、**PSK Reporter**（N1DQ）、**POTA**、**SOTA** 和 **WWFF**；**Super Check Partial**（supercheckpartial.com）；呼号查询使用 **HamQTH**；世界地图来自 **Natural Earth**（公有领域）。 **APRS-IS** 网络（aprs2.net）；APRS 由 Bob Bruninga WB4APR 创立。 中继台来自 **RepeaterBook.com**。
 
 许可的完整文本见公开仓库 SculptWorksLTD/QTHome 的 **docs/terze-parti.md**。
 

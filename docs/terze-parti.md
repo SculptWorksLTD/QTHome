@@ -50,6 +50,8 @@ dell'hotspot), **Hamlib rigctld** e **flrig** se l'OM li preferisce.
 - **cty.dat** di Jim Reisert AD1C (country-files.com): paesi DXCC e zone, aggiornato ogni settimana.
 - **hamqsl.com** di Paul Herrman N0NBH e **NOAA Space Weather Prediction Center**: dati solari.
 - **GIRO** (Global Ionospheric Radio Observatory) tramite **prop.kc2g.com** di Andrew Rodland KC2G: misure delle ionosonde.
+- **RepeaterBook.com**: elenco dei ponti (file esportato dall'OM per uso personale o API con il suo token).
+- **AREDN**: stato del nodo letto dall'API sysinfo.json del firmware AREDN.
 - **CelesTrak** (T.S. Kelso): orbite dei satelliti.
 - DX cluster, **Reverse Beacon Network**, **PSK Reporter** (Philip Gladstone N1DQ), **POTA**, **SOTA**, **WWFF**: spot.
 - **Super Check Partial** (supercheckpartial.com), **HamQTH** (OK2CQR), **Natural Earth** (dominio pubblico), **WSPRnet**.

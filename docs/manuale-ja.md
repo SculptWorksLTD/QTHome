@@ -31,7 +31,7 @@ QTHome は自動で更新されます。新しいバージョンがあればダ�
 
 ## セクション
 
-- **局**：大きな周波数表示、Sメーター、PTT、無線機の操作、メモリー（CHIRPとの読み書きも）、今交信できる局、開いているバンド。 **S メーター (dBm)**：設定 › 無線機とプログラムで S 単位と dBm で表示し、既知の信号で校正できます。
+- **局**：大きな周波数表示、Sメーター、PTT、無線機の操作、メモリー（CHIRPとの読み書きも）、今交信できる局、開いているバンド。 **S メーター (dBm)**：設定 › 無線機とプログラムで S 単位と dBm で表示し、既知の信号で校正できます。 自宅ネットワークの **FlexRadio**（SmartSDR）を自動で検出。RepeaterBook の **近くのレピーター**（サイトから書き出したファイル）をワンクリックでメモリーへ。**無線機に書き込む** で Icom に CI-V でメモリーを書き込み（他の無線機やハンディ機は CHIRP で）。**USB パドル**（設定 › アクセサリー）：USB ポートの DTR で無線機をキーイングするエレキー。
 - **ログ**：すべてのセクションのQSO。コールサイン、国、バンドで検索；**行をクリック** すると修正・削除できます。紙のQSL（ビューローと直送、印刷用ラベル）と **電子QSL**：LoTW（無料のTQSLが必要）、eQSL、QRZ Logbook、Club Log, HRDLog.net, Wavelog/Cloudlog。アワードと局プロファイル。 公園や山頂から運用するときはプロファイルに参照番号を入力（プロファイル… ›「運用地」）：すべての QSO がログと ADIF に記録します。デジタルモードでは CQ の横のメニューで「CQ POTA」「CQ SOTA」を出せます。 **統計…**：年・バンド・モード・UTC 時刻別の QSO、最多の日、確認済み。 プロファイルには **出力**（W）も入れてください。すべての QSO（TX_PWR）に入り、コンテストの出力部門を選び、統計にワットあたりの記録が出ます。プロファイルごとのエクスポートは POTA と WWFF が求めるファイル名になります。 **アワード…** の「未コンファームのみ」は、コンファームのない交信と QSL を依頼する相手のコールサインを一覧にします。 アワードには ARI の **WAIP** (イタリアの県) もあります。県は QSO (QSO 修正時の県の欄)、ARI コンテストの交換、またはメモの「WAIP-XX」から取ります。 アワードに **WCA**（城）、**ILLW**（灯台）、**JCC**（日本の市）も追加：リファレンスは ADIF の SIG/SIG_INFO かメモ（「WCA I-00123」）から。
 - **電話**：受信と録音、直近60秒はいつでも保存可能、音声メモリー4つ（F1-F4）。**FreeDV**（700D、700E、700C、1600）：無線機の音声から受信、「押している間に話す」。**Pi-Star / WPSD**：DMR、D-STAR、YSF のホットスポットを通った局を、クリックで QSO バーへ。
 - **CW**：CWEngine デコーダー、キーヤー、メッセージ、SDRドングルのスキマー。オンにすると他のセクションを使っている間も動作します。ここでのQSOは QTHome のログに入ります。CWのデコードはずっと無料です。
@@ -68,7 +68,7 @@ QTHome は IU1MVI のプログラムです。コードは一から書いたも�
 - **libusb**（LGPL-2.1）：Mac と Windows の SDR ドングル用。差し替え可能な別ライブラリ。ソース：github.com/libusb/libusb。
 - ウィンドウに **webview**（MIT）、CW 機能の SDR ドングルに **webrtlsdr**（Apache 2.0）、**OmniRig** のタイプライブラリ © VE3NEA（MIT）。
 - **別のプログラム**（インストールされていれば QTHome が使用、同梱はしない）：Q65・MSK144・JT65 と Trainer の比較に **WSJT-X**（GPL、K1JT ほか）、無線による Winlink に **VARA**（EA5HVK）、LoTW に **TQSL**（ARRL）、**JS8Call**（KN4CRD）、ホットスポットの **Pi-Star** と **WPSD**。
-- **データ**：AD1C の **cty.dat**（country-files.com）による DXCC エンティティ、**hamqsl.com**（N0NBH）と **NOAA SWPC** の太陽データ、**prop.kc2g.com**（KC2G）経由の **GIRO** ネットワークのイオノゾンデ、**CelesTrak** の軌道要素、DX クラスター・**Reverse Beacon Network**・**PSK Reporter**（N1DQ）・**POTA**・**SOTA**・**WWFF** のスポット、**Super Check Partial**（supercheckpartial.com）、**HamQTH** によるコールサイン検索、**Natural Earth** の地図（パブリックドメイン）。 **APRS-IS** ネットワーク（aprs2.net）。APRS は Bob Bruninga WB4APR が考案しました。
+- **データ**：AD1C の **cty.dat**（country-files.com）による DXCC エンティティ、**hamqsl.com**（N0NBH）と **NOAA SWPC** の太陽データ、**prop.kc2g.com**（KC2G）経由の **GIRO** ネットワークのイオノゾンデ、**CelesTrak** の軌道要素、DX クラスター・**Reverse Beacon Network**・**PSK Reporter**（N1DQ）・**POTA**・**SOTA**・**WWFF** のスポット、**Super Check Partial**（supercheckpartial.com）、**HamQTH** によるコールサイン検索、**Natural Earth** の地図（パブリックドメイン）。 **APRS-IS** ネットワーク（aprs2.net）。APRS は Bob Bruninga WB4APR が考案しました。 レピーターは **RepeaterBook.com** より。
 
 ライセンスの全文は公開リポジトリ SculptWorksLTD/QTHome の **docs/terze-parti.md** にあります。
 
