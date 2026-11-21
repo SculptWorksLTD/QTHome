@@ -50,6 +50,8 @@ QTHome aktualisiert sich selbst: Gibt es eine neue Version, wird sie geladen und
 
 **Kiosk-Modus** (Einstellungen › Aussehen): für Messen, Clubräume und Vorführungen. Es bleiben nur Empfangsfunktionen; Einstellungen und Senden verschwinden (im Motor gesperrt, auch für externe Programme). Verlassen mit der beim Einschalten gewählten PIN.
 
+**Hilf, CW zu verbessern** (Einstellungen): während du CW hörst, lesen zwei QTHome-Decoder das Empfangene erneut, und die Rufzeichen werden mit dem Reverse Beacon Network geprüft; nur zweifelhafte Fälle gehen anonym hinaus. Das ist das Betatester-Programm: 10 Hörstunden = PRO ein Jahr gratis.
+
 ## Kostenlos und PRO
 
 Hören, Dekodieren und Loggen sind immer kostenlos. Senden aus QTHome, Automatik, erweiterter Contest und Online-QSL gehören zu PRO; die ersten 30 Tage sind eine vollständige Probe. PRO kostet **12 € im Jahr**: das deckt Server- und Forschungskosten.
@@ -67,14 +69,14 @@ Nutzungsbedingungen, Datenschutz und Erstattung innerhalb von 14 Tagen: Hilfe �
 
 QTHome ist ein Programm von IU1MVI. Sein Code ist neu geschrieben oder baut auf Bibliotheken auf, deren freie Lizenz das erlaubt; kein GPL-lizenzierter Code ist in QTHome kopiert.
 
-- **ft8_lib** © Kārlis Goba (MIT): Grundlage des FT8/FT4-Decoders. Methode aus der öffentlichen Arbeit von K1JT, K9AN und G4WJS (QEX 2020).
+- **ft8_lib** © Kārlis Goba (MIT): Grundlage des FT8/FT4-Encoders und des Ersatz-Decoders (bis die WSJT-X-Programme geladen sind). Methode aus der öffentlichen Arbeit von K1JT, K9AN und G4WJS (QEX 2020).
 - **wl2k-go** © Martin Hebnes Pedersen LA5NTA (MIT): Winlink-B2F-Protokoll; enthält **lzhuf** von Haruyasu Yoshizaki und Haruhiko Okumura.
 - **codec2** © David Rowe VK5DGR und Mitwirkende (LGPL-2.1): FreeDV. Eigene, austauschbare Bibliothek; Quelltext: github.com/drowe67/codec2.
 - **GSM 06.10** (ETSI-Norm, Tabellen 4.1-4.6) für die EchoLink-Sprache, Codec in QTHome neu geschrieben und mit **libgsm** von Jutta Degener und Carsten Bormann (TU Berlin) verglichen; **EchoLink®** ist eine Marke von Synergenics, LLC: QTHome spricht das öffentliche Protokoll und ist kein Produkt von ihnen.
 - **ITU-R P.533 und P.1239** (Internationale Fernmeldeunion): Ausbreitungsvorhersage; CCIR-Karten von foF2 und M(3000)F2, foF2-Dezile und Magnetfeld aus dem ITU-R-Referenzprogramm ITURHFProp (Studienkommission 3), frei von Urheberrechtsansprüchen verteilt.
 - **libusb** (LGPL-2.1): SDR-Stick auf Mac und Windows, eigene, austauschbare Bibliothek; Quelltext: github.com/libusb/libusb.
 - **webview** (MIT) für das Fenster; **webrtlsdr** (Apache 2.0) für den SDR-Stick in der CW-Funktion; Typbibliothek von **OmniRig** © VE3NEA (MIT).
-- **WSJT-X-Programme** (GPL v3, Joe Taylor K1JT und die WSJT Development Group): für Q65, JT65 und MSK144 lädt QTHome beim ersten Mal selbst die Kommandozeilen-Decoder von WSJT-X (jt9, q65code, jt65code, msk144code), unverändert aus der offiziellen Version, mit der Lizenz; sie bleiben eigenständige Programme, der Quellcode liegt auf github.com/WSJTX/wsjtx.
+- **WSJT-X-Programme** (GPL v3, Joe Taylor K1JT und die WSJT Development Group): für FT8, FT4, Q65, JT65 und MSK144 lädt QTHome beim ersten Mal selbst die Kommandozeilen-Decoder von WSJT-X (jt9, q65code, jt65code, msk144code), unverändert aus der offiziellen Version, mit der Lizenz; sie bleiben eigenständige Programme, der Quellcode liegt auf github.com/WSJTX/wsjtx.
 - **Eigenständige Programme**, die QTHome nutzt, wenn sie installiert sind, ohne sie mitzuliefern: **VARA** (EA5HVK) für Winlink per Funk; **TQSL** (ARRL) für LoTW; **JS8Call** (KN4CRD); **Pi-Star** und **WPSD** auf dem Hotspot.
 - **Daten**: DXCC-Gebiete aus AD1Cs **cty.dat** (country-files.com); Sonnendaten von **hamqsl.com** (N0NBH) und **NOAA SWPC**; Ionosonden des **GIRO**-Netzes über **prop.kc2g.com** (KC2G); Bahndaten von **CelesTrak**; Spots aus DX-Clustern, dem **Reverse Beacon Network**, **PSK Reporter** (N1DQ), **POTA**, **SOTA** und **WWFF**; **Super Check Partial** (supercheckpartial.com); Rufzeichensuche mit **HamQTH**; Weltkarten von **Natural Earth** (gemeinfrei). **APRS-IS**-Netz (aprs2.net); APRS wurde von Bob Bruninga WB4APR entwickelt. Relais von **RepeaterBook.com**.
 

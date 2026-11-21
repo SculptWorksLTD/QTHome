@@ -50,6 +50,8 @@ QTHome updates itself: when there is a new version it downloads it and installs 
 
 **Kiosk mode** (Settings › Appearance): for fairs, club rooms and demonstrations. Only listening functions remain; settings and transmission disappear (blocked in the engine, also from external programs). You leave with the PIN chosen when turning it on.
 
+**Help improve CW** (Settings): while you listen to CW, two QTHome decoders reread what arrives and the callsigns are checked against the Reverse Beacon Network; only doubtful cases are sent, anonymously. It is the beta tester programme: 10 listening hours = PRO free for a year.
+
 ## Free and PRO
 
 Listening, decoding and logging are always free. Transmitting from QTHome, automation, advanced contesting and online QSLs are part of PRO; the first 30 days are a full trial. PRO costs **€12 a year**: it covers server and research costs.
@@ -67,14 +69,14 @@ Terms of use, privacy and refund within 14 days: Help › Terms of use and priva
 
 QTHome is a program by IU1MVI. Its code is written from scratch or builds on libraries whose free licences allow it; no GPL-licensed code is copied into QTHome.
 
-- **ft8_lib** © Kārlis Goba (MIT): base of the FT8/FT4 decoder. Method from the public work of K1JT, K9AN and G4WJS (QEX 2020).
+- **ft8_lib** © Kārlis Goba (MIT): base of the FT8/FT4 encoder and of the backup decoder (until the WSJT-X programs are downloaded). Method from the public work of K1JT, K9AN and G4WJS (QEX 2020).
 - **wl2k-go** © Martin Hebnes Pedersen LA5NTA (MIT): Winlink B2F protocol; it contains **lzhuf** by Haruyasu Yoshizaki and Haruhiko Okumura.
 - **codec2** © David Rowe VK5DGR and contributors (LGPL-2.1): FreeDV. A separate, replaceable library; source: github.com/drowe67/codec2.
 - **GSM 06.10** (ETSI standard, tables 4.1-4.6) for EchoLink voice, codec rewritten in QTHome and checked against **libgsm** by Jutta Degener and Carsten Bormann (TU Berlin); **EchoLink®** is a trademark of Synergenics, LLC: QTHome speaks its public protocol and is not their product.
 - **ITU-R P.533 and P.1239** (International Telecommunication Union): propagation forecast; CCIR maps of foF2 and M(3000)F2, foF2 deciles and magnetic field from the ITU-R reference program ITURHFProp (Study Group 3), distributed free from copyright assertions.
 - **libusb** (LGPL-2.1): SDR dongle on Mac and Windows, a separate, replaceable library; source: github.com/libusb/libusb.
 - **webview** (MIT) for the window; **webrtlsdr** (Apache 2.0) for the SDR dongle in the CW function; **OmniRig** type library © VE3NEA (MIT).
-- **WSJT-X programs** (GPL v3, Joe Taylor K1JT and the WSJT Development Group): for Q65, JT65 and MSK144 QTHome downloads by itself, the first time, the WSJT-X command-line decoders (jt9, q65code, jt65code, msk144code) copied unchanged from the official release, with the licence; they stay separate programs, the source is at github.com/WSJTX/wsjtx.
+- **WSJT-X programs** (GPL v3, Joe Taylor K1JT and the WSJT Development Group): for FT8, FT4, Q65, JT65 and MSK144 QTHome downloads by itself, the first time, the WSJT-X command-line decoders (jt9, q65code, jt65code, msk144code) copied unchanged from the official release, with the licence; they stay separate programs, the source is at github.com/WSJTX/wsjtx.
 - **Separate programs** QTHome uses if you have installed them, without including them: **VARA** (EA5HVK) for Winlink by radio; **TQSL** (ARRL) for LoTW; **JS8Call** (KN4CRD); **Pi-Star** and **WPSD** on the hotspot.
 - **Data**: DXCC entities from AD1C's **cty.dat** (country-files.com); solar data from **hamqsl.com** (N0NBH) and **NOAA SWPC**; ionosondes of the **GIRO** network via **prop.kc2g.com** (KC2G); orbits from **CelesTrak**; spots from DX clusters, the **Reverse Beacon Network**, **PSK Reporter** (N1DQ), **POTA**, **SOTA** and **WWFF**; **Super Check Partial** (supercheckpartial.com); callsign lookup with **HamQTH**; world maps from **Natural Earth** (public domain). **APRS-IS** network (aprs2.net); APRS was created by Bob Bruninga WB4APR. Repeaters from **RepeaterBook.com**.
 

@@ -1,6 +1,6 @@
 # Software di terze parti · Third-party software
 
-QTHome, QTHome Trainer e QTHome Mothership includono:
+QTHome e QTHome Mothership includono:
 
 - **ft8_lib** — © 2018 Kārlis Goba — licenza MIT.
   Il decoder FT8/FT4 di QTEngine parte da questa libreria.
@@ -35,13 +35,13 @@ QTHome, QTHome Trainer e QTHome Mothership includono:
   `QTHome.exe`) e si può sostituire con un'altra versione compatibile. Sorgente: https://github.com/drowe67/codec2/releases/tag/1.2.0
 - **wl2k-go** (protocollo Winlink B2F) — © 2014-2017 Martin Hebnes Pedersen LA5NTA — licenza MIT (testo come ft8_lib
   qui sopra). Contiene **lzhuf**, derivato dal lavoro di Haruyasu Yoshizaki e Haruhiko Okumura, di uso libero.
-- **Reverse Beacon Network** (telnet.reversebeacon.net): il Trainer legge gli spot pubblici per controllare i
+- **Reverse Beacon Network** (telnet.reversebeacon.net): con «Aiuta a migliorare il CW» QTHome legge gli spot pubblici per controllare i
   nominativi letti dal CW e dallo skimmer; non manda nulla al RBN.
 
 ## Programmi separati (non inclusi)
 
 QTHome li usa se l'OM li ha installati; restano programmi a sé, con le loro licenze, e non vengono distribuiti con QTHome:
-**WSJT-X** (GPL-3, Joe Taylor K1JT e il WSJT Development Group: QTHome scarica da solo, come pacchetto a parte, i suoi programmi a riga di comando jt9, q65code, jt65code e msk144code copiati senza modifiche dalla release ufficiale v3.0.2, con la licenza; sorgente su https://github.com/WSJTX/wsjtx/tree/v3.0.2; ponte UDP; confronto nel Trainer), **VARA HF/FM** (EA5HVK,
+**WSJT-X** (GPL-3, Joe Taylor K1JT e il WSJT Development Group: QTHome scarica da solo, come pacchetto a parte, i suoi programmi a riga di comando jt9, q65code, jt65code e msk144code copiati senza modifiche dalla release ufficiale v3.0.2, con la licenza, e li usa per decodificare FT8, FT4, Q65, JT65 e MSK144; sorgente su https://github.com/WSJTX/wsjtx/tree/v3.0.2; ponte UDP), **VARA HF/FM** (EA5HVK,
 porte TCP per Winlink via radio), **TQSL** (ARRL, per LoTW), **JS8Call** (KN4CRD, API TCP), **Pi-Star** e **WPSD** (cruscotto
 dell'hotspot), **Hamlib rigctld** e **flrig** se l'OM li preferisce.
 
