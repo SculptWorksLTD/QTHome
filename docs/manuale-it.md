@@ -54,6 +54,8 @@ QTHome si aggiorna da solo: quando c'è una versione nuova la scarica e la insta
 
 Ascoltare, decodificare e tenere il log è sempre gratis. Trasmettere da QTHome, le automazioni, il contest avanzato e le QSL online fanno parte di PRO; i primi 30 giorni sono una prova completa. PRO costa **12 € all'anno**: copre i costi dei server e della ricerca.
 
+Condizioni d'uso, privacy e rimborso entro 14 giorni: Aiuto › Condizioni d'uso e privacy.
+
 ## Se qualcosa non va
 
 - **Controlla la stazione**: **Aiuto › Controlla la stazione…** prova in un colpo nominativo, radio, audio, orologio, internet, licenza e aggiornamenti, e per ogni problema ha il tasto per sistemarlo.

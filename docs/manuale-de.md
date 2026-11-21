@@ -54,6 +54,8 @@ QTHome aktualisiert sich selbst: Gibt es eine neue Version, wird sie geladen und
 
 Hören, Dekodieren und Loggen sind immer kostenlos. Senden aus QTHome, Automatik, erweiterter Contest und Online-QSL gehören zu PRO; die ersten 30 Tage sind eine vollständige Probe. PRO kostet **12 € im Jahr**: das deckt Server- und Forschungskosten.
 
+Nutzungsbedingungen, Datenschutz und Erstattung innerhalb von 14 Tagen: Hilfe › Nutzungsbedingungen und Datenschutz.
+
 ## Wenn etwas nicht geht
 
 - **Station prüfen**: **Hilfe › Station prüfen…** testet in einem Durchgang Rufzeichen, Funkgerät, Audio, Uhr, Internet, Lizenz und Aktualisierungen, mit einer Schaltfläche zum Beheben jedes Problems.

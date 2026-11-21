@@ -54,6 +54,8 @@ QTHome updates itself: when there is a new version it downloads it and installs 
 
 Listening, decoding and logging are always free. Transmitting from QTHome, automation, advanced contesting and online QSLs are part of PRO; the first 30 days are a full trial. PRO costs **€12 a year**: it covers server and research costs.
 
+Terms of use, privacy and refund within 14 days: Help › Terms of use and privacy.
+
 ## If something goes wrong
 
 - **Check the station**: **Help › Check the station…** tests callsign, radio, audio, clock, internet, licence and updates in one go, with a button to fix each problem.
