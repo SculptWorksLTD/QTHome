@@ -206,6 +206,10 @@ jobs:
           set -e
           ( "appT/QTHome Trainer.app/Contents/MacOS/trainer" --senza-finestra --porta 47470 & ) ; sleep 4
           curl -sf http://127.0.0.1:47470/api/trainer/state | head -c 300; echo
+          # il Trainer scarica da solo i programmi di WSJT-X per il confronto
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:47470/api/trainer/state | grep -q '"jt9":true' && break; sleep 3; done
+          curl -sf http://127.0.0.1:47470/api/trainer/state | python3 -c 'import json,sys;d=json.load(sys.stdin);print("Trainer oracle:",d["oracle"]);print("sync:",d.get("sync"))' || true
+          curl -sf http://127.0.0.1:47470/api/trainer/inputs || true; echo
           ( "appM/QTHome Mothership.app/Contents/MacOS/mothership" --senza-finestra & ) ; sleep 3
           curl -sf http://127.0.0.1:47460/api/state | head -c 300; echo
           pkill -f "MacOS/trainer" || true; pkill -f "MacOS/mothership" || true
@@ -327,6 +331,9 @@ jobs:
             try { $r = Invoke-WebRequest -UseBasicParsing $u -TimeoutSec 5; $s = $r.StatusCode } catch { $s = "errore: " + $_.Exception.Message }
             "{0}: in esecuzione={1} · {2} → {3}" -f $p.ProcessName, (-not $p.HasExited), $u, $s
           }
+          for ($i = 0; $i -lt 30; $i++) { try { $o = (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:47470/api/trainer/state" -TimeoutSec 5).Content; if ($o -match '"jt9":true') { break } } catch {} ; Start-Sleep 3 }
+          try { "Trainer: " + (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:47470/api/trainer/state" -TimeoutSec 5).Content.Substring(0, 900) } catch { "Trainer: " + $_.Exception.Message }
+          try { "Ingressi audio: " + (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:47470/api/trainer/inputs" -TimeoutSec 5).Content } catch {}
           try { "FreeDV (codec2): " + (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:47481/api/freedv" -TimeoutSec 5).Content } catch { "FreeDV: " + $_.Exception.Message }
           Stop-Process $q, $t, $m -ErrorAction SilentlyContinue
       - uses: actions/upload-artifact@v4
@@ -494,7 +501,7 @@ jobs:
             [ -f dist/QTHome-Mac-Catalina.pkg ] && { echo "Mac con macOS 10.15 Catalina (Intel): [⬇ QTHome-Mac-Catalina.pkg](${D}/QTHome-Mac-Catalina.pkg)"; echo; }
             echo "Mac: doppio clic sul .pkg (se il Mac lo blocca: tasto destro → Apri). Windows: apri lo zip e avvia il programma (se Windows avvisa: Ulteriori informazioni → Esegui comunque)."
             echo
-            echo "**QTHome Trainer** ascolta insieme a te (solo ricezione) e confronta il decoder FT8/FT4 di QTHome con WSJT-X. Serve WSJT-X installato. Manda solo dati anonimi, e gli spezzoni audio solo se acconsenti."
+            echo "**QTHome Trainer** ascolta insieme a te (solo ricezione) e confronta il decoder FT8/FT4 di QTHome con WSJT-X: non serve installare niente, i programmi di WSJT-X li scarica da solo. Manda solo dati anonimi, e gli spezzoni audio solo se acconsenti."
             echo
             echo "Versione di prova. Realizzato da IU1MVI. (build ${SHA:0:12})"
           } > notes.md

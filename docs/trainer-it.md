@@ -1,6 +1,6 @@
 # QTHome Trainer — guida per i beta tester
 
-QTHome Trainer ascolta la radio insieme a te mentre usi WSJT-X come sempre e
+QTHome Trainer ascolta la radio insieme a te mentre la usi come sempre e
 confronta il decoder FT8/FT4 di QTHome con quello di WSJT-X. Così impariamo
 dove il nostro decoder sbaglia e lo correggiamo.
 
@@ -9,8 +9,8 @@ dove il nostro decoder sbaglia e lo correggiamo.
 ## Cosa serve
 
 - Un computer Mac (Apple o Intel) oppure Windows 10/11.
-- La radio collegata al computer con la sua scheda audio USB (quella che usi per WSJT-X).
-- **WSJT-X installato** (gratuito: <https://wsjt.sourceforge.io/wsjtx.html>). Il Trainer usa il suo decoder come metro di paragone. Non deve essere aperto.
+- La radio collegata al computer con il cavo USB (la sua scheda audio, es. «USB Audio CODEC»).
+- Nient'altro: i programmi di WSJT-X che servono per il confronto il Trainer li scarica da solo, una volta.
 
 ## Installare
 
@@ -21,51 +21,52 @@ dove il nostro decoder sbaglia e lo correggiamo.
 
 ## La prima volta
 
-1. Scrivi il tuo **locatore** (4 o 6 caratteri, es. JN45ab): serve solo a sapere la zona.
-2. Spunta cosa usi per ricevere e che antenna hai.
-3. Decidi se mandare **spezzoni audio** (leggi il riquadro): aiutano molto, ma puoi dire di no.
-4. **Salva e comincia**.
+Si apre una procedura in 5 passi:
 
-## Ogni volta
+1. **Benvenuto**: cosa fa il Trainer.
+2. **La tua stazione**: il locatore (4 o 6 caratteri, es. JN45ab, serve solo a sapere la zona), la radio, l'antenna.
+3. **L'audio della radio**: scegli la scheda audio della radio e sintonizza una frequenza FT8 (es. 14,074 MHz USB). Il livello deve stare nella zona verde. Sul Mac, la prima volta, il sistema chiede il permesso del microfono: rispondi **Consenti**.
+4. **Riservatezza**: cosa mandiamo e se vuoi mandare gli spezzoni audio.
+5. **Tutto pronto**: premi **Comincia ad ascoltare**.
 
-1. Scegli l'**ingresso audio della radio** (es. "USB Audio CODEC").
-2. Premi **Comincia ad ascoltare**. Sul Mac la prima volta il sistema chiede il permesso del microfono: rispondi **Consenti**.
-3. Sintonizza la radio su una frequenza FT8 (es. 14,074 MHz USB) e lascia lavorare.
+## La finestra
 
-Alla fine di ogni slot di 15 secondi vedi la tabella: per ogni messaggio, ✓ se l'ha letto QTHome e ✓ se l'ha letto WSJT-X.
+- **Panoramica**: l'ascolto (ingresso, livello con il consiglio, spettro), lo **stato della stazione** (audio, confronto con WSJT-X, radio, orologio, invio) e i tuoi numeri. Le quattro lucine in alto dicono lo stesso a colpo d'occhio: verde va bene, giallo da guardare, rosso da sistemare.
+- **FT8 · FT4**: per ogni slot, i messaggi letti da QTHome e da WSJT-X (verde = tutti e due, rosso = solo WSJT-X, giallo = solo QTHome) e l'accordo tra i due negli ultimi slot.
+- **CW** e **Skimmer**: vedi sotto.
+- **Impostazioni**: cosa ascoltare, uso del computer, spezzoni audio, profilo della stazione, aggiornamenti.
 
-Se la finestra non riesce a usare l'audio, compare il tasto **Apri nel browser**: il Trainer si apre nel tuo browser e lì il microfono funziona sempre.
+Lascia il Trainer aperto (anche ridotto a icona) mentre usi la radio: a ogni avvio riprende l'ascolto da solo.
+L'orologio del computer viene controllato via internet: se sbaglia, il Trainer corregge da solo il taglio degli slot.
 
 ## CW dalla radio
 
-In **Impostazioni** spunta **CW** e premi **Comincia ad ascoltare** sulla stessa scheda audio della radio.
-Ascolta il CW come fai sempre (in banda, in un QSO, in un contest): ogni 30 secondi due decoder di QTHome
-rileggono quello che hai sentito e i nominativi letti vengono controllati con il Reverse Beacon Network (RBN).
-Se The Rigger è acceso, il Trainer sa anche su che banda sei e il controllo è più preciso.
-Parte verso QTHome solo ciò che serve: un nominativo che il RBN non ha mai sentito, o i due decoder in disaccordo.
+Nella scheda **CW** spunta **Leggi il CW dalla radio** (con l'ascolto acceso). Ascolta il CW come fai sempre:
+ogni 30 secondi due decoder di QTHome rileggono quello che hai sentito e i nominativi vengono controllati con il
+Reverse Beacon Network (RBN). Se The Rigger è acceso, il Trainer sa anche su che banda sei e il controllo è più preciso.
 
 ## Skimmer con la chiavetta SDR (solo Mac, per ora)
 
 Serve una chiavetta RTL-SDR V3 o V4 con un'antenna HF collegata (la radio resta libera).
-Spunta **Skimmer con la chiavetta SDR**, scegli le bande e premi **Accendi lo skimmer**: la chiavetta va a caccia
-da sola: si mette sulla banda dove il RBN e lo spettro mostrano più stazioni, le legge tutte insieme e, appena lì
-non arrivano più nominativi nuovi, si sposta dove c'è più attività. Più bande scegli, più prove fa.
-I nominativi vengono confrontati con il RBN; nella tabella ✓ vuol dire confermato, ? mai sentito dal RBN.
+In **Impostazioni** spunta **Skimmer con la chiavetta SDR**, poi nella scheda **Skimmer** scegli le bande e premi
+**Accendi lo skimmer**: la chiavetta va a caccia da sola dove il RBN e lo spettro mostrano più stazioni.
+Nella tabella ✓ vuol dire confermato dal RBN, ? mai sentito dal RBN.
 
 ## Cosa parte verso QTHome
 
 - Solo i casi utili: segnali deboli, bande affollate, messaggi letti da uno solo dei due decoder.
 - **Mai il tuo nominativo**, mai indirizzo IP, nome del computer o cartelle personali.
 - Spezzoni audio di 15 secondi solo se hai acconsentito, al massimo 6 all'ora. Vengono cancellati dopo 12 mesi.
+- Se l'invio non è ancora attivo o manca internet, i casi restano in coda sul computer e partono da soli dopo: la riga **Invio** dello stato dice sempre com'è.
 
 ## Licenza gratis per i tester
 
-Nei numeri trovi le **ore di ascolto** e il tuo **codice tester** (QT-XXXX-XXXX): è anonimo, non contiene il tuo nominativo. Scrivilo nel modulo della pagina [Beta tester](https://iu1mvi.jimdofree.com/beta-tester/) insieme al nominativo.
+Nella Panoramica trovi le **ore di ascolto**, le barre verso la licenza e il tuo **codice tester** (QT-XXXX-XXXX): è anonimo. Scrivilo nel modulo della pagina [Beta tester](https://iu1mvi.jimdofree.com/beta-tester/) insieme al nominativo.
 
 - **10 ore** di ascolto: QTHome PRO gratis per un anno.
 - **100 ore** in almeno 3 mesi diversi: licenza Fondatore, PRO gratis per sempre.
 
-Contano solo le ore con la radio accesa e il segnale che arriva, e solo quelle già arrivate a QTHome.
+Contano solo le ore con la radio accesa e il segnale che arriva.
 
 ## Se qualcosa non va
 
