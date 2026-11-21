@@ -332,7 +332,7 @@ jobs:
             "{0}: in esecuzione={1} · {2} → {3}" -f $p.ProcessName, (-not $p.HasExited), $u, $s
           }
           for ($i = 0; $i -lt 30; $i++) { try { $o = (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:47470/api/trainer/state" -TimeoutSec 5).Content; if ($o -match '"jt9":true') { break } } catch {} ; Start-Sleep 3 }
-          try { "Trainer: " + (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:47470/api/trainer/state" -TimeoutSec 5).Content.Substring(0, 900) } catch { "Trainer: " + $_.Exception.Message }
+          try { "Trainer: " + (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:47470/api/trainer/state" -TimeoutSec 5).Content } catch { "Trainer: " + $_.Exception.Message }
           try { "Ingressi audio: " + (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:47470/api/trainer/inputs" -TimeoutSec 5).Content } catch {}
           try { "FreeDV (codec2): " + (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:47481/api/freedv" -TimeoutSec 5).Content } catch { "FreeDV: " + $_.Exception.Message }
           Stop-Process $q, $t, $m -ErrorAction SilentlyContinue
