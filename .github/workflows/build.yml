@@ -308,6 +308,7 @@ jobs:
           curl -sfL -o w.exe https://github.com/WSJTX/wsjtx/releases/download/v$V/wsjtx-$V-win64.exe
           7z x -owx w.exe >/dev/null
           J=$(find wx -iname jt9.exe | head -1); D=$(dirname "$J"); echo "jt9 in $J"
+          find wx -iname '*.dll' | head -60
           go run ./tools/wsjtxpack -root "$D" -out dist/wsjtx-tools-windows.zip -version $V -license COPYING-wsjtx jt9.exe q65code.exe jt65code.exe msk144code.exe
           rm -rf wtest; mkdir wtest; (cd wtest && 7z x ../dist/wsjtx-tools-windows.zip >/dev/null)
           for f in Q65/60A_EME_6m/210106_1621.wav JT65/JT65B/000000_0004.wav MSK144/181211_120800.wav; do mkdir -p "samples/$(dirname $f)"; curl -sfL -o "samples/$f" "https://raw.githubusercontent.com/WSJTX/wsjtx/v$V/samples/$f"; done
