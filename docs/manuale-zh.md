@@ -42,7 +42,7 @@ QTHome 会自动更新：有新版本时会下载，并在退出时安装。
 - **地图**：黑夜和晨昏线、spot、谁能听到你、EME、Es；点击 spot 即可联络。 “我的 QSO”显示日志中电台的位置（绿色 = 已确认）。 在「从你这里开通(估计)」中选择一个波段,地图会给该波段此刻从你的电台能到达的地区上色。
 - **SDR**：使用 RTL-SDR 加密狗的接收机、频谱和瀑布图；点击收听某个频率。 接收棒还能接收 **船舶 (AIS)**（显示在地图上，并以 NMEA 发送到 OpenCPN）和 **飞机 (ACARS)**。 以及 **RS41 探空仪**（400-406 MHz）：位置、高度和速度，并在地图上显示轨迹。
 - **转向器**：按角度、网格定位或当前 QSO 转向，也可走长路径。
-- **QTHome Chat**：业余无线电爱好者的文字和语音房间、加密私信；服务器上不保留任何内容。 **通过互联网的 APRS (APRS-IS)**：用你的呼号收发 APRS 消息，附近的 APRS 电台显示在地图上（浅蓝色）。 **AREDN 网状网络**：电脑连接到节点时，显示可达节点、网络服务和链路质量。 **AX.25 分组无线电**（用 Direwolf 或 TNC 连接 BBS 和节点的终端）和 **Meshtastic**（LoRa 消息，节点显示在地图上）。
+- **QTHome Chat**：业余无线电爱好者的文字和语音房间、加密私信；服务器上不保留任何内容。 **通过互联网的 APRS (APRS-IS)**：用你的呼号收发 APRS 消息，附近的 APRS 电台显示在地图上（浅蓝色）。 **AREDN 网状网络**：电脑连接到节点时，显示可达节点、网络服务和链路质量。 **AX.25 分组无线电**（用 Direwolf 或 TNC 连接 BBS 和节点的终端）和 **Meshtastic**（LoRa 消息，节点显示在地图上）。 **EchoLink**：直接在 QTHome 中与全球的 EchoLink 中继、链路和电台联络（电台目录、语音、文字），无需其他程序；需要经 EchoLink 验证的呼号，并在路由器中开放 UDP 端口 5198-5199。
 - **Winlink**：通过互联网或用 VARA 调制解调器（需另装）经电台收发邮件：收件、发件、附件、应急用的 ICS-213 表单。Winlink 密码只保存在你的电脑上。
 - **工具**：计算工具、史密斯圆图、天线实验室、堆积呼叫练习、**用 Koch 法学 CW**、执照考试题。 **NanoVNA**：天线的驻波比、阻抗和 2:1 带宽，并提示应剪短还是加长。
 - **设置**：你的电台、电台设备和外部程序（WSJT-X、fldigi、日志软件）、每个功能使用哪台电台和哪路音频、附件（发射时序器（PTT 之前的继电器，用于前置放大器和功放）、功放、天线切换器、电池、气象、WinKeyer）、外观、语言和无障碍。 在**我的电台**中还可以选择**你使用的波段和模式**（“现在可以通联”和集群会据此调整）以及**提醒**：新国家在空中、卫星即将过境、有人听到你（你的呼号出现在报告中），任何面板都会显示。
@@ -65,6 +65,7 @@ QTHome 是 IU1MVI 的程序。它的代码从零编写，或基于自由许可�
 - **ft8_lib** © Kārlis Goba（MIT）：FT8/FT4 解码器的基础。方法来自 K1JT、K9AN 和 G4WJS 的公开成果（QEX 2020）。
 - **wl2k-go** © Martin Hebnes Pedersen LA5NTA（MIT）：Winlink B2F 协议；包含吉崎晴康（Haruyasu Yoshizaki）和奥村晴彦（Haruhiko Okumura）的 **lzhuf**。
 - **codec2** © David Rowe VK5DGR 及贡献者（LGPL-2.1）：FreeDV。独立、可替换的库；源码：github.com/drowe67/codec2。
+- **GSM 06.10**（ETSI 标准，表 4.1-4.6）：EchoLink 语音，编解码器在 QTHome 中重写，并与 Jutta Degener 和 Carsten Bormann（柏林工业大学）的 **libgsm** 对照；**EchoLink®** 是 Synergenics, LLC 的商标：QTHome 使用其公开协议，并非其产品。
 - **libusb**（LGPL-2.1）：Mac 和 Windows 上的 SDR 接收棒，独立、可替换的库；源码：github.com/libusb/libusb。
 - 窗口使用 **webview**（MIT）；CW 功能中的 SDR 接收棒使用 **webrtlsdr**（Apache 2.0）；**OmniRig** 类型库 © VE3NEA（MIT）。
 - **独立程序**（如已安装，QTHome 会使用，但不包含在内）：**WSJT-X**（GPL，K1JT 及贡献者）用于 Q65、MSK144、JT65 及 Trainer 中的对比；**VARA**（EA5HVK）用于电台 Winlink；**TQSL**（ARRL）用于 LoTW；**JS8Call**（KN4CRD）；热点上的 **Pi-Star** 和 **WPSD**。
