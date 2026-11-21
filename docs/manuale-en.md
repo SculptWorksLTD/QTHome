@@ -50,7 +50,7 @@ QTHome updates itself: when there is a new version it downloads it and installs 
 
 **Kiosk mode** (Settings › Appearance): for fairs, club rooms and demonstrations. Only listening functions remain; settings and transmission disappear (blocked in the engine, also from external programs). You leave with the PIN chosen when turning it on.
 
-**Help improve CW** (Settings): while you listen to CW, two QTHome decoders reread what arrives and the callsigns are checked against the Reverse Beacon Network; only doubtful cases are sent, anonymously. It is the beta tester programme: 10 listening hours = PRO free for a year.
+**Help improve CW** (Settings): while you listen to CW, two QTHome decoders reread what arrives and the callsigns are checked against the Reverse Beacon Network; only doubtful cases are sent, anonymously.
 
 ## Free and PRO
 

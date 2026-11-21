@@ -42,9 +42,9 @@ Manuale: [italiano](docs/manuale-it.md) · [English](docs/manuale-en.md) · [Fra
 
 ## Beta tester
 
-Non serve un programma a parte: in QTHome, **Impostazioni › Aiuta a migliorare il CW**. Mentre ascolti il CW come sempre,
-due decoder di QTHome rileggono quello che arriva e i nominativi si controllano con il Reverse Beacon Network. Partono solo
-i casi dubbi, in forma anonima, mai il tuo nominativo. 10 ore di ascolto = QTHome PRO gratis per un anno.
+I beta tester usano QTHome come tutti e mandano problemi e idee con il tasto **Segnala** (anonimo). Chi vuole può anche
+accendere **Impostazioni › Aiuta a migliorare il CW** (facoltativo): mentre ascolti il CW, i nominativi letti da QTHome
+si controllano con il Reverse Beacon Network e partono solo i casi dubbi, in forma anonima, mai il tuo nominativo.
 Guida: [italiano](docs/trainer-it.md) · [English](docs/trainer-en.md) · [Français](docs/trainer-fr.md) · [Deutsch](docs/trainer-de.md) · [Español](docs/trainer-es.md) · [Português](docs/trainer-pt.md) · [日本語](docs/trainer-ja.md) · [Русский](docs/trainer-ru.md) · [中文](docs/trainer-zh.md)
 
 ## Gratis e PRO
@@ -69,8 +69,8 @@ Made for everyone, including visually impaired operators: everything works from 
 downloaded automatically · automatic logging with ADIF · S-meter and frequency by voice or Morse · electronic QSLs · cluster, SDR, satellites, rotator, contest · anonymous reports · 9 languages.
 Manual: [English](docs/manuale-en.md).
 
-**Beta testers:** in QTHome, Settings › Help improve CW: while you listen to CW, our decoders are checked against the
-Reverse Beacon Network and only doubtful cases are sent, anonymously. Guide: [English](docs/trainer-en.md).
+**Beta testers** use QTHome and send problems and ideas with the **Report** button (anonymous). Optionally, Settings ›
+Help improve CW checks our CW decoding against the Reverse Beacon Network and sends only doubtful cases, anonymously. Guide: [English](docs/trainer-en.md).
 
 **Requirements:** a Mac with macOS 11 or later (Apple or Intel) or Windows 10/11, with the radio connected as for WSJT-X.
 

@@ -50,7 +50,7 @@ QTHome se actualiza solo: cuando hay una versión nueva la descarga y la instala
 
 **Modo quiosco** (Ajustes › Aspecto): para ferias, sede del radioclub y demostraciones. Solo quedan las funciones de escucha; desaparecen ajustes y transmisión (bloqueada en el motor, también desde programas externos). Se sale con el PIN elegido al activarlo.
 
-**Ayuda a mejorar el CW** (Ajustes): mientras escuchas CW, dos decodificadores de QTHome releen lo que llega y los indicativos se comprueban con la Reverse Beacon Network; solo salen los casos dudosos, de forma anónima. Es el programa de beta testers: 10 horas de escucha = PRO gratis un año.
+**Ayuda a mejorar el CW** (Ajustes): mientras escuchas CW, dos decodificadores de QTHome releen lo que llega y los indicativos se comprueban con la Reverse Beacon Network; solo salen los casos dudosos, de forma anónima.
 
 ## Gratis y PRO
 

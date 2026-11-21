@@ -22,14 +22,8 @@ FT8 und FT4 braucht es nicht mehr: QTHome dekodiert sie mit der WSJT-X-Engine, d
 - Audioausschnitte nur mit Zustimmung, höchstens 6 pro Stunde, nach 12 Monaten gelöscht.
 - Ist das Senden noch nicht aktiv oder fehlt Internet, warten die Fälle auf dem Computer und gehen später von selbst.
 
-## Kostenlose Lizenz für Tester
+## Meldungen
 
-Auf derselben Seite: deine **Hörstunden**, die Balken zur Lizenz und dein **Tester-Code** (QT-XXXX-XXXX, anonym).
-Trage ihn mit deinem Rufzeichen im Formular der Seite [Beta tester](https://iu1mvi.jimdofree.com/beta-tester/) ein.
-
-- **10 Stunden** Hören: QTHome PRO ein Jahr gratis.
-- **100 Stunden** in mindestens 3 verschiedenen Monaten: Gründerlizenz, PRO für immer gratis.
-
-Es zählen nur Abschnitte, in denen wirklich CW ankommt.
+Betatester benutzen QTHome wie gewohnt und drücken bei Problemen oder Ideen auf **Melden**: die Meldung kommt anonym an, mit dem Protokoll des Programms, das zum Verstehen des Problems nötig ist.
 
 Von IU1MVI.

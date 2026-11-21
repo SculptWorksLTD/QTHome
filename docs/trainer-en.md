@@ -22,14 +22,8 @@ FT8 and FT4 are no longer needed: QTHome decodes them with the WSJT-X engine, do
 - Audio clips only if you agreed, at most 6 per hour, deleted after 12 months.
 - If uploading is not on yet or there is no internet, cases wait on your computer and leave by themselves later.
 
-## Free licence for testers
+## Reports
 
-On the same page you find your **listening hours**, the bars towards the licence and your **tester code** (QT-XXXX-XXXX, anonymous).
-Enter it in the form on the [Beta tester](https://iu1mvi.jimdofree.com/beta-tester/) page with your callsign.
-
-- **10 hours** of listening: QTHome PRO free for one year.
-- **100 hours** over at least 3 different months: Founder licence, PRO free forever.
-
-Only stretches where CW really arrives count.
+Beta testers use QTHome as usual and, when something goes wrong or they have an idea, press **Report**: it arrives anonymously, with the program log needed to understand the problem.
 
 Made by IU1MVI.

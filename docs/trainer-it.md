@@ -22,14 +22,8 @@ FT8 e FT4 non servono più: QTHome li decodifica con il motore di WSJT-X, che sc
 - Spezzoni audio solo se hai acconsentito, al massimo 6 all'ora, cancellati dopo 12 mesi.
 - Se l'invio non è ancora acceso o manca internet, i casi aspettano sul computer e partono da soli dopo.
 
-## Licenza gratis per i tester
+## Segnalazioni
 
-Nella stessa pagina trovi le **ore di ascolto**, le barre verso la licenza e il tuo **codice tester** (QT-XXXX-XXXX, anonimo).
-Scrivilo nel modulo della pagina [Beta tester](https://iu1mvi.jimdofree.com/beta-tester/) insieme al nominativo.
-
-- **10 ore** di ascolto: QTHome PRO gratis per un anno.
-- **100 ore** in almeno 3 mesi diversi: licenza Fondatore, PRO gratis per sempre.
-
-Contano solo i tratti in cui arriva davvero del CW.
+I beta tester usano QTHome come sempre e, quando qualcosa non va o hanno un'idea, premono **Segnala**: arriva in forma anonima, con il diario del programma che serve a capire il problema.
 
 Realizzato da IU1MVI.

@@ -50,7 +50,7 @@ QTHome aktualisiert sich selbst: Gibt es eine neue Version, wird sie geladen und
 
 **Kiosk-Modus** (Einstellungen › Aussehen): für Messen, Clubräume und Vorführungen. Es bleiben nur Empfangsfunktionen; Einstellungen und Senden verschwinden (im Motor gesperrt, auch für externe Programme). Verlassen mit der beim Einschalten gewählten PIN.
 
-**Hilf, CW zu verbessern** (Einstellungen): während du CW hörst, lesen zwei QTHome-Decoder das Empfangene erneut, und die Rufzeichen werden mit dem Reverse Beacon Network geprüft; nur zweifelhafte Fälle gehen anonym hinaus. Das ist das Betatester-Programm: 10 Hörstunden = PRO ein Jahr gratis.
+**Hilf, CW zu verbessern** (Einstellungen): während du CW hörst, lesen zwei QTHome-Decoder das Empfangene erneut, und die Rufzeichen werden mit dem Reverse Beacon Network geprüft; nur zweifelhafte Fälle gehen anonym hinaus.
 
 ## Kostenlos und PRO
 

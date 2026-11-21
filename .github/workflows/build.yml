@@ -478,7 +478,7 @@ jobs:
             [ -f dist/QTHome-Mac-Catalina.pkg ] && { echo "Mac con macOS 10.15 Catalina (Intel): [⬇ QTHome-Mac-Catalina.pkg](${D}/QTHome-Mac-Catalina.pkg)"; echo; }
             echo "Mac: doppio clic sul .pkg (se il Mac lo blocca: tasto destro → Apri). Windows: apri lo zip e avvia il programma (se Windows avvisa: Ulteriori informazioni → Esegui comunque)."
             echo
-            echo "**Beta tester**: in QTHome, Impostazioni › Aiuta a migliorare il CW. FT8 e FT4 decodificati con il motore di WSJT-X, scaricato da solo la prima volta."
+            echo "FT8 e FT4 decodificati con il motore di WSJT-X, scaricato da solo la prima volta. Problemi e idee: tasto Segnala in QTHome."
             echo
             echo "Versione di prova. Realizzato da IU1MVI. (build ${SHA:0:12})"
           } > notes.md
