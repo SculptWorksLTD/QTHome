@@ -38,7 +38,7 @@ QTHome 会自动更新：有新版本时会下载，并在退出时安装。
 - **数字模式**：像 WSJT-X 一样的 FT8 和 FT4（自动序列、CQ、自动记录）、RTTY、PSK31/63、Feld Hell、QRSS、APRS、WSPR 和 SSTV（图像：自动识别模式，接收的图像保存在图库中）。波段跟随电台。 FT8、FT4、RTTY 和 PSK 的 spot 会把电台调到正确位置，并打开数字模式、填好对方呼号。解码和 QSO 也可以像 WSJT-X 一样发送给 GridTracker、JTAlert、N1MM 或 Log4OM（设置 › 电台和程序）。 开启发送后，在 GridTracker 或 JTAlert 中双击某电台，会在数字模式中准备好（Tx1 就绪，何时发射由你决定）。 自动猎取时只回应针对你的 CQ：「CQ POTA/SOTA/WWFF」总是回应（便携电台每天重新计算），「CQ DX」仅当呼叫者在另一大洲，「CQ NA」「CQ EU」…仅当是你所在的大洲，「CQ TEST」仅在比赛已开始时。 **WEFAX**：海岸电台（DWD Hamburg、Northwood）的气象图，自动校正并保存。 **NAVTEX**：航行警告和海上气象（518 和 490 kHz），消息按主题分类；每个字符发送两次，即使其中一份受损也能恢复。 **Olivia 和 Contestia**（所有音调/带宽组合，接收和发射）。 **THOR**（4、5、8、11、16、22）：调谐要求不高，抗多径。
 - **比赛**：ARI DX、CQ WW、CQ WPX、IARU HF、VHF 和通用；序号、重复、Cabrillo、SO2R。回车记录，Esc 清除。 竞赛开始后，QSO 栏也会要求填写收到的交换信息，每个 QSO（FT8、CW、RTTY…）都会进入竞赛；顶部显示进行中的竞赛。 得分按竞赛规则计算（CQ WW、WPX、ARI DX、IARU、VHF）并写入 Cabrillo；在 CQ WW 和 IARU 中，区号根据前缀自动填写。 竞赛工具：波段图、输入时的呼号建议（含相差一个字符的“也许”）、可编辑的 F1-F4 消息（{MYCALL} {CALL} {EXCH}）以及 ESM：回车发送 CQ、交换信息和 TU。 还有 ARI FT8 Activity Contest（IAC）：每个 QSO 1 分，乘数为 4 位网格。 未连接电台(没有 CAT)时,在呼号旁手动选择波段和模式。 还有面向美国和加拿大以外电台的 **ARRL International DX**（每个 W/VE 电台 3 分，乘数为州和省）。顶部显示 **即将举行的大型比赛** 及日期：点击即可选择；你的交换信息（分区、网格、功率）自动填写，前一天会收到提醒。
 - **卫星和太空**：接下来的过境、多普勒、用转向器跟踪和电台校正。轨道数据自动下载。 QO-100：从你的网格指向、LNB 旋转角、信标，以及下行、上行和 LNB 输出之间的换算。
-- **集群和传播**：带过滤器的 DX 集群和 Reverse Beacon Network；点击 spot 电台就转过去。太阳数据和波段状况。 NCDXF/IARU 信标：各波段现在由谁发射、距离和方位，以及哪些信标真的被你所在大洲收到。 “当前开放”：按波段 × 大洲列出最近 30 分钟内你所在大洲真正收到的电台。 还可以加入 POTA、SOTA 和 WWFF 移动台 spot：公园或山顶编号会写入日志。 **24 小时预测**：逐小时显示通往 QSO 对方或世界某地区的哪些波段开通；这是根据太阳通量的估算（真正开通的情况看「现在开通」的 spot）。当没有通往该电台的 spot 时,QSO 栏也会显示。 在 **显示** 中可只看新国家/地区，或只看该频段尚未通联的电台。DXCC 国家/地区每周自动更新。
+- **集群和传播**：带过滤器的 DX 集群和 Reverse Beacon Network；点击 spot 电台就转过去。太阳数据和波段状况。 NCDXF/IARU 信标：各波段现在由谁发射、距离和方位，以及哪些信标真的被你所在大洲收到。 “当前开放”：按波段 × 大洲列出最近 30 分钟内你所在大洲真正收到的电台。 还可以加入 POTA、SOTA 和 WWFF 移动台 spot：公园或山顶编号会写入日志。 **24 小时预测**：逐小时显示通往 QSO 对方或世界某地区的哪些波段开通；采用 ITU-R P.533 模型和 CCIR 图（类似 VOACAP，内置于 QTHome），并给出波段可通的天数百分比（真正开通的情况看「现在开通」的 spot）。当没有通往该电台的 spot 时,QSO 栏也会显示。 在 **显示** 中可只看新国家/地区，或只看该频段尚未通联的电台。DXCC 国家/地区每周自动更新。
 - **地图**：黑夜和晨昏线、spot、谁能听到你、EME、Es；点击 spot 即可联络。 “我的 QSO”显示日志中电台的位置（绿色 = 已确认）。 在「从你这里开通(估计)」中选择一个波段,地图会给该波段此刻从你的电台能到达的地区上色。
 - **SDR**：使用 RTL-SDR 加密狗的接收机、频谱和瀑布图；点击收听某个频率。 接收棒还能接收 **船舶 (AIS)**（显示在地图上，并以 NMEA 发送到 OpenCPN）和 **飞机 (ACARS)**。 以及 **RS41 探空仪**（400-406 MHz）：位置、高度和速度，并在地图上显示轨迹。
 - **转向器**：按角度、网格定位或当前 QSO 转向，也可走长路径。
@@ -66,6 +66,7 @@ QTHome 是 IU1MVI 的程序。它的代码从零编写，或基于自由许可�
 - **wl2k-go** © Martin Hebnes Pedersen LA5NTA（MIT）：Winlink B2F 协议；包含吉崎晴康（Haruyasu Yoshizaki）和奥村晴彦（Haruhiko Okumura）的 **lzhuf**。
 - **codec2** © David Rowe VK5DGR 及贡献者（LGPL-2.1）：FreeDV。独立、可替换的库；源码：github.com/drowe67/codec2。
 - **GSM 06.10**（ETSI 标准，表 4.1-4.6）：EchoLink 语音，编解码器在 QTHome 中重写，并与 Jutta Degener 和 Carsten Bormann（柏林工业大学）的 **libgsm** 对照；**EchoLink®** 是 Synergenics, LLC 的商标：QTHome 使用其公开协议，并非其产品。
+- **ITU-R P.533 和 P.1239**（国际电信联盟）：传播预测；foF2 与 M(3000)F2 的 CCIR 图、foF2 十分位数和磁场来自 ITU-R 参考程序 ITURHFProp（第 3 研究组），以不主张版权的方式发布。
 - **libusb**（LGPL-2.1）：Mac 和 Windows 上的 SDR 接收棒，独立、可替换的库；源码：github.com/libusb/libusb。
 - 窗口使用 **webview**（MIT）；CW 功能中的 SDR 接收棒使用 **webrtlsdr**（Apache 2.0）；**OmniRig** 类型库 © VE3NEA（MIT）。
 - **独立程序**（如已安装，QTHome 会使用，但不包含在内）：**WSJT-X**（GPL，K1JT 及贡献者）用于 Q65、MSK144、JT65 及 Trainer 中的对比；**VARA**（EA5HVK）用于电台 Winlink；**TQSL**（ARRL）用于 LoTW；**JS8Call**（KN4CRD）；热点上的 **Pi-Star** 和 **WPSD**。
