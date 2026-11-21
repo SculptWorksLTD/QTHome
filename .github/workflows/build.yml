@@ -209,6 +209,25 @@ jobs:
           ( "appM/QTHome Mothership.app/Contents/MacOS/mothership" --senza-finestra & ) ; sleep 3
           curl -sf http://127.0.0.1:47460/api/state | head -c 300; echo
           pkill -f "MacOS/trainer" || true; pkill -f "MacOS/mothership" || true
+      - name: Programmi di WSJT-X per Q65/JT65/MSK144 (GPL v3, pacchetto a parte che QTHome scarica da solo)
+        continue-on-error: true
+        run: |
+          set -e
+          V=3.0.2
+          curl -sfL -o COPYING-wsjtx https://raw.githubusercontent.com/WSJTX/wsjtx/v$V/COPYING
+          for a in arm64 x86_64; do
+            curl -sfL -o w-$a.pkg https://github.com/WSJTX/wsjtx/releases/download/v$V/wsjtx-$V-$a-macOS.pkg
+            rm -rf wx-$a; pkgutil --expand-full w-$a.pkg wx-$a
+            J=$(find wx-$a -type f -name jt9 -path '*/Contents/MacOS/*' | head -1)
+            C=$(dirname "$(dirname "$J")")
+            echo "jt9 in $J"
+            go run ./tools/wsjtxpack -root "$C" -out dist/wsjtx-tools-mac-$a.zip -version $V -license COPYING-wsjtx MacOS/jt9 MacOS/q65code MacOS/jt65code MacOS/msk144code
+          done
+          # prova sul Mac della build (Apple): il pacchetto aperto altrove funziona da solo
+          rm -rf wtest; mkdir wtest; (cd wtest && ditto -x -k ../dist/wsjtx-tools-mac-arm64.zip .)
+          for f in Q65/60A_EME_6m/210106_1621.wav JT65/JT65B/000000_0004.wav MSK144/181211_120800.wav; do mkdir -p "samples/$(dirname $f)"; curl -sfL -o "samples/$f" "https://raw.githubusercontent.com/WSJTX/wsjtx/v$V/samples/$f"; done
+          QTH_WSJTX_DIR="$PWD/wtest/wsjtx/MacOS" QTH_WSJTX_SAMPLES="$PWD/samples" go test -count=1 -v -run WithJT9 ./qtengine/wsjtxbin 2>&1 | tail -20
+          ls -la dist
       - uses: actions/upload-artifact@v4
         with:
           name: app-mac
@@ -278,6 +297,21 @@ jobs:
           (cd z1 && 7z a ../dist/QTHome-Windows.zip QTHome.exe libusb-1.0.dll $C2 >/dev/null)
           (cd z2 && 7z a ../dist/QTHome-Trainer-Windows.zip "QTHome Trainer.exe" libusb-1.0.dll >/dev/null)
           (cd z3 && 7z a ../dist/QTHome-Mothership-Windows.zip "QTHome Mothership.exe" >/dev/null)
+          ls -la dist
+      - name: Programmi di WSJT-X per Q65/JT65/MSK144 (GPL v3, pacchetto a parte che QTHome scarica da solo)
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -e
+          V=3.0.2
+          curl -sfL -o COPYING-wsjtx https://raw.githubusercontent.com/WSJTX/wsjtx/v$V/COPYING
+          curl -sfL -o w.exe https://github.com/WSJTX/wsjtx/releases/download/v$V/wsjtx-$V-win64.exe
+          7z x -owx w.exe >/dev/null
+          J=$(find wx -iname jt9.exe | head -1); D=$(dirname "$J"); echo "jt9 in $J"
+          go run ./tools/wsjtxpack -root "$D" -out dist/wsjtx-tools-windows.zip -version $V -license COPYING-wsjtx jt9.exe q65code.exe jt65code.exe msk144code.exe
+          rm -rf wtest; mkdir wtest; (cd wtest && 7z x ../dist/wsjtx-tools-windows.zip >/dev/null)
+          for f in Q65/60A_EME_6m/210106_1621.wav JT65/JT65B/000000_0004.wav MSK144/181211_120800.wav; do mkdir -p "samples/$(dirname $f)"; curl -sfL -o "samples/$f" "https://raw.githubusercontent.com/WSJTX/wsjtx/v$V/samples/$f"; done
+          QTH_WSJTX_DIR="$(cygpath -w "$PWD/wtest/wsjtx")" QTH_WSJTX_SAMPLES="$PWD/samples" go test -count=1 -v -run WithJT9 ./qtengine/wsjtxbin 2>&1 | tail -20
           ls -la dist
       - name: Prova di avvio con la finestra vera
         continue-on-error: true

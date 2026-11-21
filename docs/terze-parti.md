@@ -41,7 +41,7 @@ QTHome, QTHome Trainer e QTHome Mothership includono:
 ## Programmi separati (non inclusi)
 
 QTHome li usa se l'OM li ha installati; restano programmi a sé, con le loro licenze, e non vengono distribuiti con QTHome:
-**WSJT-X** (GPL-3, K1JT e collaboratori: ponte UDP per Q65, MSK144, JT65; confronto nel Trainer), **VARA HF/FM** (EA5HVK,
+**WSJT-X** (GPL-3, Joe Taylor K1JT e il WSJT Development Group: QTHome scarica da solo, come pacchetto a parte, i suoi programmi a riga di comando jt9, q65code, jt65code e msk144code copiati senza modifiche dalla release ufficiale v3.0.2, con la licenza; sorgente su https://github.com/WSJTX/wsjtx/tree/v3.0.2; ponte UDP; confronto nel Trainer), **VARA HF/FM** (EA5HVK,
 porte TCP per Winlink via radio), **TQSL** (ARRL, per LoTW), **JS8Call** (KN4CRD, API TCP), **Pi-Star** e **WPSD** (cruscotto
 dell'hotspot), **Hamlib rigctld** e **flrig** se l'OM li preferisce.
 
