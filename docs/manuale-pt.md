@@ -45,7 +45,8 @@ O QTHome atualiza-se sozinho: quando há uma versão nova descarrega-a e instala
 - **QTHome Chat**: salas de texto e voz entre radioamadores, mensagens privadas cifradas; no servidor não fica nada. **APRS pela internet (APRS-IS)**: mensagens APRS com o seu indicativo e estações APRS próximas no Mapa (azul-claro). **Rede mesh AREDN**: com o computador ligado a um nó, os nós alcançáveis, os serviços da rede e a qualidade das ligações. **Packet radio AX.25** (terminal para BBS e nós, com o Direwolf ou um TNC) e **Meshtastic** (mensagens LoRa, nós no Mapa). **EchoLink**: ligações com repetidores, links e estações EchoLink de todo o mundo diretamente do QTHome, sem outros programas (diretório de estações, voz, texto); precisa de um indicativo validado pelo EchoLink e das portas UDP 5198-5199 abertas no roteador.
 - **Winlink**: correio pela internet ou por rádio com o modem VARA (instalado à parte): entrada, saída, anexos, formulário ICS-213 para emergências. A senha do Winlink fica no seu computador.
 - **Ferramentas**: calculadoras, carta de Smith, laboratório de antenas, treino de pile-up, **aprenda CW com o método Koch**, questionário do exame. **NanoVNA**: ROE, impedância e faixa a 2:1 da antena, com uma dica para encurtá-la ou alongá-la.
-- **Configurações**: a sua estação, os rádios e os programas externos (WSJT-X, fldigi, logs), que rádio e que áudio usa cada função, os acessórios (sequenciador de transmissão (relés antes do PTT, para pré-amplificadores e amplificadores), amplificador, comutador de antena, bateria, meteorologia, WinKeyer), aparência, idioma e acessibilidade. Em **A minha estação** escolha também as **bandas e modos que usa** («Pode trabalhar agora» e o cluster seguem-nos) e os **avisos**: país novo no ar, satélite a chegar e «estão a ouvir-te» (o teu indicativo nos spots), em qualquer painel.
+- **Ligações**: tudo o que o QTHome usa, cada um com a sua luz (verde = funciona) e o seu botão: os rádios (também vários, e os FlexRadio em rede), a pen SDR, que rádio e que áudio usa cada função, os programas externos (WSJT-X, fldigi, JS8Call, logs: ligam-se através do QTHome, todos juntos), as descodificações para o GridTracker e semelhantes, o telefone, os acessórios (sequenciador de transmissão, amplificador, comutador de antena, bateria, meteo, WinKeyer, manipulador USB). Também lá chega clicando nas luzes em cima. No topo de cada função uma faixa diz se está ligada e que rádio usa.
+- **Configurações**: a sua estação, transverter e S-meter, aspeto, idioma e acessibilidade. Em **A minha estação** escolhe também as **bandas e os modos que usa** («Pode contactar agora» e o cluster seguem-nos) e os **avisos**: país novo no ar, satélite a chegar e «ouvem-no» (o seu indicativo nos spots), em qualquer painel.
 
 ## Grátis e PRO
 
@@ -54,7 +55,7 @@ Ouvir, descodificar e manter o log é sempre grátis. Transmitir a partir do QTH
 ## Se algo não funcionar
 
 - **Verificar a estação**: **Ajuda › Verificar a estação…** testa de uma vez indicativo, rádio, áudio, relógio, internet, licença e atualizações, com um botão para corrigir cada problema.
-- **O rádio não aparece**: verifique o cabo USB e se o rádio está ligado; depois **Configurações › Rádios e programas › Procurar de novo os rádios**.
+- **O rádio não aparece**: verifique o cabo USB e se o rádio está ligado; depois **Ligações › Rádios ligados › Procurar de novo os rádios**.
 - **Sem áudio**: no Mac, Definições do Sistema › Privacidade e segurança › Microfone › ative o QTHome. No Windows, Definições › Privacidade › Microfone.
 - **Comunicar um problema**: **Ajuda › Comunicar um problema ou uma ideia…** É enviado de forma anónima, sem indicativos, nomes ou endereços.
 

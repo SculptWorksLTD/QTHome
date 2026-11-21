@@ -45,7 +45,8 @@ QTHome updates itself: when there is a new version it downloads it and installs 
 - **QTHome Chat**: text and voice rooms between hams, encrypted private messages; nothing stays on the server. **APRS over the internet (APRS-IS)**: APRS messages with your callsign and nearby APRS stations on the Map (light blue). **AREDN mesh network**: with the computer connected to a node, reachable nodes, network services and link quality. **AX.25 packet radio** (terminal for BBSs and nodes, with Direwolf or a TNC) and **Meshtastic** (LoRa messages, nodes on the Map). **EchoLink**: connect to EchoLink repeaters, links and stations worldwide straight from QTHome, with no other program (station directory, voice, text); you need a callsign validated by EchoLink and UDP ports 5198-5199 open in your router.
 - **Winlink**: mail over the internet or by radio with the VARA modem (installed separately): inbox, outbox, attachments, ICS-213 form for emergencies. Your Winlink password stays on your computer.
 - **Tools**: calculators, Smith chart, antenna lab, pile-up training, **learn CW with the Koch method**, licence quiz. **NanoVNA**: SWR, impedance and 2:1 bandwidth of the antenna, with a tip on whether to shorten or lengthen it.
-- **Settings**: your station, radios and external programs (WSJT-X, fldigi, loggers), which radio and audio each function uses, accessories (transmit sequencer (relays before the PTT, for preamps and amplifiers), amplifier, antenna switch, battery, weather, WinKeyer), appearance, language and accessibility. In **My station** you also choose the **bands and modes you use** (“You can work now” and the cluster follow them) and the **alerts**: new country on the air, satellite coming and “you are being heard” (your callsign in spots), in any panel.
+- **Connections**: everything QTHome uses, each with its light (green = working) and its button: the radios (more than one too, and FlexRadio on the network), the SDR dongle, which radio and audio each function uses, external programs (WSJT-X, fldigi, JS8Call, loggers: they connect through QTHome, all together), decodes to GridTracker and similar, the phone, accessories (transmit sequencer, amplifier, antenna switch, battery, weather, WinKeyer, USB paddle). You also get there by clicking the lights at the top. At the top of each function a strip shows whether it is on and which radio it uses.
+- **Settings**: your station, transverter and S-meter, appearance, language and accessibility. In **My station** you also choose the **bands and modes you use** (“You can work now” and the cluster follow them) and the **alerts**: new country on the air, satellite coming and “you are heard” (your callsign in spots), in any panel.
 
 ## Free and PRO
 
@@ -54,7 +55,7 @@ Listening, decoding and logging are always free. Transmitting from QTHome, autom
 ## If something goes wrong
 
 - **Check the station**: **Help › Check the station…** tests callsign, radio, audio, clock, internet, licence and updates in one go, with a button to fix each problem.
-- **The radio does not appear**: check the USB cable and that the radio is on; then **Settings › Radios and programs › Search for radios again**.
+- **The radio does not appear**: check the USB cable and that the radio is on; then **Connections › Connected radios › Search for radios again**.
 - **No audio**: on Mac, System Settings › Privacy & Security › Microphone › turn QTHome on. On Windows, Settings › Privacy › Microphone.
 - **Report a problem**: **Help › Report a problem or an idea…** It is sent anonymously, without callsigns, names or addresses.
 
