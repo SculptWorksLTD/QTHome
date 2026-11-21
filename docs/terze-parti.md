@@ -51,6 +51,9 @@ dell'hotspot), **Hamlib rigctld** e **flrig** se l'OM li preferisce.
 - **hamqsl.com** di Paul Herrman N0NBH e **NOAA Space Weather Prediction Center**: dati solari.
 - **GIRO** (Global Ionospheric Radio Observatory) tramite **prop.kc2g.com** di Andrew Rodland KC2G: misure delle ionosonde.
 - **RepeaterBook.com**: elenco dei ponti (file esportato dall'OM per uso personale o API con il suo token).
+- **Direwolf** (GPL, WB2OSZ): solo come programma esterno installato dall'OM, collegato in KISS TCP per il packet radio.
+- **Meshtastic**: API client pubblica (protobuf su TCP 4403 o seriale) per parlare con la radio LoRa dell'OM.
+- **Olivia** di Pawel Jalocha (SP9VRC): codifica riscritta dalla specifica pubblicata dall'ARRL e dalla guida UKHAS.
 - **AREDN**: stato del nodo letto dall'API sysinfo.json del firmware AREDN.
 - **CelesTrak** (T.S. Kelso): orbite dei satelliti.
 - DX cluster, **Reverse Beacon Network**, **PSK Reporter** (Philip Gladstone N1DQ), **POTA**, **SOTA**, **WWFF**: spot.
