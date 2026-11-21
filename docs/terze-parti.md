@@ -43,7 +43,7 @@ QTHome, QTHome Trainer e QTHome Mothership includono:
 QTHome li usa se l'OM li ha installati; restano programmi a sé, con le loro licenze, e non vengono distribuiti con QTHome:
 **WSJT-X** (GPL-3, K1JT e collaboratori: ponte UDP per Q65, MSK144, JT65; confronto nel Trainer), **VARA HF/FM** (EA5HVK,
 porte TCP per Winlink via radio), **TQSL** (ARRL, per LoTW), **JS8Call** (KN4CRD, API TCP), **Pi-Star** e **WPSD** (cruscotto
-dell'hotspot), **Ollama** e **LM Studio** (modelli per l'assistente), **Hamlib rigctld** e **flrig** se l'OM li preferisce.
+dell'hotspot), **Hamlib rigctld** e **flrig** se l'OM li preferisce.
 
 ## Dati e servizi
 

@@ -23,8 +23,7 @@ Windows: apri lo zip, avvia il programma e, se compare l'avviso, scegli **Ulteri
 ## Cos'è
 
 QTHome riunisce in **un'unica finestra** tutto quello che serve a una stazione radioamatoriale: controllo delle radio,
-CW, modi digitali, log e, passo dopo passo, fonia, cluster e propagazione, SDR, satelliti, remoto, contest e un assistente
-che gira sul computer. Pensato per tutti, anche per chi vede poco: ogni cosa si usa da tastiera e si può ascoltare.
+CW, modi digitali, log e, passo dopo passo, fonia, cluster e propagazione, SDR, satelliti, remoto e contest. Pensato per tutti, anche per chi vede poco: ogni cosa si usa da tastiera e si può ascoltare.
 
 Tutto il lavoro è fatto da **QTEngine**, il motore di QTHome, che contiene The Rigger e il decoder CW di CWIU1MVI.
 
@@ -35,7 +34,7 @@ Tutto il lavoro è fatto da **QTEngine**, il motore di QTHome, che contiene The 
 - **Modi digitali** – FT8 e FT4 in ricezione con il decoder di QTEngine, nato in casa. RTTY, PSK, SSTV e APRS in arrivo.
 - **Log e QSL elettroniche** – ogni QSO registrato da solo, import/export ADIF; invio a LoTW, eQSL, QRZ e Club Log.
 - **Fonia, cluster, SDR, satelliti, rotore, contest** – registrazioni e memorie voce; DX cluster e RBN con dati solari; ricevitore con la chiavetta RTL-SDR; passaggi e Doppler; rotore verso un locatore; log da contest con Cabrillo.
-- **QTHome Chat e assistente** – stanze di testo tra OM; un assistente sul computer che non trasmette mai.
+- **QTHome Chat** – stanze di testo e di voce tra OM, messaggi privati cifrati.
 - **Accessibilità** – S-meter e frequenza a voce o in Morse, navigazione completa da tastiera, lettori di schermo.
 - **Segnalazioni** – un tasto per mandare in modo anonimo un problema o un'idea.
 - **9 lingue** – italiano, inglese, francese, tedesco, spagnolo, portoghese, giapponese, russo e cinese.

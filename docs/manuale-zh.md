@@ -38,14 +38,13 @@ QTHome 会自动更新：有新版本时会下载，并在退出时安装。
 - **数字模式**：像 WSJT-X 一样的 FT8 和 FT4（自动序列、CQ、自动记录）、RTTY、PSK31/63、Feld Hell、QRSS、APRS、WSPR 和 SSTV（图像：自动识别模式，接收的图像保存在图库中）。波段跟随电台。 FT8、FT4、RTTY 和 PSK 的 spot 会把电台调到正确位置，并打开数字模式、填好对方呼号。解码和 QSO 也可以像 WSJT-X 一样发送给 GridTracker、JTAlert、N1MM 或 Log4OM（设置 › 电台和程序）。 开启发送后，在 GridTracker 或 JTAlert 中双击某电台，会在数字模式中准备好（Tx1 就绪，何时发射由你决定）。 自动猎取时只回应针对你的 CQ：「CQ POTA/SOTA/WWFF」总是回应（便携电台每天重新计算），「CQ DX」仅当呼叫者在另一大洲，「CQ NA」「CQ EU」…仅当是你所在的大洲，「CQ TEST」仅在比赛已开始时。 **WEFAX**：海岸电台（DWD Hamburg、Northwood）的气象图，自动校正并保存。 **NAVTEX**：航行警告和海上气象（518 和 490 kHz），消息按主题分类；每个字符发送两次，即使其中一份受损也能恢复。
 - **比赛**：ARI DX、CQ WW、CQ WPX、IARU HF、VHF 和通用；序号、重复、Cabrillo、SO2R。回车记录，Esc 清除。 竞赛开始后，QSO 栏也会要求填写收到的交换信息，每个 QSO（FT8、CW、RTTY…）都会进入竞赛；顶部显示进行中的竞赛。 得分按竞赛规则计算（CQ WW、WPX、ARI DX、IARU、VHF）并写入 Cabrillo；在 CQ WW 和 IARU 中，区号根据前缀自动填写。 竞赛工具：波段图、输入时的呼号建议（含相差一个字符的“也许”）、可编辑的 F1-F4 消息（{MYCALL} {CALL} {EXCH}）以及 ESM：回车发送 CQ、交换信息和 TU。 还有 ARI FT8 Activity Contest（IAC）：每个 QSO 1 分，乘数为 4 位网格。 未连接电台(没有 CAT)时,在呼号旁手动选择波段和模式。 还有面向美国和加拿大以外电台的 **ARRL International DX**（每个 W/VE 电台 3 分，乘数为州和省）。顶部显示 **即将举行的大型比赛** 及日期：点击即可选择；你的交换信息（分区、网格、功率）自动填写，前一天会收到提醒。
 - **卫星和太空**：接下来的过境、多普勒、用转向器跟踪和电台校正。轨道数据自动下载。 QO-100：从你的网格指向、LNB 旋转角、信标，以及下行、上行和 LNB 输出之间的换算。
-- **集群和传播**：带过滤器的 DX 集群和 Reverse Beacon Network；点击 spot 电台就转过去。太阳数据和波段状况。 NCDXF/IARU 信标：各波段现在由谁发射、距离和方位，以及哪些信标真的被你所在大洲收到。 “当前开放”：按波段 × 大洲列出最近 30 分钟内你所在大洲真正收到的电台。 还可以加入 POTA、SOTA 和 WWFF 移动台 spot：公园或山顶编号会写入日志。 **24 小时预测**：逐小时显示通往 QSO 对方或世界某地区的哪些波段开通；这是根据太阳通量的估算（真正开通的情况看「现在开通」的 spot）。当没有通往该电台的 spot 时,QSO 栏也会显示,助手可回答「propagation to Japan?」。 在 **显示** 中可只看新国家/地区，或只看该频段尚未通联的电台。DXCC 国家/地区每周自动更新。
+- **集群和传播**：带过滤器的 DX 集群和 Reverse Beacon Network；点击 spot 电台就转过去。太阳数据和波段状况。 NCDXF/IARU 信标：各波段现在由谁发射、距离和方位，以及哪些信标真的被你所在大洲收到。 “当前开放”：按波段 × 大洲列出最近 30 分钟内你所在大洲真正收到的电台。 还可以加入 POTA、SOTA 和 WWFF 移动台 spot：公园或山顶编号会写入日志。 **24 小时预测**：逐小时显示通往 QSO 对方或世界某地区的哪些波段开通；这是根据太阳通量的估算（真正开通的情况看「现在开通」的 spot）。当没有通往该电台的 spot 时,QSO 栏也会显示。 在 **显示** 中可只看新国家/地区，或只看该频段尚未通联的电台。DXCC 国家/地区每周自动更新。
 - **地图**：黑夜和晨昏线、spot、谁能听到你、EME、Es；点击 spot 即可联络。 “我的 QSO”显示日志中电台的位置（绿色 = 已确认）。 在「从你这里开通(估计)」中选择一个波段,地图会给该波段此刻从你的电台能到达的地区上色。
 - **SDR**：使用 RTL-SDR 加密狗的接收机、频谱和瀑布图；点击收听某个频率。
 - **转向器**：按角度、网格定位或当前 QSO 转向，也可走长路径。
 - **QTHome Chat**：业余无线电爱好者的文字和语音房间、加密私信；服务器上不保留任何内容。 **通过互联网的 APRS (APRS-IS)**：用你的呼号收发 APRS 消息，附近的 APRS 电台显示在地图上（浅蓝色）。
 - **Winlink**：通过互联网或用 VARA 调制解调器（需另装）经电台收发邮件：收件、发件、附件、应急用的 ICS-213 表单。Winlink 密码只保存在你的电脑上。
 - **工具**：计算工具、史密斯圆图、天线实验室、堆积呼叫练习、**用 Koch 法学 CW**、执照考试题。 **NanoVNA**：天线的驻波比、阻抗和 2:1 带宽，并提示应剪短还是加长。
-- **AI 助手**：写下你想做的事（“把电台调到 14.074 FT8”、“ISS 什么时候过境”、“QSB 是什么意思”）。它在电脑上运行，从不发射。 窗口不是意大利语时，助手用英语理解和回答；电脑上装有模型（Ollama 或 LM Studio）时可用任何语言。
 - **设置**：你的电台、电台设备和外部程序（WSJT-X、fldigi、日志软件）、每个功能使用哪台电台和哪路音频、附件（发射时序器（PTT 之前的继电器，用于前置放大器和功放）、功放、天线切换器、电池、气象、WinKeyer）、外观、语言和无障碍。 在**我的电台**中还可以选择**你使用的波段和模式**（“现在可以通联”和集群会据此调整）以及**提醒**：新国家在空中、卫星即将过境、有人听到你（你的呼号出现在报告中），任何面板都会显示。
 
 ## 免费和 PRO
@@ -68,7 +67,7 @@ QTHome 是 IU1MVI 的程序。它的代码从零编写，或基于自由许可�
 - **codec2** © David Rowe VK5DGR 及贡献者（LGPL-2.1）：FreeDV。独立、可替换的库；源码：github.com/drowe67/codec2。
 - **libusb**（LGPL-2.1）：Mac 和 Windows 上的 SDR 接收棒，独立、可替换的库；源码：github.com/libusb/libusb。
 - 窗口使用 **webview**（MIT）；CW 功能中的 SDR 接收棒使用 **webrtlsdr**（Apache 2.0）；**OmniRig** 类型库 © VE3NEA（MIT）。
-- **独立程序**（如已安装，QTHome 会使用，但不包含在内）：**WSJT-X**（GPL，K1JT 及贡献者）用于 Q65、MSK144、JT65 及 Trainer 中的对比；**VARA**（EA5HVK）用于电台 Winlink；**TQSL**（ARRL）用于 LoTW；**JS8Call**（KN4CRD）；热点上的 **Pi-Star** 和 **WPSD**；助手使用 **Ollama** 或 **LM Studio**。
+- **独立程序**（如已安装，QTHome 会使用，但不包含在内）：**WSJT-X**（GPL，K1JT 及贡献者）用于 Q65、MSK144、JT65 及 Trainer 中的对比；**VARA**（EA5HVK）用于电台 Winlink；**TQSL**（ARRL）用于 LoTW；**JS8Call**（KN4CRD）；热点上的 **Pi-Star** 和 **WPSD**。
 - **数据**：DXCC 实体来自 AD1C 的 **cty.dat**（country-files.com）；太阳数据来自 **hamqsl.com**（N0NBH）和 **NOAA SWPC**；**GIRO** 网络的电离层测高仪数据经由 **prop.kc2g.com**（KC2G）；轨道来自 **CelesTrak**；spot 来自 DX 集群、**Reverse Beacon Network**、**PSK Reporter**（N1DQ）、**POTA**、**SOTA** 和 **WWFF**；**Super Check Partial**（supercheckpartial.com）；呼号查询使用 **HamQTH**；世界地图来自 **Natural Earth**（公有领域）。 **APRS-IS** 网络（aprs2.net）；APRS 由 Bob Bruninga WB4APR 创立。
 
 许可的完整文本见公开仓库 SculptWorksLTD/QTHome 的 **docs/terze-parti.md**。
