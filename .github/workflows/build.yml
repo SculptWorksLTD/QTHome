@@ -226,7 +226,7 @@ jobs:
           # prova sul Mac della build (Apple): il pacchetto aperto altrove funziona da solo
           rm -rf wtest; mkdir wtest; (cd wtest && ditto -x -k ../dist/wsjtx-tools-mac-arm64.zip .)
           for f in Q65/60A_EME_6m/210106_1621.wav JT65/JT65B/000000_0004.wav MSK144/181211_120800.wav; do mkdir -p "samples/$(dirname $f)"; curl -sfL -o "samples/$f" "https://raw.githubusercontent.com/WSJTX/wsjtx/v$V/samples/$f"; done
-          QTH_WSJTX_DIR="$PWD/wtest/wsjtx/MacOS" QTH_WSJTX_SAMPLES="$PWD/samples" go test -count=1 -v -run WithJT9 ./qtengine/wsjtxbin 2>&1 | tail -20
+          QTH_WSJTX_DIR="$PWD/wtest/wsjtx/MacOS" QTH_WSJTX_SAMPLES="$PWD/samples" go test -count=1 -v -run WithJT9 ./qtengine/wsjtxbin 2>&1 | tail -45
           ls -la dist
       - uses: actions/upload-artifact@v4
         with:
@@ -312,7 +312,7 @@ jobs:
           go run ./tools/wsjtxpack -root "$D" -out dist/wsjtx-tools-windows.zip -version $V -license COPYING-wsjtx jt9.exe q65code.exe jt65code.exe msk144code.exe
           rm -rf wtest; mkdir wtest; (cd wtest && 7z x ../dist/wsjtx-tools-windows.zip >/dev/null)
           for f in Q65/60A_EME_6m/210106_1621.wav JT65/JT65B/000000_0004.wav MSK144/181211_120800.wav; do mkdir -p "samples/$(dirname $f)"; curl -sfL -o "samples/$f" "https://raw.githubusercontent.com/WSJTX/wsjtx/v$V/samples/$f"; done
-          QTH_WSJTX_DIR="$(cygpath -w "$PWD/wtest/wsjtx")" QTH_WSJTX_SAMPLES="$PWD/samples" go test -count=1 -v -run WithJT9 ./qtengine/wsjtxbin 2>&1 | tail -20
+          QTH_WSJTX_DIR="$(cygpath -w "$PWD/wtest/wsjtx")" QTH_WSJTX_SAMPLES="$PWD/samples" go test -count=1 -v -run WithJT9 ./qtengine/wsjtxbin 2>&1 | tail -45
           ls -la dist
       - name: Prova di avvio con la finestra vera
         continue-on-error: true
