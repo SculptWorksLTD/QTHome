@@ -19,7 +19,7 @@ QTHome se actualiza solo: cuando hay una versión nueva la descarga y la instala
 
 ## La ventana
 
-- **Arriba**: los menús, el estado de la radio y de la llave SDR, tu indicativo y la hora UTC.
+- **Arriba**: los menús, el estado de la radio y de la llave SDR, tu indicativo y la hora UTC. **Cascada**: el botón «Ajustar» junto a cada cascada cambia nivel automático, brillo, contraste, colores y altura.
 - **La barra de la radio** siempre visible: radio, banda, frecuencia (VFO A y B), modo, filtro, **PTT · TX** (se pone rojo cuando la radio transmite, la mande quien la mande; se suelta sola a los 3 minutos) y **Mandos de la radio** con todos los mandos del panel frontal.
 - **A la izquierda** las secciones. De serie ves solo las esenciales; las demás están en **+ Más funciones** (o todas siempre: **Ajustes › Aspecto, idioma y accesibilidad**).
 - **Abajo, la cascada**, encima de la barra QSO, en Estación, Log, Fonía, Concurso, Cluster, Mapa, Satélites y Rotor: un clic en «Cascada» la pliega.

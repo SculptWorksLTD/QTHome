@@ -19,7 +19,7 @@ QTHome aktualisiert sich selbst: Gibt es eine neue Version, wird sie geladen und
 
 ## Das Fenster
 
-- **Oben**: die Menüs, der Zustand von Funkgerät und SDR-Stick, Ihr Rufzeichen und die UTC-Zeit.
+- **Oben**: die Menüs, der Zustand von Funkgerät und SDR-Stick, Ihr Rufzeichen und die UTC-Zeit. **Wasserfall**: die Taste «Einstellen» neben jedem Wasserfall ändert automatischen Pegel, Helligkeit, Kontrast, Farben und Höhe.
 - **Die Funkgeräteleiste** ist immer sichtbar: Funkgerät, Band, Frequenz (VFO A und B), Betriebsart, Filter, **PTT · TX** (rot, sobald das Funkgerät sendet, egal wer es tastet; löst sich nach 3 Minuten selbst) und **Funkgerät-Bedienung** mit allen Reglern der Front.
 - **Links** die Bereiche. Standardmäßig sehen Sie nur die wichtigsten; die anderen stehen unter **+ Weitere Funktionen** (oder immer alle: **Einstellungen › Aussehen, Sprache und Barrierefreiheit**).
 - **Unten der Wasserfall**, über der QSO-Leiste, in Station, Log, Sprechfunk, Contest, Cluster, Karte, Satelliten und Rotor: ein Klick auf « Wasserfall » klappt ihn ein.

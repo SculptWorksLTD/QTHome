@@ -19,7 +19,7 @@ QTHome updates itself: when there is a new version it downloads it and installs 
 
 ## The window
 
-- **At the top**: the menus, the state of the radio and of the SDR dongle, your callsign and UTC time.
+- **At the top**: the menus, the state of the radio and of the SDR dongle, your callsign and UTC time. **Waterfall**: the «Adjust» button next to every waterfall changes automatic level, brightness, contrast, colours and height.
 - **The radio bar** is always visible: radio, band, frequency (VFO A and B), mode, filter, **PTT · TX** (it turns red whenever the radio transmits, whoever keys it; it releases itself after 3 minutes) and **Radio controls** with every control of the front panel.
 - **On the left** the sections. By default you see only the essential ones; the others are under **+ More functions** (or always all of them: **Settings › Appearance, language and accessibility**).
 - **At the bottom, the waterfall**, above the QSO bar, in Station, Log, Phone, Contest, Cluster, Map, Satellites and Rotator: one click on «Waterfall» folds it.
