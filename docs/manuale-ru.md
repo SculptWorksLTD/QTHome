@@ -84,4 +84,4 @@ QTHome — программа IU1MVI. Её код написан с нуля и�
 
 Полные тексты лицензий — в **docs/terze-parti.md** публичного репозитория SculptWorksLTD/QTHome.
 
-QTHome сделан IU1MVI. Если он вам полезен, можно угостить кофе: paypal.me/qthome
+QTHome сделан IU1MVI. Если он вам полезен, можно угостить кофе: paypal.me/nerosdmf

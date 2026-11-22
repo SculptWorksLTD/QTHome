@@ -79,4 +79,4 @@ Help improve CW checks our CW decoding against the Reverse Beacon Network and se
 <sub>QTHome e QTEngine · © 2026 Enrico Migliorati (IU1MVI). Tutti i diritti riservati / All rights reserved. Software proprietario:
 copia, distribuzione e modifica non consentite senza autorizzazione scritta del titolare. Questo repository contiene solo gli installer,
 la documentazione e il canale degli aggiornamenti. Software di terze parti: [docs/terze-parti.md](docs/terze-parti.md) ·
-[Sostieni con PayPal](https://paypal.me/qthome)</sub>
+[Sostieni con PayPal](https://paypal.me/nerosdmf)</sub>

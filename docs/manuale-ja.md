@@ -84,4 +84,4 @@ QTHome は IU1MVI のプログラムです。コードは一から書いたも�
 
 ライセンスの全文は公開リポジトリ SculptWorksLTD/QTHome の **docs/terze-parti.md** にあります。
 
-QTHome は IU1MVI が作りました。役に立ったらコーヒーをごちそうしてください：paypal.me/qthome
+QTHome は IU1MVI が作りました。役に立ったらコーヒーをごちそうしてください：paypal.me/nerosdmf
