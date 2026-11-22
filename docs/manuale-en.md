@@ -50,6 +50,8 @@ QTHome updates itself: when there is a new version it downloads it and installs 
 
 **Kiosk mode** (Settings › Appearance): for fairs, club rooms and demonstrations. Only listening functions remain; settings and transmission disappear (blocked in the engine, also from external programs). You leave with the PIN chosen when turning it on.
 
+**Phone** (Connections › Phone): turn on «Use QTHome from your phone», open the address in the phone's browser and type the PIN. With «Also away from home» it works anywhere over the internet, without touching the router: the program connects to the QTHome service by itself and gives you an address to keep secret. From the phone: frequency, mode, spots, log; never transmitting.
+
 **Help improve CW** (Settings): while you listen to CW, two QTHome decoders reread what arrives and the callsigns are checked against the Reverse Beacon Network; only doubtful cases are sent, anonymously.
 
 ## Free and PRO

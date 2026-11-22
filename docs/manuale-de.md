@@ -50,6 +50,8 @@ QTHome aktualisiert sich selbst: Gibt es eine neue Version, wird sie geladen und
 
 **Kiosk-Modus** (Einstellungen › Aussehen): für Messen, Clubräume und Vorführungen. Es bleiben nur Empfangsfunktionen; Einstellungen und Senden verschwinden (im Motor gesperrt, auch für externe Programme). Verlassen mit der beim Einschalten gewählten PIN.
 
+**Telefon** (Verbindungen › Telefon): «QTHome vom Telefon aus nutzen» einschalten, die Adresse im Browser des Telefons öffnen und die PIN eingeben. Mit «Auch unterwegs» geht es überall über das Internet, ohne den Router anzufassen: Das Programm verbindet sich selbst mit dem QTHome-Dienst und gibt dir eine geheim zu haltende Adresse. Vom Telefon: Frequenz, Modus, Spots, Log; nie Senden.
+
 **Hilf, CW zu verbessern** (Einstellungen): während du CW hörst, lesen zwei QTHome-Decoder das Empfangene erneut, und die Rufzeichen werden mit dem Reverse Beacon Network geprüft; nur zweifelhafte Fälle gehen anonym hinaus.
 
 ## Kostenlos und PRO

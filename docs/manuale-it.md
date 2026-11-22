@@ -50,6 +50,8 @@ QTHome si aggiorna da solo: quando c'è una versione nuova la scarica e la insta
 
 **Modalità chiosco** (Impostazioni › Aspetto): per fiere, sede di sezione e dimostrazioni. Restano solo le funzioni di ascolto, spariscono impostazioni e trasmissione (bloccata nel motore, anche dai programmi esterni). Si esce col PIN scelto all'accensione.
 
+**Telefono** (Collegamenti › Telefono): accendi «Usa QTHome dal telefono», apri l'indirizzo nel browser del telefono e scrivi il PIN. Con «Anche fuori casa» funziona ovunque via internet, senza toccare il router: il programma si collega da solo al servizio di QTHome e ti dà un indirizzo da tenere segreto. Dal telefono: frequenza, modo, spot, log; mai la trasmissione.
+
 **Aiuta a migliorare il CW** (Impostazioni): mentre ascolti il CW, due decoder di QTHome rileggono quello che arriva e i nominativi si controllano con il Reverse Beacon Network; partono solo i casi dubbi, in forma anonima.
 
 ## Gratis e PRO

@@ -50,6 +50,8 @@ QTHome se met à jour tout seul : quand une nouvelle version existe, il la tél�
 
 **Mode kiosque** (Réglages › Apparence) : pour les salons, le local du club et les démonstrations. Seules les fonctions d'écoute restent ; réglages et émission disparaissent (bloquée dans le moteur, même depuis les programmes externes). On sort avec le PIN choisi à l'activation.
 
+**Téléphone** (Connexions › Téléphone) : activez « Utiliser QTHome depuis le téléphone », ouvrez l'adresse dans le navigateur du téléphone et tapez le PIN. Avec « Aussi hors de chez soi », ça marche partout par internet, sans toucher au routeur : le programme se connecte tout seul au service de QTHome et vous donne une adresse à garder secrète. Depuis le téléphone : fréquence, mode, spots, log ; jamais l'émission.
+
 **Aider à améliorer le CW** (Réglages) : pendant que vous écoutez le CW, deux décodeurs de QTHome relisent ce qui arrive et les indicatifs sont vérifiés avec le Reverse Beacon Network ; seuls les cas douteux partent, anonymement.
 
 ## Gratuit et PRO
