@@ -204,6 +204,7 @@ jobs:
           set -e
           ( "appM/QTHome Mothership.app/Contents/MacOS/mothership" --senza-finestra & ) ; sleep 3
           curl -sf http://127.0.0.1:47460/api/state | head -c 300; echo
+          pkill -f "MacOS/mothership" || true
       - name: Prova di avvio di QTHome (Electron + motore)
         continue-on-error: true
         run: |
@@ -215,7 +216,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: foto-mac, path: shot-mac.png, if-no-files-found: ignore, retention-days: 3 }
-          pkill -f "MacOS/mothership" || true
       - name: Programmi di WSJT-X per Q65/JT65/MSK144 (GPL v3, pacchetto a parte che QTHome scarica da solo)
         continue-on-error: true
         run: |
