@@ -23,7 +23,8 @@ QTHome e QTHome Mothership includono:
   > OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   > SOFTWARE.
 
-- **webview** (finestra) — licenza MIT.
+- **Electron** (finestra di QTHome) — © OpenJS Foundation e contributori, licenza MIT; contiene Chromium (licenza BSD e altre, elencate in LICENSES.chromium.html accanto al programma).
+- **webview** (finestra di Mothership) — licenza MIT.
 - **webrtlsdr** (chiavetta RTL-SDR nella funzione CW) — licenza Apache 2.0.
 - **OmniRig** type library — © VE3NEA — licenza MIT.
 

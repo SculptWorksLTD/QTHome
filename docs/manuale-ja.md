@@ -77,7 +77,7 @@ QTHome は IU1MVI のプログラムです。コードは一から書いたも�
 - **GSM 06.10**（ETSI 規格、表 4.1-4.6）：EchoLink の音声。コーデックは QTHome で書き直し、Jutta Degener と Carsten Bormann（ベルリン工科大学）の **libgsm** と照合；**EchoLink®** は Synergenics, LLC の商標です。QTHome は公開プロトコルで通信し、同社の製品ではありません。
 - **ITU-R P.533 と P.1239**（国際電気通信連合）：伝搬予報。foF2 と M(3000)F2 の CCIR マップ、foF2 の十分位、磁場は ITU-R 参照プログラム ITURHFProp（第3研究委員会）から。著作権の主張なしで配布されています。
 - **libusb**（LGPL-2.1）：Mac と Windows の SDR ドングル用。差し替え可能な別ライブラリ。ソース：github.com/libusb/libusb。
-- ウィンドウに **webview**（MIT）、CW 機能の SDR ドングルに **webrtlsdr**（Apache 2.0）、**OmniRig** のタイプライブラリ © VE3NEA（MIT）。
+- ウィンドウに **Electron**（MIT、Chromium は BSD）と **webview**（MIT）、CW 機能の SDR ドングルに **webrtlsdr**（Apache 2.0）、**OmniRig** のタイプライブラリ © VE3NEA（MIT）。
 - **WSJT-X のプログラム**（GPL v3、Joe Taylor K1JT と WSJT Development Group）：FT8・FT4・Q65・JT65・MSK144 用に、QTHome が最初に WSJT-X のコマンドラインデコーダー（jt9、q65code、jt65code、msk144code）を公式版から無改変でライセンスとともに自動ダウンロードします。別のプログラムのままで、ソースは github.com/WSJTX/wsjtx にあります。
 - **別のプログラム**（インストールされていれば QTHome が使用、同梱はしない）：無線による Winlink に **VARA**（EA5HVK）、LoTW に **TQSL**（ARRL）、**JS8Call**（KN4CRD）、ホットスポットの **Pi-Star** と **WPSD**。
 - **データ**：AD1C の **cty.dat**（country-files.com）による DXCC エンティティ、**hamqsl.com**（N0NBH）と **NOAA SWPC** の太陽データ、**prop.kc2g.com**（KC2G）経由の **GIRO** ネットワークのイオノゾンデ、**CelesTrak** の軌道要素、DX クラスター・**Reverse Beacon Network**・**PSK Reporter**（N1DQ）・**POTA**・**SOTA**・**WWFF** のスポット、**Super Check Partial**（supercheckpartial.com）、**HamQTH** によるコールサイン検索、**Natural Earth** の地図（パブリックドメイン）。 **APRS-IS** ネットワーク（aprs2.net）。APRS は Bob Bruninga WB4APR が考案しました。 レピーターは **RepeaterBook.com** より。

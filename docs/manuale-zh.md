@@ -77,7 +77,7 @@ QTHome 是 IU1MVI 的程序。它的代码从零编写，或基于自由许可�
 - **GSM 06.10**（ETSI 标准，表 4.1-4.6）：EchoLink 语音，编解码器在 QTHome 中重写，并与 Jutta Degener 和 Carsten Bormann（柏林工业大学）的 **libgsm** 对照；**EchoLink®** 是 Synergenics, LLC 的商标：QTHome 使用其公开协议，并非其产品。
 - **ITU-R P.533 和 P.1239**（国际电信联盟）：传播预测；foF2 与 M(3000)F2 的 CCIR 图、foF2 十分位数和磁场来自 ITU-R 参考程序 ITURHFProp（第 3 研究组），以不主张版权的方式发布。
 - **libusb**（LGPL-2.1）：Mac 和 Windows 上的 SDR 接收棒，独立、可替换的库；源码：github.com/libusb/libusb。
-- 窗口使用 **webview**（MIT）；CW 功能中的 SDR 接收棒使用 **webrtlsdr**（Apache 2.0）；**OmniRig** 类型库 © VE3NEA（MIT）。
+- 窗口使用 **Electron**（MIT，Chromium 为 BSD）和 **webview**（MIT）；CW 功能中的 SDR 接收棒使用 **webrtlsdr**（Apache 2.0）；**OmniRig** 类型库 © VE3NEA（MIT）。
 - **WSJT-X 程序**（GPL v3，Joe Taylor K1JT 与 WSJT Development Group）：为 FT8、FT4、Q65、JT65 和 MSK144，QTHome 首次使用时自动下载 WSJT-X 的命令行解码器（jt9、q65code、jt65code、msk144code），从官方版本原样复制并附带许可证；它们仍是独立程序，源代码在 github.com/WSJTX/wsjtx。
 - **独立程序**（如已安装，QTHome 会使用，但不包含在内）：**VARA**（EA5HVK）用于电台 Winlink；**TQSL**（ARRL）用于 LoTW；**JS8Call**（KN4CRD）；热点上的 **Pi-Star** 和 **WPSD**。
 - **数据**：DXCC 实体来自 AD1C 的 **cty.dat**（country-files.com）；太阳数据来自 **hamqsl.com**（N0NBH）和 **NOAA SWPC**；**GIRO** 网络的电离层测高仪数据经由 **prop.kc2g.com**（KC2G）；轨道来自 **CelesTrak**；spot 来自 DX 集群、**Reverse Beacon Network**、**PSK Reporter**（N1DQ）、**POTA**、**SOTA** 和 **WWFF**；**Super Check Partial**（supercheckpartial.com）；呼号查询使用 **HamQTH**；世界地图来自 **Natural Earth**（公有领域）。 **APRS-IS** 网络（aprs2.net）；APRS 由 Bob Bruninga WB4APR 创立。 中继台来自 **RepeaterBook.com**。
