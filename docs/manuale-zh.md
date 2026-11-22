@@ -84,4 +84,4 @@ QTHome 是 IU1MVI 的程序。它的代码从零编写，或基于自由许可�
 
 许可的完整文本见公开仓库 SculptWorksLTD/QTHome 的 **docs/terze-parti.md**。
 
-QTHome 由 IU1MVI 制作。如果对你有用，可以请我喝杯咖啡：paypal.me/nerosdmf
+QTHome 由 IU1MVI 制作。如果对你有用，可以请我喝杯咖啡：paypal.me/qthome

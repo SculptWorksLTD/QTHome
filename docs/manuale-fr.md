@@ -84,4 +84,4 @@ QTHome est un programme d'IU1MVI. Son code est écrit de zéro ou s'appuie sur d
 
 Le texte complet des licences se trouve dans **docs/terze-parti.md** du dépôt public SculptWorksLTD/QTHome.
 
-QTHome est réalisé par IU1MVI. S'il vous est utile, vous pouvez offrir un café : paypal.me/nerosdmf
+QTHome est réalisé par IU1MVI. S'il vous est utile, vous pouvez offrir un café : paypal.me/qthome
