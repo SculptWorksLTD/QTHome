@@ -138,18 +138,24 @@ jobs:
             done
             iconutil -c icns $n.iconset -o $n.icns
           done
-      - name: QTHome (.app e installer)
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: QTHome (.app Electron e installer)
         run: |
           set -e
-          mkdir -p dist
+          mkdir -p dist appA
+          EV=$(npm view electron version); echo "Electron $EV"
+          npx --yes @electron/packager@latest desktop QTHome --platform=darwin --arch=universal --electron-version="$EV" \
+            --icon=icon.icns --app-bundle-id=com.sculptworks.qthome --app-version="$VERSION" --build-version="$VERSION" \
+            --app-copyright="© 2026 SculptWorks LTD" --extend-info=desktop/extra.plist --asar --ignore='extra\.plist' --out=out --overwrite --quiet
+          mv out/QTHome-darwin-universal/QTHome.app appA/
           APP="appA/QTHome.app"; C="$APP/Contents"
-          mkdir -p "$C/MacOS" "$C/Resources"
-          cp bin/u/QTHome "$C/MacOS/QTHome"; chmod +x "$C/MacOS/QTHome"
-          mkdir -p "$C/Frameworks"; cp bin/u/libusb-1.0.dylib "$C/Frameworks/"
+          cp bin/u/QTHome "$C/MacOS/qthome-motore"; chmod +x "$C/MacOS/qthome-motore"
+          cp bin/u/libusb-1.0.dylib "$C/Frameworks/"
           if [ -f bin/u/libcodec2.dylib ]; then cp bin/u/libcodec2.dylib "$C/Frameworks/"; fi
-          cp icon.icns "$C/Resources/icon.icns"
-          sed -e "s|<string>0.1.0</string>|<string>${VERSION}</string>|g" build/pkg/Info.plist > "$C/Info.plist"
+          /usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "$C/Info.plist"
           codesign --force --deep --sign - "$APP"
+          du -sh "$APP"
           pkgbuild --analyze --root appA comp.plist
           /usr/libexec/PlistBuddy -c "Set :0:BundleIsRelocatable false" -c "Set :0:BundleOverwriteAction upgrade" comp.plist
           pkgbuild --root appA --component-plist comp.plist --install-location /Applications \
@@ -198,6 +204,17 @@ jobs:
           set -e
           ( "appM/QTHome Mothership.app/Contents/MacOS/mothership" --senza-finestra & ) ; sleep 3
           curl -sf http://127.0.0.1:47460/api/state | head -c 300; echo
+      - name: Prova di avvio di QTHome (Electron + motore)
+        continue-on-error: true
+        run: |
+          ( appA/QTHome.app/Contents/MacOS/QTHome --demo & ) ; sleep 15
+          pgrep -fl qthome-motore || echo "motore non partito"
+          curl -sf http://127.0.0.1:47481/qtui.js | head -c 120; echo
+          screencapture -x shot-mac.png || true
+          pkill -f "QTHome.app/Contents/MacOS/QTHome" || true; sleep 2; pgrep -fl qthome-motore && echo "motore ancora vivo" || echo "motore chiuso con la finestra"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: foto-mac, path: shot-mac.png, if-no-files-found: ignore, retention-days: 3 }
           pkill -f "MacOS/mothership" || true
       - name: Programmi di WSJT-X per Q65/JT65/MSK144 (GPL v3, pacchetto a parte che QTHome scarica da solo)
         continue-on-error: true
@@ -273,17 +290,28 @@ jobs:
           cmake --build c2 --target codec2 -j4 >/dev/null
           cp "$(find c2 -name 'libcodec2*.dll' | head -1)" libcodec2.dll
           ls -la libcodec2.dll
-      - name: Compila
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Compila (motore + finestra Electron)
         shell: bash
         run: |
           set -e
-          CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X github.com/SculptWorksLTD/QTHome/qtengine.Version=${VERSION}" -o QTHome.exe .
+          CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X github.com/SculptWorksLTD/QTHome/qtengine.Version=${VERSION}" -o qthome-motore.exe .
           CGO_ENABLED=1 go build -trimpath -ldflags "-s -w -H=windowsgui -X main.Version=${VERSION}" -o "QTHome Mothership.exe" ./apps/mothership
-          mkdir -p dist internal z1 z2 z3
-          C2=""; [ -f libcodec2.dll ] && C2=libcodec2.dll
-          cp QTHome.exe libusb-1.0.dll $C2 z1/; cp "QTHome Mothership.exe" z3/
-          (cd z1 && 7z a ../dist/QTHome-Windows.zip QTHome.exe libusb-1.0.dll $C2 >/dev/null)
-          (cd z3 && 7z a ../dist/QTHome-Mothership-Windows.zip "QTHome Mothership.exe" >/dev/null)
+          python -m pip install --quiet pillow
+          python -c "from PIL import Image; Image.open('build/resources/icon-256.png').save('icon.ico', sizes=[(16,16),(24,24),(32,32),(48,48),(64,64),(128,128),(256,256)])"
+          EV=$(npm view electron version); echo "Electron $EV"
+          npx --yes @electron/packager@latest desktop QTHome --platform=win32 --arch=x64 --electron-version="$EV" --icon=icon.ico \
+            --app-version="$VERSION" --build-version="$VERSION" --app-copyright="© 2026 SculptWorks LTD" \
+            --win32metadata.ProductName=QTHome --win32metadata.FileDescription="QTHome - The Home of OM" --win32metadata.CompanyName="SculptWorks LTD" \
+            --asar --ignore='extra\.plist' --out=out --overwrite --quiet
+          W=out/QTHome-win32-x64
+          cp qthome-motore.exe libusb-1.0.dll "$W/"; [ -f libcodec2.dll ] && cp libcodec2.dll "$W/"
+          mkdir -p dist z3
+          (cd "$W" && 7z a -r ../../dist/QTHome-Windows.zip . >/dev/null)
+          cp "QTHome Mothership.exe" z3/; (cd z3 && 7z a ../dist/QTHome-Mothership-Windows.zip "QTHome Mothership.exe" >/dev/null)
+          # le versioni vecchie si aggiornano copiando l'ULTIMO .exe dello zip: deve essere il motore (che poi installa tutto)
+          7z l -slt dist/QTHome-Windows.zip | grep -i '^Path = .*\.exe$'
           ls -la dist
       - name: Programmi di WSJT-X per Q65/JT65/MSK144 (GPL v3, pacchetto a parte che QTHome scarica da solo)
         continue-on-error: true
@@ -305,7 +333,7 @@ jobs:
         continue-on-error: true
         shell: pwsh
         run: |
-          $q = Start-Process -FilePath ".\QTHome.exe" -ArgumentList "--demo" -PassThru
+          $q = Start-Process -FilePath ".\out\QTHome-win32-x64\QTHome.exe" -ArgumentList "--demo" -PassThru
           $m = Start-Process -FilePath ".\QTHome Mothership.exe" -PassThru
           Start-Sleep 12
           foreach ($x in @(@($q,"http://127.0.0.1:47481/"), @($m,"http://127.0.0.1:47460/api/state"))) {
@@ -419,6 +447,8 @@ jobs:
           cmake --build c2 --target codec2 -j4 >/dev/null
           cp "$(find c2 -name 'libcodec2.*.dylib' -type f | head -1)" libcodec2.dylib
           install_name_tool -id @rpath/libcodec2.dylib libcodec2.dylib
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
       - name: Pacchetto
         run: |
           set -e
@@ -428,13 +458,17 @@ jobs:
             d=$((s*2)); sips -z $d $d build/resources/icon-1024.png --out icon.iconset/icon_${s}x${s}@2x.png >/dev/null
           done
           iconutil -c icns icon.iconset -o icon.icns
+          # Electron 32: l'ultimo che gira su macOS 10.15
+          mkdir -p appC
+          EV=$(npm view 'electron@32' version | tail -1 | sed -E "s/.*'([0-9.]+)'.*/\1/"); echo "Electron $EV"
+          npx --yes @electron/packager@latest desktop QTHome --platform=darwin --arch=x64 --electron-version="$EV" \
+            --icon=icon.icns --app-bundle-id=com.sculptworks.qthome --app-version="$VERSION" --build-version="$VERSION" \
+            --app-copyright="© 2026 SculptWorks LTD" --extend-info=desktop/extra.plist --asar --ignore='extra\.plist' --out=out --overwrite --quiet
+          mv out/QTHome-darwin-x64/QTHome.app appC/
           APP="appC/QTHome.app"; C="$APP/Contents"
-          mkdir -p "$C/MacOS" "$C/Resources" "$C/Frameworks"
-          cp QTHome "$C/MacOS/QTHome"; chmod +x "$C/MacOS/QTHome"
+          cp QTHome "$C/MacOS/qthome-motore"; chmod +x "$C/MacOS/qthome-motore"
           for l in libusb-1.0.dylib libcodec2.dylib; do [ -f "$l" ] && cp "$l" "$C/Frameworks/"; done
-          cp icon.icns "$C/Resources/icon.icns"
-          sed -e "s|<string>0.1.0</string>|<string>${VERSION}</string>|g" -e "s|<key>LSMinimumSystemVersion</key><string>11.0</string>|<key>LSMinimumSystemVersion</key><string>10.15</string>|" build/pkg/Info.plist > "$C/Info.plist"
-          grep -A1 LSMinimumSystemVersion "$C/Info.plist"
+          /usr/libexec/PlistBuddy -c "Print :LSMinimumSystemVersion" "$C/Info.plist" || true
           codesign --force --deep --sign - "$APP"
           pkgbuild --analyze --root appC comp.plist
           /usr/libexec/PlistBuddy -c "Set :0:BundleIsRelocatable false" -c "Set :0:BundleOverwriteAction upgrade" comp.plist
@@ -471,7 +505,7 @@ jobs:
           {
             echo "## Scarica · Download"
             echo
-            echo "| | Mac (Apple e Intel) | Windows 10 / 11 |"
+            echo "| | Mac (Apple e Intel, macOS 11+) | Windows 10 / 11 |"
             echo "|---|---|---|"
             echo "| **QTHome** | [⬇ QTHome-Mac.pkg](${D}/QTHome-Mac.pkg) | [⬇ QTHome-Windows.zip](${D}/QTHome-Windows.zip) |"
             echo
