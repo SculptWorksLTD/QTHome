@@ -73,6 +73,7 @@ QTHome ist ein Programm von IU1MVI. Sein Code ist neu geschrieben oder baut auf 
 
 - **ft8_lib** © Kārlis Goba (MIT): Grundlage des FT8/FT4-Encoders und des Ersatz-Decoders (bis die WSJT-X-Programme geladen sind). Methode aus der öffentlichen Arbeit von K1JT, K9AN und G4WJS (QEX 2020).
 - **wl2k-go** © Martin Hebnes Pedersen LA5NTA (MIT): Winlink-B2F-Protokoll; enthält **lzhuf** von Haruyasu Yoshizaki und Haruhiko Okumura.
+- **Wavelog** © 2019 Peter Goodhall, © 2024 DF2ET, DJ7NT, HB9HIL, LA8AJA (MIT): Aufbau der Menüs, Übersicht, Live-QSO und nachträgliches QSO; **Simple FLE** von OK2CQR auf Basis der FLE-Syntax von DF3CB für die Schnelleingabe.
 - **codec2** © David Rowe VK5DGR und Mitwirkende (LGPL-2.1): FreeDV. Eigene, austauschbare Bibliothek; Quelltext: github.com/drowe67/codec2.
 - **GSM 06.10** (ETSI-Norm, Tabellen 4.1-4.6) für die EchoLink-Sprache, Codec in QTHome neu geschrieben und mit **libgsm** von Jutta Degener und Carsten Bormann (TU Berlin) verglichen; **EchoLink®** ist eine Marke von Synergenics, LLC: QTHome spricht das öffentliche Protokoll und ist kein Produkt von ihnen.
 - **ITU-R P.533 und P.1239** (Internationale Fernmeldeunion): Ausbreitungsvorhersage; CCIR-Karten von foF2 und M(3000)F2, foF2-Dezile und Magnetfeld aus dem ITU-R-Referenzprogramm ITURHFProp (Studienkommission 3), frei von Urheberrechtsansprüchen verteilt.

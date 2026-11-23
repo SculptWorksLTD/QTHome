@@ -36,6 +36,8 @@ QTHome e QTHome Mothership includono:
   `QTHome.exe`) e si può sostituire con un'altra versione compatibile. Sorgente: https://github.com/drowe67/codec2/releases/tag/1.2.0
 - **wl2k-go** (protocollo Winlink B2F) — © 2014-2017 Martin Hebnes Pedersen LA5NTA — licenza MIT (testo come ft8_lib
   qui sopra). Contiene **lzhuf**, derivato dal lavoro di Haruyasu Yoshizaki e Haruhiko Okumura, di uso libero.
+- **Wavelog** (impaginazione di menu, Panoramica, Live QSO e Post QSO; inserimento rapido Simple FLE di OK2CQR sulla sintassi FLE di DF3CB) —
+  © 2019 Peter Goodhall, © 2024 DF2ET, DJ7NT, HB9HIL, LA8AJA — licenza MIT. Sorgente: https://github.com/wavelog/wavelog
 - **Reverse Beacon Network** (telnet.reversebeacon.net): con «Aiuta a migliorare il CW» QTHome legge gli spot pubblici per controllare i
   nominativi letti dal CW e dallo skimmer; non manda nulla al RBN.
 

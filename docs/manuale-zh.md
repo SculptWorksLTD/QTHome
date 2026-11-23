@@ -73,6 +73,7 @@ QTHome 是 IU1MVI 的程序。它的代码从零编写，或基于自由许可�
 
 - **ft8_lib** © Kārlis Goba（MIT）：FT8/FT4 编码器以及备用解码器（在 WSJT-X 程序下载完成前使用）的基础。方法来自 K1JT、K9AN 和 G4WJS 的公开成果（QEX 2020）。
 - **wl2k-go** © Martin Hebnes Pedersen LA5NTA（MIT）：Winlink B2F 协议；包含吉崎晴康（Haruyasu Yoshizaki）和奥村晴彦（Haruhiko Okumura）的 **lzhuf**。
+- **Wavelog** © 2019 Peter Goodhall，© 2024 DF2ET、DJ7NT、HB9HIL、LA8AJA（MIT）：菜单、概览、实时 QSO 与补录的布局；快速录入采用 OK2CQR 基于 DF3CB FLE 语法的 **Simple FLE**。
 - **codec2** © David Rowe VK5DGR 及贡献者（LGPL-2.1）：FreeDV。独立、可替换的库；源码：github.com/drowe67/codec2。
 - **GSM 06.10**（ETSI 标准，表 4.1-4.6）：EchoLink 语音，编解码器在 QTHome 中重写，并与 Jutta Degener 和 Carsten Bormann（柏林工业大学）的 **libgsm** 对照；**EchoLink®** 是 Synergenics, LLC 的商标：QTHome 使用其公开协议，并非其产品。
 - **ITU-R P.533 和 P.1239**（国际电信联盟）：传播预测；foF2 与 M(3000)F2 的 CCIR 图、foF2 十分位数和磁场来自 ITU-R 参考程序 ITURHFProp（第 3 研究组），以不主张版权的方式发布。
