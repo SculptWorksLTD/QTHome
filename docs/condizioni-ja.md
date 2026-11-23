@@ -37,7 +37,7 @@ QTHome はあなたのコンピューターの上で動きます。広告も隠�
 - **アクティベーション**：「1 ライセンス 1 台」を守るためのライセンスコードとインストールごとのランダムな番号。名前やコンピューターの情報は含みません。
 - **アップデートと WSJT-X のプログラム**：QTHome は新しいバージョンを GitHub からダウンロードします。どのサイトでも同じように、GitHub にはリクエストの IP アドレスが見えます。
 - **報告**：「問題やアイデアを送る…」を押したときだけ。あなたの文章、そのとき開いていた画面、無線機の機種、ロケーター（最大 6 文字）が送られます。送信前に、ユーザー名とコンピューター名、個人フォルダー、メールアドレス、ネットワークアドレス、パスワードやキーを取り除き、コールサインを符号に置き換えるフィルターを通します。
-- **あなたが使うことを選んだサービス**：DX クラスター、Reverse Beacon Network、PSK Reporter、HamQTH、LoTW、eQSL、QRZ、Club Log、HRDLog、Wavelog/Cloudlog、APRS-IS、EchoLink、Winlink、POTA/SOTA/WWFF のスポット、RepeaterBook、伝搬データ（hamqsl.com、NOAA、KC2G/GIRO）、国のリスト（country-files.com）、Super Check Partial、ネットワーク時刻。QTHome がこれらに接続するのは、あなたがオンにした機能のためだけで、その機能に必要なデータ（ふつうはコールサイン、ときにはロケーターやアップロードする QSO）だけを送ります。それぞれに独自のプライバシー規則があります。
+- **あなたが使うことを選んだサービス**：DX クラスター、Reverse Beacon Network、PSK Reporter、HamQTH、LoTW、eQSL、QRZ、Club Log、HRDLog、APRS-IS、EchoLink、Winlink、POTA/SOTA/WWFF のスポット、RepeaterBook、伝搬データ（hamqsl.com、NOAA、KC2G/GIRO）、国のリスト（country-files.com）、Super Check Partial、ネットワーク時刻。QTHome がこれらに接続するのは、あなたがオンにした機能のためだけで、その機能に必要なデータ（ふつうはコールサイン、ときにはロケーターやアップロードする QSO）だけを送ります。それぞれに独自のプライバシー規則があります。
 - **QTHome チャット**：メッセージは私たちのサービスを通りますが保存されません。個人メッセージと音声通話はエンドツーエンドで暗号化されます。
 
 **根拠と権利。** 購入データはライセンスを提供するため（契約）と税務上の義務のために扱います。報告はあなたが送るから扱います。ご連絡いただければ、データの確認、訂正、削除を求めることができます。ただし税法で保存が義務づけられているものは削除できません。イタリアのデータ保護当局（Garante per la protezione dei dati personali）またはお住まいの国の当局に申し立てることもできます。

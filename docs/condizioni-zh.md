@@ -37,7 +37,7 @@ QTHome 在你的电脑上运行。没有广告，没有隐藏的使用统计，�
 - **激活**：许可证代码和安装时生成的随机编号，用于执行"一个许可证一台电脑"的规则。其中不含你的姓名或电脑信息。
 - **更新和 WSJT-X 程序**：QTHome 从 GitHub 下载新版本。和访问任何网站一样，GitHub 能看到请求的 IP 地址。
 - **报告**：只有在你点击"报告问题或想法…"时才会发送。发送的内容包括你的文字、你当时所在的程序页面、电台型号和网格坐标（最多 6 个字符）；发送前，文字会经过过滤，去掉用户名和电脑名、个人文件夹、邮箱、网络地址、密码和密钥，并把呼号替换为代码。
-- **你选择使用的服务**：DX 集群、Reverse Beacon Network、PSK Reporter、HamQTH、LoTW、eQSL、QRZ、Club Log、HRDLog、Wavelog/Cloudlog、APRS-IS、EchoLink、Winlink、POTA/SOTA/WWFF 的 spot、RepeaterBook、传播数据（hamqsl.com、NOAA、KC2G/GIRO）、国家列表（country-files.com）、Super Check Partial 以及网络时间。QTHome 只为你开启的功能联系这些服务，并且只发送该功能需要的数据（通常是呼号，有时是网格坐标或要上传的 QSO）。每项服务都有自己的隐私规则。
+- **你选择使用的服务**：DX 集群、Reverse Beacon Network、PSK Reporter、HamQTH、LoTW、eQSL、QRZ、Club Log、HRDLog、APRS-IS、EchoLink、Winlink、POTA/SOTA/WWFF 的 spot、RepeaterBook、传播数据（hamqsl.com、NOAA、KC2G/GIRO）、国家列表（country-files.com）、Super Check Partial 以及网络时间。QTHome 只为你开启的功能联系这些服务，并且只发送该功能需要的数据（通常是呼号，有时是网格坐标或要上传的 QSO）。每项服务都有自己的隐私规则。
 - **QTHome 聊天**：消息经过我们的服务但不会被保存；私信和语音通话采用端到端加密。
 
 **依据和权利。** 我们处理购买数据是为了向你提供许可证（合同）以及履行税务义务；处理报告是因为你主动发送。你可以写信给我们，要求查看、更正或删除你的数据；但税法要求我们保存的内容不能删除。你也可以向意大利数据保护机构（Garante per la protezione dei dati personali）或你所在国家的机构投诉。
