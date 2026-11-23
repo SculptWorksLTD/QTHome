@@ -54,6 +54,8 @@ QTHome se actualiza solo: cuando hay una versión nueva la descarga y la instala
 
 **Ayuda a mejorar el CW** (Ajustes): mientras escuchas CW, dos decodificadores de QTHome releen lo que llega y los indicativos se comprueban con la Reverse Beacon Network; solo salen los casos dudosos, de forma anónima.
 
+**Log en la nube** (Conexiones › Log en la nube, con la licencia PRO): el log se queda en tu ordenador y la nube de QTHome guarda una copia que mantiene sincronizados todos tus ordenadores: un QSO hecho en portable aparece en casa, una corrección o un borrado llega a todas partes (gana el cambio más reciente). Sin internet se trabaja como siempre y se sincroniza cuando vuelve la red. «Abrir el log en el navegador» lo muestra desde cualquier ordenador o teléfono, con la licencia. **Log del club**: quien tiene la licencia del indicativo del club crea la clave del club y la da a los socios; cada QTHome que la usa escribe y lee el mismo log, y el campo Operador (del perfil de estación) dice quién hizo el QSO. La copia en la nube es privada pero no cifrada, para poder leerla en el navegador. **Wavelog en los dos sentidos** (QSL › Ajustes QSL › Wavelog): además de enviar los QSO, «Traer también los QSO anotados en Wavelog» lleva al log de QTHome los introducidos en Wavelog (cada 10 minutos), sin duplicados.
+
 ## Gratis y PRO
 
 Escuchar, decodificar y llevar el log es siempre gratis. Transmitir desde QTHome, las automatizaciones, el concurso avanzado y las QSL en línea forman parte de PRO; los primeros 30 días son una prueba completa. PRO cuesta **12 € al año**: cubre los costes de servidores e investigación.
